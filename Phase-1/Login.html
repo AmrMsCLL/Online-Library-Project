@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+</head>
+
+<body style="text-align: center;">
+    <nav style="text-align: left;">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html" target="_blank">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Welcome to the Online Library</h1>
+    </header>
+    <h2>Login</h2>
+
+    <form action="home.html">
+        <div class="is_admin">
+            <label for="admin">Admin</label>
+            <input type="radio" name="sign" value="Admin" id="admin">
+
+            <label for="User">User</label>
+            <input type="radio" name="sign" value="User" id="User">
+        </div>
+
+        <br>
+
+        <div class='email'>
+            <input type="email" placeholder="Email" required>
+        </div>
+
+        <br>
+
+        <div class='Password'>
+            <input type="password" placeholder="Password" required minlength="8" maxlength="20">
+        </div>
+
+        <br>
+
+        <div class="submit">
+            <input type="submit" value="Login">
+        </div>
+
+
+    </form>
+
+
+
+</body>
+
+</html>
