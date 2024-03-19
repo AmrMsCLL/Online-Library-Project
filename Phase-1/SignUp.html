@@ -3,7 +3,6 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Sign Up</title>
 </head>
 
@@ -11,29 +10,16 @@
     <nav style="text-align: left;">
         <ul>
             <li><a href="home.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="User-Profile.html">Your Profile</a></li>
-            <li><a href="Book.html">All Books</a></li>
-            <li><a href="Index.html">Categories</a></li>
         </ul>
     </nav>
-    <img src="Imgs/large-collection-old-books-wooden-shelves-generated-by-ai.jpg" alt="wallpaper" width="100%"> 
+    <!-- <img src="Imgs/large-collection-old-books-wooden-shelves-generated-by-ai.jpg" alt="wallpaper" width="100%">  -->
 
-
-    <header>
-        <h1>Welcome to XXX Online Library</h1>
-    </header>
+    <header> <h1>Welcome to DigitalDewey Online Library</h1> </header>
 
     <h2>SignUp</h2>
 
     <form action="login.html">
-        <div class="is_admin">
-            <label for="admin">Admin</label>
-            <input type="radio" name="sign" value="Admin" id="admin">
-            <label for="User">User</label>
-            <input type="radio" name="sign" value="User" id="User">
-        </div> <br>
-
+        
         <div class='username'>
             <input type="text" placeholder="Username" required>
         </div> <br>
@@ -47,13 +33,19 @@
             <br> <br>
             <input type="password" placeholder="Confirm Password" required minlength="8" maxlength="20">
         </div> <br>
-        
+
+        <div class="is_admin">
+            <label for="admin">Admin</label>
+            <input type="radio" name="sign" value="Admin" id="admin">
+            <label for="User">User</label>
+            <input type="radio" name="sign" value="User" id="User">
+        </div> <br>
+
         <div class="submit">
             <input type="submit">
-            <input type="reset">
+            <!-- <input type="reset"> -->
         </div>
     </form>
-
 </body>
 
 <footer style="text-align: center;">
