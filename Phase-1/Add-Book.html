@@ -20,22 +20,30 @@
 
     <div class="Book_Details" >
         <center>
+            <h2>Add New Book!</h2>
             <table>
-                    <td><img src="Imgs/book.png" width="300" height="300" alt="BOOK"></td>
-                    <td>
-                        <table width="300" height="300">
+                <td><img src="Imgs/book.png" width="300" height="300" alt="BOOK"></td>
+                <td> <table width="300" height="300">
+                    <form action="Book-Details.html">
+                        <div class="ID">
                             <tr>
                                 <td>Book ID :</td>
                                 <td><input type="text" name="Book ID" placeholder="Book ID"></td>
                             </tr>
+                        </div>
+                        <div class="name">
                             <tr>
                                 <td>Book Name :</td>
                                 <td><input type="text" name="Book Name" placeholder="Book Name"></td>
                             </tr>
+                        </div>
+                        <div class="author">
                             <tr>
                                 <td>Book Author :</td>
                                 <td><input type="text" name="Book Author" placeholder="Book Author"></td>
                             </tr>
+                        </div>
+                        <div class="Category">
                             <tr>
                                 <td>Book Category :</td>
                                 <td><select name="Book-Category" id="Book-Category">
@@ -55,12 +63,20 @@
                                     <option value="Statistics & Decision Support">Statistics & Decision Support</option>
                                 </select></td>
                             </tr>
+                        </div>
+                        <div class="descrpition">
                             <tr>
                                 <td>Book description :</td>
                                 <td><textarea name="Description" id="Description" cols="21" rows="5" placeholder="Enter Book Description Here"></textarea></td>
                             </tr>
-                        </table>
-                    </td>
+                        </div>
+                        <div class="submit">
+                            <tr>
+                            <td><input type="submit" value="Add-Book"></td>
+                            </tr>
+                        </div>
+                    </form>
+                </table> </td>
                 </tr>
             </table>
         </center>        
