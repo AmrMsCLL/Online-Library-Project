@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.Search_Bar {
+
+    padding-top: 120px;
+    padding-left: 30px;
+    width: 1337px;
+    height: 300px;
+    background-image: url('Imgs/pexels-pixabay-47805.jpg');
+    background-size: cover;
+    position: relative;
+    input[type="search"] {
+        width: 900px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    /*--------------------------------------------------------------*/
+    p{
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        position: relative;
+        left: 5px;
+        top: 30px;
+    }
+    /*--------------------------------------------------------------*/
+    h2{
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        position: relative;
+        left: 5px;
+        top: 15px;
+    }
+
+}
+    /*--------------------------------------------------------------*/
+
+.bar{
+    width: 900px;
+    height: 50px;
+    position: relative;
+}
+
+    /*--------------------------------------------------------------*/
+
+
+.bar {
+    position: relative;
+}
+
+    /*--------------------------------------------------------------*/
+
+.search-icon {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+}
+    /*--------------------------------------------------------------*/
+
+
+#Search::-webkit-search-cancel-button {
+    position: absolute;
+    right: 50px; /* Adjust as needed */
+}
+
+    /*--------------------------------------------------------------*/
+
+
+
