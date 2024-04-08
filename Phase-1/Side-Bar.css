@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.side-bar{
+    box-sizing: border-box; 
+    padding: 0;
+    color: #fff;
+    width: 0px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.912);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    z-index: 9999;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+.side-bar.active{
+    padding: 6px 14px;
+    width: 265px;
+}
+
+.side-bar.active .logo{
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.options{
+    margin-top: 40px;
+    .option{
+        opacity: 0;
+        pointer-events: none;
+        list-style: none;
+        width: 100%;
+        height: 60px;
+        margin: 10px 0px;
+        display: flex; 
+        align-items: center; 
+        transition: 0.3s;
+
+        a{
+            white-space: nowrap;
+            padding-left:5px ;
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            flex-grow: 1; 
+            display: flex; 
+            align-items: center; 
+            border-radius: 8px;
+            transition: 0.3s;
+
+            .icon{
+                font-size: 10px;
+                font-weight: 300;
+                min-width: 30px;
+                height: 60px;
+                text-align: center;
+                margin-right: 10px; 
+            }
+            
+            span {
+                display: flex; 
+                align-items: center;
+            }
+        }
+
+    }
+    .option.active a, .option a:hover{
+            background-color: rgba(255, 255, 255, .2);
+    }
+}
+
+
+.logos{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    .logo{
+        padding-top: 5px;
+        padding-left: 20px;
+        pointer-events: none;
+        font-size: 25px;
+        font-weight: 600;
+        opacity: 0;
+        transition: .1s;
+    }
+    .btn{
+        color: black;
+        position: fixed;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 40px;
+        cursor: pointer;
+        transition-delay: 0.3s;
+        transition: opacity 0.3s;
+    }
+}
+.side-bar.active .option{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.side-bar.active .btn{
+    color: #fff;
+}
+

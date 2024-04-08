@@ -7,7 +7,7 @@
 }
 .header{
     position: static;
-    background-color: rgb(5, 3, 3);
+    background-color: rgb(1, 1, 1);
     top: 0;
     left: 0;
     width: 100%;
@@ -63,7 +63,7 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 50px 0px;
+    padding: 50px 50px 100px;
 
 }
 

@@ -5,18 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
     <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="Side-Bar.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="Categoriesstyle.css"
 </head>
 
 <body>
-    <nav style="text-align: left;">
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="Books.html">All Books</a></li>
-            <li><a href="Profile.html">Your Profile</a></li>
-            <li><a href="Admin-Dash.html">Admin-DashBoard</a></li>
-        </ul>
-    </nav>
+    <navc class="side-bar">
+        <div class="logos">
+            <p class="logo"><ion-icon name="library"></ion-icon>DigitalDewey</p>
+            <ion-icon name="list-outline" class="btn"></ion-icon>
+
+        </div>
+        <div >
+            <ul class="options">
+                <li class="option active"><a href="#"><span><ion-icon  name="settings-outline" class="icon"></ion-icon>Home</span></a></li>
+
+                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>User</span></a></li>
+
+
+                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Books</span></a></li>
+
+
+                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Categories</span></a></li>
+
+
+                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Oreder</span></a></li>
+
+
+                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>About</span></a></li>
+
+
+                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Login</span></a></li>
+            </ul>
+        </div>
+
+    </navc>
 
     <div class ="Search_Bar">
         <p>Accelerating research discovery to shape a better future</p>  
@@ -53,6 +78,7 @@
             <li><a href="Books.html#B12">Space</a></li>
             <li><a href="Books.html#B13">Statistics & Decision Support</a></li>
         </ul>
+        <script src="nav-script.js"></script>
 </body>
 
 <footer>
