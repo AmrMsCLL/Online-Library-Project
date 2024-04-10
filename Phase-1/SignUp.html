@@ -4,13 +4,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="Main.css">
-    <link rel="stylesheet" href="Side-Bar.css">
+    <link rel="stylesheet" href="styles/Side-Bar.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styles/SignUp.css">
+
 </head>
 
-<body style="text-align: center;">
+<body>
     <navc class="side-bar">
         <div class="logos">
             <p class="logo"><ion-icon name="library"></ion-icon>DigitalDewey</p>
@@ -45,35 +46,45 @@
 
     <header> <h1>Welcome to DigitalDewey Online Library</h1> </header>
 
-    <h2>SignUp</h2>
+    <form action="login.html" class="content">
+        <div class="input_box">
+            <div class='input_field'>
+                <input type="text" placeholder="Username" required>
+                <ion-icon name="person" class="sIcon"></ion-icon>
+            </div> 
+            
+            <div class='input_field'>
+                <input type="email" placeholder="Email" required>
+                <ion-icon name="mail" class="sIcon"></ion-icon>
+            </div> 
+        </div>
 
-    <form action="login.html">
-        
-        <div class='username'>
-            <input type="text" placeholder="Username" required>
-        </div> <br>
-        
-        <div class='email'>
-            <input type="email" placeholder="Email" required>
-        </div> <br>
+        <div class="input_box">
+            <div class='input_field'>
+                <input type="password" placeholder="Password" required minlength="8" maxlength="20">
+                <ion-icon name="lock-closed" class="sIcon"></ion-icon>
+            </div>
+            <div class="input_field">
+                <input type="password" placeholder="Confirm Password" required minlength="8" maxlength="20">
+                <ion-icon name="lock-closed" class="sIcon"></ion-icon>
+            </div> 
+        </div>
 
-        <div class='Password'>
-            <input type="password" placeholder="Password" required minlength="8" maxlength="20">
-            <br> <br>
-            <input type="password" placeholder="Confirm Password" required minlength="8" maxlength="20">
-        </div> <br>
-
-        <div class="is_admin">
+        <div class="input_box">
+            <div class="input_field ">
             <label for="admin">Admin</label>
             <input type="radio" name="sign" value="Admin" id="admin">
+            <ion-icon name="construct" class="sIcon check"></ion-icon>
+            </div>
+            <div class="input_field ">
             <label for="User">User</label>
             <input type="radio" name="sign" value="User" id="User">
-        </div> <br>
-
-        <div class="submit">
-            <input type="submit">
-            <!-- <input type="reset"> -->
+            <ion-icon name="person-circle" class="sIcon check"></ion-icon>
+            </div> 
         </div>
+        <!-- <label class="lb"><input type="checkbox">I hereby declare that the above information is true and correct</label> -->
+        
+        <input type="submit" value="Register">
     </form>
     <script src="nav-script.js"></script>
 </body>

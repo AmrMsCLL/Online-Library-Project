@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -57,7 +57,7 @@ li{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url('Imgs/joey-huang-JLJQAG2Ofn4-unsplash.jpg') no-repeat;
+    background: url('../Imgs/joey-huang-JLJQAG2Ofn4-unsplash.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;

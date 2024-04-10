@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
 }
 body{
     padding-left: 30px;
@@ -97,7 +97,7 @@ body{
         transition: .1s;
     }
     .btn{
-        color: black;
+        color: rgb(255, 255, 255);
         position: fixed;
         left: 0;
         width: 30px;
