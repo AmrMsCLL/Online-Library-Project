@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+    padding-top: 50px;
     text-align: center;
     background-color: black;
     color: #fff;
