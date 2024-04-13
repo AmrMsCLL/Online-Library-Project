@@ -10,7 +10,7 @@ body{
     background-color: black;
 }
 .header{
-    position: static;
+    position: fixed;
     background-color: rgb(1, 1, 1);
     top: 0;
     left: 0;

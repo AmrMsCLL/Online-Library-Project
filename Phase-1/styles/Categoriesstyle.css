@@ -99,12 +99,12 @@ body{
         margin-top: 60px;
         display: flex;
         justify-content: left;
-        gap: 120px;
+        gap: 100px;
     }
     li{
         display: flex;
         justify-content: center;
-        width: 200px;
+        width: 150px;
         border: 3px solid aqua;
         padding: 10px;
         border-radius: 50px;
@@ -138,7 +138,7 @@ body{
     a{
         text-decoration: none;
         color: #fff;
-        font-size: 20px;
+        font-size: 15px;
 
     }
 
