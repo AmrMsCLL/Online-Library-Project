@@ -36,4 +36,3 @@ function initToggleButton() {
   }
 
 loadCSS('Assets/Assets-Styles/Side-Bar.css', loadNav);
-

@@ -1,0 +1,20 @@
+.About a:visited {
+    color: red;
+}
+
+.footer {
+    text-align: center;
+}
+
+.copyright-DigitalDewey {
+    color: blue;
+}
+
+.help-support a:visited {
+    color: cyan
+}
+
+/* this body is for the entire login page and shouldn't be written like this  */
+/* body {
+    text-align: center;
+} */
