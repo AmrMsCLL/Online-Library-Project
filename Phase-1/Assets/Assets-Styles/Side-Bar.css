@@ -2,9 +2,14 @@
 *{
     font-family: 'Poppins';
 }
-body{
-    /* padding-left: 30px;
-    padding-top: 50px; */
+
+/* body{
+    padding-left: 30px;
+    padding-top: 50px;
+} */
+
+.test {
+    color: blue;
 }
 
 .side-bar{

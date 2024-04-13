@@ -4,5 +4,5 @@ fetch('Assets/Footer.html')
     document.getElementById('footer_placeholder').innerHTML = html;
   })
   .catch(error => {
-    console.warn('Error loading the header:', error);
+    console.warn('Error loading the footer: ', error);
   });

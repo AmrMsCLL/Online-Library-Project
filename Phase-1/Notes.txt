@@ -1,13 +1,15 @@
 https://www.librarything.com/
 
-Some Library names GPT suggested :
-LibraSphere
-InfiReads
-EpicLeaf
-WisdomNest
-PagePioneer
-ScriptoVault
-BookBiosphere
-InkHarbor
-MindMosaic
-EchoesOfInk
+
+// done // 
+login - signup
+home
+categories
+
+// medhat // 
+book details
+
+// jimy // 
+boooks ig
+
+

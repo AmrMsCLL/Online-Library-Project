@@ -4,7 +4,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="styles/Side-Bar.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="styles/SignUp.css">
@@ -12,36 +11,9 @@
 </head>
 
 <body>
-    <navc class="side-bar">
-        <div class="logos">
-            <p class="logo"><ion-icon name="library"></ion-icon>DigitalDewey</p>
-            <ion-icon name="list-outline" class="btn"></ion-icon>
+    <div id="side-bar_reuseable"></div>
+    <script src="Assets/LoadSide-Bar.js"></script>
 
-        </div>
-        <div >
-            <ul class="options">
-                <li class="option active"><a href="#"><span><ion-icon  name="settings-outline" class="icon"></ion-icon>Home</span></a></li>
-
-                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>User</span></a></li>
-
-
-                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Books</span></a></li>
-
-
-                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Categories</span></a></li>
-
-
-                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Oreder</span></a></li>
-
-
-                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>About</span></a></li>
-
-
-                <li class="option"><a href="#"><span><ion-icon name="settings-outline" class="icon"></ion-icon>Login</span></a></li>
-            </ul>
-        </div>
-
-    </navc>
     <!-- <img src="Imgs/large-collection-old-books-wooden-shelves-generated-by-ai.jpg" alt="wallpaper" width="100%">  -->
 
     <header> <h1>Welcome to DigitalDewey Online Library</h1> </header>
@@ -86,7 +58,6 @@
         
         <input type="submit" value="Register">
     </form>
-    <script src="scripts/nav-script.js"></script>
 </body>
 
 <footer>
