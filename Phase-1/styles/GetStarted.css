@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+body{
+    background-color: black;
 }
 .header{
     position: static;
@@ -218,7 +222,12 @@ li{
     }
 }
 
-.Popular{
+
+/*----------------------SLIDER Lists--------------*/
+
+.Slider_Content{
+    padding: 70px;
+    position: relative;
     a{
         width: 16%;
         display: inline-block;
@@ -242,8 +251,7 @@ li{
         }
     }
 
-    padding: 70px;
-    background: black;
+
 
     div{
         p{
@@ -251,11 +259,17 @@ li{
         }
     }
 }
+
 .slider{
     display: flex;
     justify-content: left;
     margin: 20px auto;
+    overflow-x:auto;
+    scrollbar-width: none;
 
+}
+.slider ::-webkit-scrollbar{
+    display: none;
 }
 
 .sliderCard{
@@ -283,10 +297,41 @@ li{
 
 
 hr{
+    margin: 0 auto;
+    width: 90%;
     border: none;
     border-radius: 5px;
     height: 5px;
     background-color: aqua;
+}
+
+.slider_Button{
+    position: absolute;
+    top: 50%;
+    background-color: aqua;
+    color: #000000;
+    height: 40px;
+    width: 40px;
+    font-size: 2.2rem;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+
+.slider_Button:hover{
+    background-color: #fff;
+}
+
+.Slider_Content #prev{
+    left: 5;
+    display: none;
+}
+
+.Slider_Content #next{
+    right: 5;
 }
 
 
