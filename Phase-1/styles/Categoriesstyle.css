@@ -3,15 +3,25 @@
     font-family: 'Poppins';
     box-sizing: border-box;
 }
+
+
+body{
+    background-color:black;
+    padding-left: 20px;
+    /* padding-top: 50px; */
+}
 .Search_Bar {
     display: flex;
+    margin-top:100px ;
+    margin-bottom: 100px;
     flex-direction: column;
     align-items: center;
-    width: 1337px;
+    width: 1330px;
     height: 300px;
     background-image: url('../Imgs/wallpaperflare-cropped.jpg');
     background-size: cover;
     position: relative;
+    border: 5px solid aqua;
     border-radius: 20px;
     /*--------------------------------------------------------------*/
     p{
@@ -78,4 +88,107 @@
     /*--------------------------------------------------------------*/
 
 
+.Resources{
 
+    position: relative;
+    padding: 20px;
+    ul{
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+        margin-top: 60px;
+        display: flex;
+        justify-content: left;
+        gap: 120px;
+    }
+    li{
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        border: 3px solid aqua;
+        padding: 10px;
+        border-radius: 50px;
+        transition: .3s;
+    }
+    li:hover{
+        background-color: aqua;
+        color: black;
+        a{
+            color: black;
+            font-weight: 700;
+        }
+    }
+
+    h2{
+        padding: 3px 10px 3px 10px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    h2:before{
+        content: "";
+        width: 5px;
+        height: 50px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 10px  rgba(0, 255, 255, 0.868);
+        position: absolute;
+        top: 45px;
+        left: 15px;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+
+    }
+
+}
+
+.Subjects{
+    position: relative;
+    padding: 20px;
+    ul{
+        display: flex;
+        flex-direction: column;
+
+    }
+    li{
+        margin: 10px 0;
+        height: 60px;
+        width: 100%;
+        background-color: rgb(8, 180, 180);
+        line-height: 60px;
+        font-size: 20px;
+        letter-spacing: 5px;
+        padding-left: 10px;
+        border-radius: 4px;
+        transition: .3s;
+    }
+    li:hover{
+        width: 70%; 
+        padding-left: 60px;
+    }
+    a{
+        text-decoration: none;
+        color: #000000;
+    }
+
+
+
+    h2{
+        padding: 3px 10px 3px 10px;
+        color: #fff;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    h2:before{
+        content: "";
+        width: 5px;
+        height: 50px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 10px  rgba(0, 255, 255, 0.696);
+        position: absolute;
+        top: 45px;
+        left: 15px;
+    }
+}
