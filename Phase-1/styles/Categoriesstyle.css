@@ -12,9 +12,9 @@ body{
 }
 .Search_Bar {
     display: flex;
-    margin-top:100px ;
-    margin-bottom: 100px;
+    margin: 100px auto;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 1330px;
     height: 300px;
@@ -148,11 +148,13 @@ body{
     position: relative;
     padding: 20px;
     ul{
+        position: relative;
         display: flex;
         flex-direction: column;
 
     }
     li{
+        position: relative;
         margin: 10px 0;
         height: 60px;
         width: 100%;
@@ -165,12 +167,34 @@ body{
         transition: .3s;
     }
     li:hover{
-        width: 70%; 
-        padding-left: 60px;
+        padding-left: 50px;
+        font-weight: 900;
+        letter-spacing: 2px;
     }
-    a{
+
+    li a{
+        position: relative;
         text-decoration: none;
+        width: 100%;
+        height: auto;
+        margin: auto;
         color: #000000;
+    }
+
+    li::after{
+        content: "";
+        width: 0;
+        height: 100%;
+        color: #000000;
+        background-color: #000000;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: .2s;
+    }
+    li:hover::after{
+        width: 30%;
+
     }
 
 

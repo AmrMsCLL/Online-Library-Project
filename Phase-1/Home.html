@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="styles/GetStarted.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
       rel="stylesheet">
+      <script>
+window.onload = function() {
+    var sliderCards = document.querySelectorAll('.sliderCard');
+
+    sliderCards.forEach(function(card) {
+        var imageDiv = card.querySelector('.image');
+        var img = imageDiv.querySelector('img');
+        var imageName = img.getAttribute('name');
+
+        imageDiv.addEventListener('mouseover', function() {
+            var textDiv = document.createElement('div');
+            textDiv.className = 'hoverText'; // Assign a class to the div
+            textDiv.innerText = imageName;
+            imageDiv.appendChild(textDiv);
+        });
+
+        imageDiv.addEventListener('mouseout', function() {
+            var textDiv = imageDiv.querySelector('.hoverText');
+            imageDiv.removeChild(textDiv);
+        });
+    });
+}
+
+
+
+
+      </script>
 </head>
 <body>
     <header class="header">
@@ -51,103 +78,179 @@
         <button id="prev" class="slider_Button material-symbols-rounded">chevron_left</button>
         <div class="slider">
     
-            <div class="sliderCard">
+            <div class="sliderCard" >
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"  data-image="Imgs/Books/ (1).jpg" data-name="the end of the war"><img src="Imgs/Books/ (1).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (1).jpg"  width="180px" height="230px" name="The Art Of War" ></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html" data-image="Imgs/Books/ (2).jpg" data-name="nigga"><img src="Imgs/Books/ (2).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (2).jpg" alt="" width="180px" height="230px" name=""></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (3).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (3).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (4).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (4).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (5).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (5).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (6).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (6).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (7).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (7).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (8).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (8).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (9).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (9).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (10).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (10).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (11).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (11).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (12).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (12).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (13).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (13).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (14).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (14).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (15).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (15).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (16).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (16).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (17).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (17).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (18).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (18).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (19).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (19).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
            
@@ -172,101 +275,113 @@
     
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (20).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (20).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (21).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (21).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
+<<<<<<< HEAD
                     <a href="Book-Details.html"><img src="Imgs/Books/ (22).jpg" alt="" width="130px" height="180px"></a>
+=======
+                    <a href="#"><img src="Imgs/Books/ (22).jpg" alt="" width="180px" height="230px"></a>
+>>>>>>> 63c53c4d77a6a64679209a39bb8ff458c5ba697d
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (23).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (23).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (24).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (24).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (25).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (25).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (26).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (26).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (27).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (27).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (28).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (28).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (29).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (29).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (30).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (30).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (31).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (31).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (32).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (32).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (33).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (33).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (34).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (34).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (35).jpg" alt="" width="130px" height="180px"></a>
-                </div>
-            </div>
-
-            <div class="sliderCard">
-                <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (36).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (35).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (37).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (36).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (38).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (37).jpg" alt="" width="180px" height="230px"></a>
+                </div>
+            </div>
+
+            <div class="sliderCard">
+                <div class="image">
+                    <a href="#"><img src="Imgs/Books/ (38).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
            
@@ -294,101 +409,101 @@
     
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (39).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (39).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (40).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (40).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (41).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (41).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (42).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (42).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (43).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (43).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (44).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (44).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (45).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (45).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (46).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (46).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (47).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (47).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (48).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (48).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (49).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (49).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (50).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (50).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (51).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (51).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (52).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (52).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (53).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (53).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (54).jpg" alt="" width="130px" height="180px"></a>
-                </div>
-            </div>
-
-            <div class="sliderCard">
-                <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (55).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (54).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (56).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (55).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
 
             <div class="sliderCard">
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (57).jpg" alt="" width="130px" height="180px"></a>
+                    <a href="#"><img src="Imgs/Books/ (56).jpg" alt="" width="180px" height="230px"></a>
+                </div>
+            </div>
+
+            <div class="sliderCard">
+                <div class="image">
+                    <a href="#"><img src="Imgs/Books/ (57).jpg" alt="" width="180px" height="230px"></a>
                 </div>
             </div>
         </div>
