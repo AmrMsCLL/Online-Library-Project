@@ -18,7 +18,7 @@ body{
     align-items: center;
     width: 100%;
     height: 470px;
-    background-image: url('../Imgs/wallpaperflare-cropped.jpg');
+    background-image: url('../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg');
     background-size: cover;
     position: relative;
     border: 4px solid aqua;
@@ -27,7 +27,7 @@ body{
     p{
         font-size: 20px;
         font-weight: 700;
-        color: #000000;
+        color: aqua;
         position: relative;
         right: 0;
         top: 50px;
