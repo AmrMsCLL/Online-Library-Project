@@ -36,6 +36,9 @@ body{
 .text-box h2{
     font-size: 42px;
 }
+.text-box h3{
+    font-size:34px;
+}
 button{
     display: flex;
     justify-content: center;
