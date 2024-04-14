@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     
-<head>
+head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book-Details</title>
     <link rel="stylesheet" href="styles/Main.css">
     <link rel="stylesheet" href="styles/Side-Bar.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="styles/Bookdetails.css"
 </head>
 
 <body>
@@ -42,53 +43,29 @@
 
     </navc>
     <br> <br>
-    <h2 style="text-align: center;">Book {Placeholder} Details</h2> <br>
-
-    <div class="Book_Details" >
-        <center>
-            <table>
-                <tr>
-                    <td><img src="Imgs/book.png" width="300" height="300" alt="BOOK"></td>
-                    <td>
-                        <table width="300" height="300">
-                            <tr>
-                                <td>Book ID :</td>
-                                <td>Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>Name :</td>
-                                <td>Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>Author :</td>
-                                <td>Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>Category :</td>
-                                <td>Placeholder</td>
-                            </tr>
-                            <tr>
-                                <td>Price :</td>
-                                <td>Placeholder</td>
-                            </tr>
-                            <tr>
-                                <!-- <td>Book Description :</td> -->
-                                <td><label for="Book-Description">Book Overview :</label></td>
-                                <td><textarea name="Book-Description" id="Book-Description" cols="20" rows="5" placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eveniet est aliquam, repellendus quia nobis consequatur eaque beatae voluptatibus numquam vero quos corporis commodi incidunt!"></textarea></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </center>        
-    </div>
-    <div>
-        <center>
-            <br> <a href="Add-Book.html"><button>Edit Book</button></a> 
+    <div class="wrap">
+            <img src="" id="image">
+            <div class="text-box">
+            <h2 id="name"></h2> <br><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequuntur nihil nam harum cumque fuga, ullam accusamus ipsam! Dignissimos asperiores nesciunt et laborum praesentium laboriosam assumenda autem consectetur aperiam neque!</p>
+            <br><br>
+            <div class="center">
+                <a href="Add-Book.html"><button>Edit Book</button></a> 
             <!-- button should appear only to admin not user but not possible with only html and actually edit the book's details rather then redirecting to adding a new book page -->
-            <button>Delete Book</button> <br>
-        </center>
+            <button>Delete Book</button>
+            </div> 
     </div>
+    </div>
+
+    <script>
+        // Retrieve the name and image source from session storage
+        var name = sessionStorage.getItem("name");
+        var imageSrc = sessionStorage.getItem("imageSrc");
+
+        // Set the name and image source in the HTML
+        document.getElementById("name").textContent = name;
+        document.getElementById("image").src = imageSrc;
+    </script>    
     <script src="scripts/nav-script.js"></script>
 </body>
 
