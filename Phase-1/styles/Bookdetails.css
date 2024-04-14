@@ -2,31 +2,36 @@
 *{
     font-family: 'Poppins';
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-img{
-    width: 260px;
-    float: left;
-    border: 3px solid #fff;
-    border-radius: 10px;
-    margin-right: 15px;
-    margin-left: 15px;
-
 }
 body{
     background-color:black;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    /* padding-top: 50px; */
 }
+img{
+    width: 260px;
+    height: 90%;
+    /* float: left; */
+    border: 3px solid #fff;
+    border-radius: 10px;
+    margin: 0 15px;
+
+}
+
 .wrap{
-    margin: 150px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 50px auto;
     width: 70%;
+    height: 450px;
+}
+
+.BookCover{
+    height: 100%;
 }
 .text-box{
+    height: 100%;
     color:#fff;
 }
 
@@ -34,12 +39,29 @@ body{
     font-size: 16px;
 }
 .text-box h2{
+    margin: 0 auto;
+    position: relative;
+    top: 0;
     font-size: 42px;
 }
 .text-box h3{
     font-size:34px;
+    margin: 0 auto;
 }
-button{
+.CheckIcon{
+    color: rgb(5, 223, 5);
+    position: relative;
+    top: 3px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    position:relative;
+}
+.btn1{
+    position: relative;
     display: flex;
     justify-content: center;
     width: 150px;
@@ -50,9 +72,26 @@ button{
     font-family: 'Poppins';
     background-color: black;
     color: #fff;
+    cursor: pointer;
 }
 .center{
     justify-content: center;
     display: flex;
-    gap: 70px;
+    gap: 20px;
+}
+
+
+.BookCover .borrowButton{
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    transition: .3s;
+    cursor: pointer;
+}
+.BookCover .borrowButton:hover{
+    background-color: aqua;
 }
