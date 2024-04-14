@@ -16,68 +16,24 @@
     <div id="side-bar_reuseable"></div>
     <script src="Assets/LoadSide-Bar.js"></script>
 
-
     <header> <h1>Log In to DigitalDewey Online Library</h1> </header>
-
-    <!-- <form action="home.html"> <br>
-        <div class='email'>
-            <input type="text" placeholder="Username" required>
-        </div> <br>
-
-        <div class='Password'>
-            <input type="password" placeholder="Password" required minlength="8" maxlength="20">
-            <br> <br>
-        </div>
-        
-        <div class="is_admin">
-            <label for="admin">Admin</label>
-            <input type="radio" name="sign" value="Admin" id="admin">
-            <label for="User">User</label>
-            <input type="radio" name="sign" value="User" id="User">
-        </div> <br>
-
-        <div>
-            <a href="Reset-Pass.html">Reset Password</a>
-            <br> <br>
-            <a href="SignUp.html">Don't Have an Account Yet? SignUp now</a>
-        </div> <br>
-
-        <div class="submit">
-            <input type="submit" value="Login">
-        </div>
-    </form> -->
-
-    <!-- <form action="Home.html" class="Join">
-        <h2>LogIn</h2>
-        <div class="input_Box">
-            <p class="icon"><ion-icon name="person"></ion-icon></p>
-            <input type="text" required id="EM">
-            <label for="EM">Enter Your Email</label>
-        </div>
-        <div class="input_Box">
-            <p class="icon"><ion-icon name="lock-closed"></ion-icon></p>
-            <input type="password" required id="P">
-            <label for="P">Enter Your Password</label>
-        </div>
-        <div class="rME">
-            <p>Don't Have An Account?<a href="SignUp.html" target="_blank">SignUp</a></p>
-        </div>
-        <a href="Home.html"><button type="submit" class="Sub">Join</button></a>
-    </form> -->
 
     <form action="Home.html" class="content">
         <div class="input_box">
             <div class="input_field">
-                <input type="text" placeholder="Username" required>
+                <label for="user" class="lbuser">Username</label>
+                <input type="text" id="user" placeholder="Enter Username" required>
                 <ion-icon name="person" class="sIcon"></ion-icon>
             </div>
         </div>
         <div class="input_box">
             <div class="input_field">
-                <input type="password" placeholder="Password" required minlength="8" maxlength="20">
+                <label for="pass" class="lbpass">Password</label>
+                <input type="password" id="pass" placeholder="Enter Password" required minlength="8" maxlength="20">
                 <ion-icon name="lock-closed" class="sIcon"></ion-icon>
             </div>
         </div>
+        <div class="forgot"><p>Forgot </p><a href="#user">Username</a> / <a href="#pass">Password</a>?</div>
         <input type="submit" value="Login" class="buttonlog">
     </form>
 </body>

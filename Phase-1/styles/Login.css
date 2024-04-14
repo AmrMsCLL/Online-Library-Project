@@ -39,12 +39,17 @@ body{
         border-radius: 8px;
     }
 }
+label{
+    padding-right: 87%;
+    color: #f1f1f1;
+}
+
 .sIcon{
     color: aqua;
     font-size: 20px;
     position: absolute;
     left: 10px;
-    top: 50%;
+    top: 63%;
     transform: translateY(-50%);
 }
 .content input[type="submit"]{
@@ -63,4 +68,19 @@ body{
 }
 .content input[type="submit"]:hover{
     background-color: aqua;
+}
+.forgot {
+    padding-left: 61%;
+    color: #f1f1f1;
+    a{
+        text-decoration: none;
+        color: #f1f1f1;
+    }
+    a:visited{
+        color: #f1f1f1;
+    }
+    p{
+        display: inline;
+        color: #c4c4c4;
+    }
 }
