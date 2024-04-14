@@ -2,40 +2,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="styles/GetStarted.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
-      rel="stylesheet">
-      <script>
-window.onload = function() {
-    var sliderCards = document.querySelectorAll('.sliderCard');
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
 
-    sliderCards.forEach(function(card) {
-        var imageDiv = card.querySelector('.image');
-        var img = imageDiv.querySelector('img');
-        var imageName = img.getAttribute('name');
+    <script>
+        window.onload = function() {
+            var sliderCards = document.querySelectorAll('.sliderCard');
 
-        imageDiv.addEventListener('mouseover', function() {
-            var textDiv = document.createElement('div');
-            textDiv.className = 'hoverText'; // Assign a class to the div
-            textDiv.innerText = imageName;
-            imageDiv.appendChild(textDiv);
-        });
+            sliderCards.forEach(function(card) {
+                var imageDiv = card.querySelector('.image');
+                var img = imageDiv.querySelector('img');
+                var imageName = img.getAttribute('name');
 
-        imageDiv.addEventListener('mouseout', function() {
-            var textDiv = imageDiv.querySelector('.hoverText');
-            imageDiv.removeChild(textDiv);
-        });
-    });
-}
+                imageDiv.addEventListener('mouseover', function() {
+                    var textDiv = document.createElement('div');
+                    textDiv.className = 'hoverText'; // Assign a class to the div
+                    textDiv.innerText = imageName;
+                    imageDiv.appendChild(textDiv);
+                });
 
-
-
-
-      </script>
+                imageDiv.addEventListener('mouseout', function() {
+                    var textDiv = imageDiv.querySelector('.hoverText');
+                    imageDiv.removeChild(textDiv);
+                });
+            });
+        }
+    </script>
 </head>
+
 <body>
     <header class="header">
         <a class="Logo" href="#"><ion-icon name="library"></ion-icon>DigitalDewey</a>
@@ -80,7 +77,7 @@ window.onload = function() {
     
             <div class="sliderCard" >
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (1).jpg"  width="180px" height="230px" name="The Art Of War" ></a>
+                    <a href="Book-Details.html"><img src="Imgs/Books/ (1).jpg"  width="180px" height="230px" name="The Art Of War" ></a>
                 </div>
             </div>
             <div class="sliderCard">
@@ -427,14 +424,21 @@ window.onload = function() {
             var image = event.target.closest(".sliderCard");
             if (image) {
                 event.preventDefault();
-                var name = image.querySelector("a").getAttribute("data-name");
+                var name = image.querySelector("img").getAttribute("name");
                 var url = image.querySelector("a").getAttribute("href");
                 var imageSrc = image.querySelector("img").getAttribute("src");
                 sessionStorage.setItem("name", name);
                 sessionStorage.setItem("imageSrc", imageSrc);
                 window.location.href = url;
-            }
+            }   
         });
     </script>
 </body>
+
+<footer>
+    <br> <br>   
+    <div id="footer_reuseable"></div>
+    <script src="Assets/loadfooter.js"></script>
+</footer>
+
 </html>

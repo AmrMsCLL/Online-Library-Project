@@ -3,10 +3,19 @@
     font-family: 'Poppins';
 }
 
-/* body{
-    padding-left: 30px;
-    padding-top: 50px;
-} */
+body{
+    padding-top: 30px;
+}
+
+.navbar {
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 50;
+}
 
 .test {
     color: blue;
@@ -81,7 +90,7 @@
         }
 
     }
-    .option.active a, .option a:hover{
+    .option a:hover{
             background-color: rgba(255, 255, 255, .2);
     }
 }
@@ -94,7 +103,7 @@
     align-items: center;
     .logo{
         padding-top: 5px;
-        padding-left: 20px;
+        padding-left: 30px;
         pointer-events: none;
         font-size: 25px;
         font-weight: 600;
@@ -104,7 +113,7 @@
     .btn{
         color: rgb(255, 255, 255);
         position: fixed;
-        left: 0;
+        left: 10px;
         width: 30px;
         height: 30px;
         text-align: center;
