@@ -14,21 +14,25 @@ head>
     <div id="side-bar_reuseable"></div>
     <script src="Assets/LoadSide-Bar.js"></script>
 
-    
-    <br> <br>
     <div class="wrap">
+        <div class="BookCover">
             <img src="" id="image">
-            <div class="text-box">
-            <h2 id="name"></h2> <br><br>
+            <button class="borrowButton">Borrow</button>
+        </div>
+        <div class="text-box">
+            <h2 id="name"></h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequuntur nihil nam harum cumque fuga, ullam accusamus ipsam! Dignissimos asperiores nesciunt et laborum praesentium laboriosam assumenda autem consectetur aperiam neque!</p>
             <br><br>
-            <h3 id="price"></h3><br><br>
-            <div class="center">
-                <a href="Add-Book.html"><button>Edit Book</button></a> 
-            <!-- button should appear only to admin not user but not possible with only html and actually edit the book's details rather then redirecting to adding a new book page -->
-            <button>Delete Book</button>
-            </div> 
-    </div>
+            <span><ion-icon name="checkmark-circle-outline" class="CheckIcon"></ion-icon> availabel</span>
+            <h3 id="price"></h3>
+            <div class="buttons">
+                <button class="btn1">Edit Book</button>
+                <button class="btn1">Delete Book</button>
+            </div>
+
+        </div>
+
+
     </div>
 
     <script>
