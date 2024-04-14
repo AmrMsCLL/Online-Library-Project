@@ -31,6 +31,7 @@ body{
     top: 0;
     left: 0;
     transition: 0.3s;
+    overflow: hidden;
     z-index: 100;
     a{
         text-decoration: none;
@@ -142,12 +143,22 @@ body{
 
 .logout {
     position: absolute;
-    bottom: 0;
+    bottom: 1%;
     width: 100%;
-    span {
-        color:rgb(255, 0, 0);
+    /* width: 10px; */
+    /* span {
+        color:rgb(255, 255, 255);
         ion-icon {
             color: white;
         }
-    }
+    } */
+}
+.logout a:hover{
+    /* example of hover effect adjustments */
+    background-color: #555; /* Darken on hover */
+    margin: 0; /* Ensure no additional margin on hover */
+    padding: 0; /* Adjust padding as necessary */
+    box-sizing: border-box; /* Include padding and border in the width/height */
+    position: relative; /* Ensure it's positioned relative to sidebar */
+    z-index: 1; /* Stack above non-hovered items */
 }
