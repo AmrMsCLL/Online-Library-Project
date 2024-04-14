@@ -108,7 +108,7 @@ body{
 
 
 /*----------------------Last Label on the screen---------------*/
-.content  lb{
+.content  .lb{
     font-size: 14.5px;
 }
 
@@ -121,4 +121,3 @@ body{
 input[type="radio"]{
     accent-color: aqua;
 }
-

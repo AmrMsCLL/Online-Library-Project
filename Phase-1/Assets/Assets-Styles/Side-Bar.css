@@ -133,3 +133,16 @@ body{
     color: #fff;
 }
 
+.side-bar .line {
+    opacity: 0;
+}
+.side-bar.avtive .line {
+    opacity: 1;
+}
+
+.logout {
+    color:rgb(255, 0, 0);
+    ion-icon {
+        color: white;
+    }
+}
