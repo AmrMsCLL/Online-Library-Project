@@ -1,21 +1,48 @@
-.About a:visited {
-    color: red;
-}
-
 .footer {
-    
-    text-align: center;
+    color: #333; /* Dark text for readability */
+    text-align: center; /* Center the text */
+    padding: 10px 0; /* Padding on top and bottom */
+    font-size: 14px; /* Set a standard font size */
+    position: sticky;
+    bottom: 0;
+    margin: 0;
 }
 
-.copyright-DigitalDewey {
-    color: blue;
+.footer a {
+    color: aqua; /* Color for links, match this to your site's theme */
+    text-decoration: none; /* Removes underline from links */
+    margin: 0 5px; /* Adds horizontal spacing between links */
 }
 
-.help-support a:visited {
-    color: cyan
+.footer a:hover {
+    text-decoration: underline; /* Adds underline on hover for better user experience */
 }
 
-/* this body is for the entire login page and shouldn't be written like this  */
-/* body {
-    text-align: center;
-} */
+.footer .About,
+.footer .help-support {
+    margin-bottom: 10px; /* Adds space between sections */
+}
+
+.footer hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: #ccc; /* Light grey line */
+    margin: 8px 0; /* Spacing before and after the line */
+}
+
+.footer .copyright-DigitalDewey {
+    font-size: 12px; /* Slightly smaller font size for copyright */
+    color: #666; /* Lighter text for the copyright notice */
+}
+
+.footer div {
+    margin: 5px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer::after {
+    content: none;
+}

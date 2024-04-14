@@ -15,7 +15,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 700px;
-    height: 350px;
+    height: 415px;
     justify-content:space-around;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, .1);
@@ -42,6 +42,8 @@ body{
 label{
     padding-right: 87%;
     color: #f1f1f1;
+    white-space: nowrap;
+    accent-color: aqua;
 }
 
 .sIcon{
@@ -73,7 +75,7 @@ label{
     padding-left: 61%;
     color: #f1f1f1;
     a{
-        text-decoration: none;
+        /* text-decoration: none; */
         color: #f1f1f1;
     }
     a:visited{
@@ -82,5 +84,16 @@ label{
     p{
         display: inline;
         color: #c4c4c4;
+    }
+}
+
+.notreg {
+    padding: 2% 2%;
+    a{
+        color: #f1f1f1;
+        /* text-decoration: none; */
+    }
+    a:visited {
+        color: #f1f1f1;
     }
 }
