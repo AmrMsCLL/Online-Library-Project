@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles/Main.css">
+    <link rel="stylesheet" href="styles/Login.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -16,11 +17,9 @@
     <script src="Assets/LoadSide-Bar.js"></script>
 
 
-    <header class="test"> <h1>Welcome to DigitalDewey Online Library</h1> </header>
+    <header> <h1>Log In to DigitalDewey Online Library</h1> </header>
 
-    <h2>Login</h2>
-
-    <form action="home.html"> <br>
+    <!-- <form action="home.html"> <br>
         <div class='email'>
             <input type="text" placeholder="Username" required>
         </div> <br>
@@ -46,6 +45,40 @@
         <div class="submit">
             <input type="submit" value="Login">
         </div>
+    </form> -->
+
+    <!-- <form action="Home.html" class="Join">
+        <h2>LogIn</h2>
+        <div class="input_Box">
+            <p class="icon"><ion-icon name="person"></ion-icon></p>
+            <input type="text" required id="EM">
+            <label for="EM">Enter Your Email</label>
+        </div>
+        <div class="input_Box">
+            <p class="icon"><ion-icon name="lock-closed"></ion-icon></p>
+            <input type="password" required id="P">
+            <label for="P">Enter Your Password</label>
+        </div>
+        <div class="rME">
+            <p>Don't Have An Account?<a href="SignUp.html" target="_blank">SignUp</a></p>
+        </div>
+        <a href="Home.html"><button type="submit" class="Sub">Join</button></a>
+    </form> -->
+
+    <form action="Home.html" class="content">
+        <div class="input_box">
+            <div class="input_field">
+                <input type="text" placeholder="Username" required>
+                <ion-icon name="person" class="sIcon"></ion-icon>
+            </div>
+        </div>
+        <div class="input_box">
+            <div class="input_field">
+                <input type="password" placeholder="Password" required minlength="8" maxlength="20">
+                <ion-icon name="lock-closed" class="sIcon"></ion-icon>
+            </div>
+        </div>
+        <input type="submit" value="Login" class="buttonlog">
     </form>
 </body>
 
