@@ -45,8 +45,11 @@ button{
     border-radius: 50px;
     transition: .3s;
     font-family: 'Poppins';
+    background-color: black;
+    color: #fff;
 }
 .center{
     justify-content: center;
     display: flex;
+    gap: 70px;
 }
