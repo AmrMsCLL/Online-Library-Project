@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styles/Main.css">
+    <link rel="stylesheet" href="styles/Login.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -15,37 +16,25 @@
     <div id="side-bar_reuseable"></div>
     <script src="Assets/LoadSide-Bar.js"></script>
 
+    <header> <h1>Log In to DigitalDewey Online Library</h1> </header>
 
-    <header class="test"> <h1>Welcome to DigitalDewey Online Library</h1> </header>
-
-    <h2>Login</h2>
-
-    <form action="home.html"> <br>
-        <div class='email'>
-            <input type="text" placeholder="Username" required>
-        </div> <br>
-
-        <div class='Password'>
-            <input type="password" placeholder="Password" required minlength="8" maxlength="20">
-            <br> <br>
+    <form action="Home.html" class="content">
+        <div class="input_box">
+            <div class="input_field">
+                <label for="user" class="lbuser">Username</label>
+                <input type="text" id="user" placeholder="Enter Username" required>
+                <ion-icon name="person" class="sIcon"></ion-icon>
+            </div>
         </div>
-        
-        <div class="is_admin">
-            <label for="admin">Admin</label>
-            <input type="radio" name="sign" value="Admin" id="admin">
-            <label for="User">User</label>
-            <input type="radio" name="sign" value="User" id="User">
-        </div> <br>
-
-        <div>
-            <a href="Reset-Pass.html">Reset Password</a>
-            <br> <br>
-            <a href="SignUp.html">Don't Have an Account Yet? SignUp now</a>
-        </div> <br>
-
-        <div class="submit">
-            <input type="submit" value="Login">
+        <div class="input_box">
+            <div class="input_field">
+                <label for="pass" class="lbpass">Password</label>
+                <input type="password" id="pass" placeholder="Enter Password" required minlength="8" maxlength="20">
+                <ion-icon name="lock-closed" class="sIcon"></ion-icon>
+            </div>
         </div>
+        <div class="forgot"><p>Forgot </p><a href="#user">Username</a> / <a href="#pass">Password</a>?</div>
+        <input type="submit" value="Login" class="buttonlog">
     </form>
 </body>
 
