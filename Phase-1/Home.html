@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="styles/GetStarted.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"
       rel="stylesheet">
+      <script>
+window.onload = function() {
+    var sliderCards = document.querySelectorAll('.sliderCard');
+
+    sliderCards.forEach(function(card) {
+        var imageDiv = card.querySelector('.image');
+        var img = imageDiv.querySelector('img');
+        var imageName = img.getAttribute('name');
+
+        imageDiv.addEventListener('mouseover', function() {
+            var textDiv = document.createElement('div');
+            textDiv.className = 'hoverText'; // Assign a class to the div
+            textDiv.innerText = imageName;
+            imageDiv.appendChild(textDiv);
+        });
+
+        imageDiv.addEventListener('mouseout', function() {
+            var textDiv = imageDiv.querySelector('.hoverText');
+            imageDiv.removeChild(textDiv);
+        });
+    });
+}
+
+
+
+
+      </script>
 </head>
 <body>
     <header class="header">
@@ -51,9 +78,10 @@
         <button id="prev" class="slider_Button material-symbols-rounded">chevron_left</button>
         <div class="slider">
     
-            <div class="sliderCard">
+            <div class="sliderCard" >
                 <div class="image">
-                    <a href="#"><img src="Imgs/Books/ (1).jpg" alt="" width="180px" height="230px"></a>
+                    <a href="#"><img src="Imgs/Books/ (1).jpg"  width="180px" height="230px" name="Art Of War" ></a>
+                    <span data-text="Art Of War"></span>
                 </div>
             </div>
             <div class="sliderCard">

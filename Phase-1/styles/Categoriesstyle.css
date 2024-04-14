@@ -173,7 +173,11 @@ body{
     }
 
     li a{
+        position: relative;
         text-decoration: none;
+        width: 100%;
+        height: auto;
+        margin: auto;
         color: #000000;
     }
 

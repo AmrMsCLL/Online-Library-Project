@@ -275,25 +275,37 @@ li{
 .sliderCard{
     margin: 20px auto;
     padding: 30px;
+    position: relative;
     .image {
+        border: 2px solid #fff;
+        box-shadow:  -5px 5px 10px 0 rgba(0, 255, 255, 0.791);
         transition: filter 0.1s ease;
+        position: relative;
+    }
+    img{
+        position: relative;
     }
     
-    .image:hover {
+    
+    .image img:hover {
         filter: brightness(50%);
 
     }
-    .image:hover ~ .details p{
-        color:rgb(203, 200, 200);
-        text-decoration: underline;
-    }
 
-    .details{
-        transition: 0.3s;
-    }
-
-    
 }
+.hoverText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; 
+    font-size: 20px;
+    font-weight: 700;
+    color: aqua;
+    white-space: nowrap;
+
+}
+
 
 
 hr{
