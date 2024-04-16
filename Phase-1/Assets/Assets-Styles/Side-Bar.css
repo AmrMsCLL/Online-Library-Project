@@ -190,7 +190,7 @@ body{
     opacity: 1;
 }
 
-form{
+.form{
     position: relative;
     width: 100%;
     outline: none;
