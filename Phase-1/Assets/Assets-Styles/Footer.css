@@ -9,6 +9,8 @@
     background-color: #181818;
     overflow: hidden;
     color: #fff;
+    /* position: absolute; */
+    bottom: 0;
 }
 
 .footer .container{
@@ -52,7 +54,8 @@
    color: #fff;
 }
 .footer .container a:hover{
-    text-decoration: underline;
+    text-decoration: none;
+    color: aqua;
 }
 
 
@@ -109,3 +112,4 @@
 .linkedin:hover{
     color: blue;
 }
+

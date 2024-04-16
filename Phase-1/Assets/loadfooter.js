@@ -15,10 +15,13 @@ function loadFooter() {
     .then(response => response.text())
     .then(html => {
         document.getElementById('footer_reuseable').innerHTML = html;
+        // Load CSS after the HTML is set
+        loadCSS('Assets/Assets-Styles/Footer.css');
     })
     .catch(error => {
         console.warn('Error loading the Footer: ', error);
     });
 }
 
-loadCSS('Assets/Assets-Styles/Footer.css', loadFooter);
+// Call loadFooter directly without loading CSS first
+loadFooter();

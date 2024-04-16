@@ -6,9 +6,10 @@
 }
 body{
     padding-top: 50px;
-    text-align: center;
+    text-align:  center;
     background-color: #181818;
     color: #fff;
+    overflow: hidden;
 }
 .content{
     padding: 20px 35px 25px;
@@ -76,27 +77,28 @@ label{
     color: #f1f1f1;
     a{
         /* text-decoration: none; */
-        color: #f1f1f1;
+        color: aqua;
     }
     a:visited{
-        color: #f1f1f1;
+        color: aqua;
     }
     p{
         display: inline;
-        color: #c4c4c4;
+        color: #f1f1f1;
     }
 }
 
 .notreg {
     padding: 2% 2%;
     a{
-        color: #f1f1f1;
+        color: aqua;
         /* text-decoration: none; */
     }
     a:visited {
-        color: #f1f1f1;
+        color: aqua;
     }
 }
+
 #remmebx {
     display: block;
     margin-top: -18px;
