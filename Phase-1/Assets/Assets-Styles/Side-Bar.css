@@ -178,7 +178,7 @@ body{
     color: red;
 }
 
-.searchInputnav{
+#searchInputnav, #searchinputnav:focus{
     position: relative;
     margin: 0;
     padding-left: 10px;
@@ -190,6 +190,7 @@ body{
     border: 2px solid aqua;
     border-radius: 50px;
     box-sizing: border-box;
+    opacity: 1;
 }
 
 form{

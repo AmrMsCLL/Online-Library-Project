@@ -10,6 +10,7 @@ body{
     text-align: center;
     background-color: #181818;
     color: #fff;
+    overflow: hidden;
 }
 
 /*----------------------All Content---------------*/
@@ -18,7 +19,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 850px;
-    height: 500px;
+    height: 550px;
     justify-content:space-around;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, .1);
@@ -82,9 +83,6 @@ body{
 .check{
     left: 120px;
 }
-
-
-
 /*----------------------Submit button---------------*/
 
 .content input[type="submit"]{
@@ -120,4 +118,15 @@ body{
 
 input[type="radio"]{
     accent-color: aqua;
+}
+
+.alrlog {
+    padding: 2% 2%;
+    a{
+        color: aqua;
+        text-decoration: underline;
+    }
+    a:visited {
+        color: aqua;
+    }
 }

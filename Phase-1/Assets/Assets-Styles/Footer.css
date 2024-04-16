@@ -9,9 +9,11 @@
     background-color: #181818;
     overflow: hidden;
     color: #fff;
+    /* position: absolute; */
+    bottom: 0;
 }
 
-.footer .container{
+.footer .container-footer{
     padding: 70px;
     position: relative;
     width: 100%;
@@ -20,14 +22,14 @@
     gap: 60px;
 }
 
-.footer .container .col{
+.footer .container-footer .col{
     /* padding-left: 40px; */
     width: 25%;
     display: flex;
     flex-direction: column;
 }
 
-.footer .container .col h2{
+.footer .container-footer .col h2{
     font-size: 26px;
     font-weight: 700;
     position: relative;
@@ -36,7 +38,7 @@
     margin: 0;
 }
 
-.footer .container h2::before{
+.footer .container-footer h2::before{
     content: "";
     width: 5px;
     height: 100%;
@@ -47,31 +49,32 @@
     left: 0px;
 }
 
-.footer .container a{
+.footer .container-footer a{
    text-decoration: none;
    color: #fff;
 }
-.footer .container a:hover{
-    text-decoration: underline;
+.footer .container-footer a:hover{
+    text-decoration: none;
+    color: aqua;
 }
 
 
-.footer .container .col ul a:hover{
+.footer .container-footer .col ul a:hover{
     color: aqua;
     text-decoration: none;
 }
-.footer .container .col p{
+.footer .container-footer .col p{
     line-height: 25px;
     padding-left: 10px;
     margin: 30px auto;
 }
 
-.footer .container .col .mail{
+.footer .container-footer .col .mail{
     margin: 40px 0;
     color: aqua;
 }
 
-.footer .container ul{
+.footer .container-footer ul{
     li{
         margin: 15px auto;
         margin-top: 0;
@@ -82,7 +85,7 @@
     padding: 0 10px;
 }
 
-.footer .container .col .social{
+.footer .container-footer .col .social{
     width: 100%;
     a{
         text-decoration: none;
@@ -109,3 +112,4 @@
 .linkedin:hover{
     color: blue;
 }
+

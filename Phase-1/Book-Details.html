@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-    
-head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
     <title>Book-Details</title>
-    <link rel="stylesheet" href="styles/Main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="styles/Bookdetails.css"
+    <link rel="stylesheet" href="styles/Bookdetails.css">
+    <link rel="stylesheet" href="styles/Main.css">
 </head>
 
 <body>
+
     <div id="side-bar_reuseable"></div>
-    <script src="Assets/LoadSide-Bar.js"></script>
+    <script src="Assets/ِAssets-Scripts/LoadSide-Bar.js"></script>
 
     <div class="wrap">
         <div class="BookCover">
@@ -29,12 +29,8 @@ head>
                 <button class="btn1">Edit Book</button>
                 <button class="btn1">Delete Book</button>
             </div>
-
         </div>
-
-
     </div>
-
     <script>
         var name = sessionStorage.getItem("name");
         var imageSrc = sessionStorage.getItem("imageSrc");
@@ -44,11 +40,16 @@ head>
         document.getElementById("image").src = imageSrc;
         document.getElementById("price").textContent=price;
     </script>    
+
 </body>
 
 <footer>
     <div id="footer_reuseable"></div>
-    <script src="Assets/loadfooter.js"></script>
+    <script src="Assets/ِAssets-Scripts/loadfooter.js"></script>
+    <style>
+        .footer{ 
+           background-color: black; 
+        }
+    </style>
 </footer>
-
 </html>
