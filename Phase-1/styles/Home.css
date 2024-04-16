@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 *{
     font-family: 'Poppins';
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 body{
@@ -20,7 +18,7 @@ body{
     align-items: center;
     z-index: 99;
 }
-li{
+.header li{
     position: relative;
     font-size: 20px;
     text-decoration: none;
@@ -197,7 +195,7 @@ li{
         background: black;
 
     }
-    li{
+    .header li{
         margin-left: 20px;
     }
     .container{
