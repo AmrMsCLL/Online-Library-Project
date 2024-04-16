@@ -147,8 +147,8 @@ body{
 
 .icon{
     position: absolute;
-    top: 12px;
-    left: 15px;
+    top: -13px;
+    left: 20px;
     font-size: 25px;
     color:aqua;
 }

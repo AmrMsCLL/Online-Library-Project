@@ -39,7 +39,12 @@
         document.getElementById("name").textContent = name;
         document.getElementById("image").src = imageSrc;
         document.getElementById("price").textContent=price;
-    </script>    
+        document.body.style.backgroundImage = "url('" + imageSrc + "')";
+
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundSize = "cover"
+
+        </script>    
 
 </body>
 
