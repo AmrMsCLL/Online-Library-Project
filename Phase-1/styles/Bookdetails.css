@@ -7,17 +7,18 @@ body{
     background-color: #181818;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 body::after {
     content: "";
-    background: rgba(0, 0, 0, 0.3); /* Black background with 0.3 opacity for a more faded effect */
-    backdrop-filter: blur(10px); /* Apply a blur effect */
-    position: fixed; /* Cover the entire screen */
+    background: rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(10px); 
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Place it behind the content */
+    z-index: -1; 
 }
 
 .content{
@@ -115,4 +116,8 @@ img{
 .BookCover .borrowButton:hover{
     background-color: aqua;
     box-shadow: 0 0 5px black;
+}
+
+#footer_reuseable{
+    width: 100%;
 }
