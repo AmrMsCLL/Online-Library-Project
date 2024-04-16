@@ -29,6 +29,14 @@ body{
         color: aqua;
     }
 }
+.search {
+    display: inline;
+    position: relative;
+    top: 0;
+    left: 80%;
+    top: -50%;
+    z-index: 500;
+}
 
 .test {
     color: blue;

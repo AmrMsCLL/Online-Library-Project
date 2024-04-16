@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
     <link rel="stylesheet" href="styles/Main.css">
     <link rel="stylesheet" href="styles/Books.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script>
         // Function to toggle dropdown content
         function toggleDropdown(button) {
@@ -20,12 +19,16 @@
             }
         }
     </script>
+
 </head>
 
 <body>
+
     <div id="side-bar_reuseable"></div>
     <script src="Assets/LoadSide-Bar.js"></script>
-    <div class="container">
+
+    <div class="container" id="content">
+
         <h1 style="text-align: center; color: white;">All Books</h1>
 
         <!-- <label for="Categories">Select Search Method:</label> 
@@ -35,11 +38,17 @@
             <option value="author">author</option> 
         </select> -->
 
-        <div class ="Mathematics" id="B1">
+        <div class="search-wrapper" style="text-align: center;">
+            <!-- <label for="searchInput">Search</label> -->
+            <input type="text" id="searchInput" placeholder="Search Books" oninput="searchText()">
+            <!-- <button onclick="searchText()">Search</button> -->
+        </div>
+
+        <div class="Mathematics" id="B1">
             <div class="dropdown">
             <button class="dropbtn" onclick="toggleDropdown(this)">Mathematics</button>
 
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Fermat's Last Theorem</a><b> - Available</b></li>
                     <p>Fermat's Last Theorem is a popular science book by Simon Singh. It tells the story of the search for a proof of Fermat's Last Theorem, first conjectured by Pierre de Fermat in 1637, and explores how many mathematicians such as Évariste Galois had tried and failed to provide a proof for the theorem</p>
 
@@ -64,15 +73,15 @@
         <div class="Art&Aplied" id="B2">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Art & Aplied</button>    
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">The Applied Arts Book - Volume 1</a><b> - Unavailable (Already Borrowed)</b></li>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nemo dicta perferendis totam, nobis veritatis iste aut velit reiciendis quidem, exercitationem quae, sunt laudantium quisquam est eos similique nulla quis molestiae? Quo labore quod, praesentium debitis omnis quas placeat veritatis architecto natus voluptates, modi provident voluptatibus iusto delectus numquam ex..</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nemo dicta perferendis totam, nobis veritatis iste aut velit reiciendis quidem, exercitationem quae, sunt laudantium quisquam est eos </p>
 
                     <li><a href="Book-Details.html">The Persistence of Craft: The Applied Arts Today</a><b> - Available</b></li>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, corporis dolores facilis dignissimos corrupti voluptatum facere. Et tenetur ullam ipsum totam eum cum, nisi voluptates quidem? Vitae aliquam necessitatibus, similique odit nisi nemo dignissimos aliquid culpa voluptate laborum ipsa maxime perferendis incidunt exercitationem nesciunt! Ad adipisci eius nobis dicta. Doloribus?</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo, corporis dolores facilis dignissimos corrupti voluptatum facere. Et tenetur ullam ipsum totam eum cum, nisi voluptates quidem? </p>
 
                     <li><a href="Book-Details.html">Introduction to Art: Design, Context, and Meaning</a><b> - Available</b></li>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos debitis veritatis totam adipisci voluptas itaque numquam. Delectus autem dolorum molestiae enim soluta laudantium totam odio fugit a placeat quae perferendis cupiditate possimus itaque necessitatibus eaque, quis, iste excepturi est! A voluptates ad vitae atque laudantium magnam magni optio neque.</p>
+                    <p>art, ipsum dolor sit amet consectetur adipisicing elit. Sint dignissimos debitis veritatis totam adipisci voluptas itaque numquam. Delectus autem dolorum molestiae enim soluta laudantium totam odio fugit a placeat quae perferendis cupiditate possimus itaque necessitatibus eaque, quis, iste excepturi est! A voluptates ad vitae atque laudantium magnam magni optio neque.</p>
 
                     <li><a href="Book-Details.html">This is Another Place</a><b> - Unavailable (Already Borrowed)</b><b> - Available</b></li>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis nesciunt aspernatur quas, quam nam tempora molestias maxime quos repellat deleniti necessitatibus voluptatibus natus? Saepe corporis iusto minus! Qui, molestias expedita eum in enim temporibus, debitis facere exercitationem perspiciatis iste rem sapiente excepturi harum molestiae eligendi amet dicta, magni obcaecati? Explicabo!</p>
@@ -86,7 +95,7 @@
         <div class="Finance & Economics" id="B3">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Finance & Economics</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Principles of Financial Economics</a><b> - Unavailable (Already Borrowed)</b></li>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta pariatur dolores blanditiis quis accusamus nobis hic, officia neque cumque cum, omnis repudiandae, exercitationem iusto expedita! Amet tempore non reprehenderit alias itaque eaque, recusandae repellendus cumque ipsam vel ducimus! Nihil reiciendis eius itaque odio molestias soluta assumenda voluptates maiores doloribus.</p>
 
@@ -105,7 +114,7 @@
         <div class="Computer Science" id = "B4">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Computer Science</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Computer Science</a><b> - Available</b></li>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae culpa minus magni laudantium et praesentium repellat recusandae, eius quaerat quasi eum labore hic adipisci fugit odio dolorem perferendis optio nobis esse tempora autem excepturi maiores fugiat quam. Tempora facilis possimus, sed recusandae officiis dignissimos maxime, nam distinctio magni voluptatibus delectus!</p>
 
@@ -124,7 +133,7 @@
         <div class="Humanities" id="B5">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Humanities</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Breaking the Book: Print Humanities in the Digital Age</a><b> - Unavailable (Already Borrowed)</b></li>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nulla nihil pariatur recusandae ipsam velit at suscipit quos vitae aliquid fugiat ad perspiciatis minus ea porro quaerat itaque ex, quibusdam similique qui! Non aliquid hic ab, aliquam necessitatibus sed quas corrupti fugiat? Ea ex repellat magni ut, odit iusto soluta.</p>
 
@@ -143,7 +152,7 @@
         <div class="Law & Criminology" id="B6">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Law & Criminology</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Textbook on Criminology</a><b> - Available</b></li>
                     <p>This text offers an engaging and wide-ranging account of crime and criminology.</p>
 
@@ -164,7 +173,7 @@
         <div class="Physics" id="B7">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Physics</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Quantum Physics</a><b> - Available</b></li>
                     <p>An introduction to the principles of quantum mechanics and their applications.</p>
             
@@ -183,7 +192,7 @@
         <div class="Psychology" id="B8">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Psychology</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Cognitive Psychology</a><b> - Available</b></li>
                     <p>An examination of mental processes such as "attention, language use, memory, perception, problem solving, creativity, and thinking."</p>
             
@@ -202,7 +211,7 @@
         <div class="Social & Behavioral Sciences" id="B9">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Social & Behavioral Sciences</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Sociology</a><b> - Available</b></li>
                     <p>An introduction to the study of social behavior and organization of human societies.</p>
             
@@ -221,7 +230,7 @@
         <div class="Medicine" id="B10">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Medicine</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Internal Medicine</a><b> - Available</b></li>
                     <p>An introduction to the diagnosis and treatment of internal diseases.</p>
             
@@ -240,7 +249,7 @@
         <div class="Comic Books" id="B11">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Comic Books</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Superhero Comics</a><b> - Available</b></li>
                     <p>An introduction to the world of superheroes, their origins, and their adventures.</p>
             
@@ -259,7 +268,7 @@
         <div class="Space" id="B12">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Space</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Astrophysics</a><b> - Available</b></li>
                     <p>An introduction to the study of the physical properties of celestial bodies and the regions of space in which they exist.</p>
             
@@ -278,7 +287,7 @@
         <div class="Statistics & Decision Support" id="B13">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Statistics & Decision Support</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Probability Theory</a><b> - Available</b></li>
                     <p>An introduction to the branch of mathematics concerned with probability, the analysis of random phenomena.</p>
             
@@ -297,7 +306,7 @@
         <div class="Trending" id="B14">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Trending</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Probability Theory</a><b> - Available</b></li>
                     <p>An introduction to the branch of mathematics concerned with probability, the analysis of random phenomena.</p>
             
@@ -312,12 +321,11 @@
                 </ul>
             </div>
         </div>
-
 
         <div class="Sales" id="B15">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Sales</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Probability Theory</a><b> - Available</b></li>
                     <p>An introduction to the branch of mathematics concerned with probability, the analysis of random phenomena.</p>
             
@@ -332,12 +340,11 @@
                 </ul>
             </div>
         </div>
-
-        
+  
         <div class="Most_Read" id="B16">
             <div class="dropdown">
                 <button class="dropbtn" onclick="toggleDropdown(this)">Most Read</button>
-                <ul class="dropdown-content">
+                <ul class="dropdown-content search-helper">
                     <li><a href="Book-Details.html">Probability Theory</a><b> - Available</b></li>
                     <p>An introduction to the branch of mathematics concerned with probability, the analysis of random phenomena.</p>
             
@@ -348,18 +355,20 @@
                     <p>An exploration of the process of inspecting, cleaning, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.</p>
             
                     <li><a href="Book-Details.html">Decision Theory</a><b> - Unavailable (Already Borrowed)</b></li>
-                    <p>A study of the principles and procedures for choosing optimal decisions in the face of uncertainty.</p>
+                    <p id="hell">A study of the principles and procedures for choosing optimal decisions in the face of uncertainty.</p>
                 </ul>
             </div>
         </div>
-    </div>
+    </div> <br> <br> 
 
-    <br> <br> 
+    <script src="scripts/searchBox.js"></script>
+
 </body>
 
 <footer>
+
     <div id="footer_reuseable"></div>
     <script src="Assets/loadfooter.js"></script>
-</footer>
 
+</footer>
 </html>
