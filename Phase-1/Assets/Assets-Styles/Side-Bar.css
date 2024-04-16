@@ -25,9 +25,6 @@ body{
     z-index: 500;
 }
 
-.test {
-    color: blue;
-}
 .side-bar{
     box-sizing: border-box; 
     padding: 0;
