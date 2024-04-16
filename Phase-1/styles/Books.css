@@ -1,12 +1,12 @@
-body {
+/* body {
     background: url("../Imgs/large-collection-old-books-wooden-shelves-generated-by-ai.jpg") no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
     /* max-width: 1000px;    
     max-height: fit-content; */
-}
+/* } */
 
-div a{
+/* div a{
     text-decoration: none;
     color: black;
     font-size: 30px;
@@ -20,20 +20,20 @@ div a{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
 
 
 /* Style for book container */
-#B1,#B2,#B3,#B4,#B5,#B6,#B7,#B8,#B9,#B10,#B11,#B12,#B13,#B14,#B15,#B16 {
+/* #B1,#B2,#B3,#B4,#B5,#B6,#B7,#B8,#B9,#B10,#B11,#B12,#B13,#B14,#B15,#B16 {
     padding-right: 20px;  
     width: 1000px;
     opacity: .8;  
     margin: 0 0 auto;
 }
-
+ */
 /* Style for dropdown button */
-.dropbtn {
+/* .dropbtn {
     width: 100%;
     color: black;
     font-size: 24px;
@@ -44,10 +44,10 @@ div a{
     cursor: pointer;
     border-radius: 5px ;
     margin: 5px auto;
-}
+} */
 
 /* Style for dropdown content */
-.dropdown-content {
+/* .dropdown-content {
     display: none;
     position:relative;
     background-color: white;
@@ -63,4 +63,4 @@ div a{
 
 .dropdown-content p {
     padding:0 10px ;
-}
+} */

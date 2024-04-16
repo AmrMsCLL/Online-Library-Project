@@ -162,13 +162,12 @@ body{
     } */
 }
 .logout a:hover{
-    /* example of hover effect adjustments */
-    background-color: #555; /* Darken on hover */
-    margin: 0; /* Ensure no additional margin on hover */
-    padding: 0; /* Adjust padding as necessary */
-    box-sizing: border-box; /* Include padding and border in the width/height */
-    position: relative; /* Ensure it's positioned relative to sidebar */
-    z-index: 1; /* Stack above non-hovered items */
+    background-color: #555; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    position: relative; 
+    z-index: 1;
 }
 
 .logoutIcon{
