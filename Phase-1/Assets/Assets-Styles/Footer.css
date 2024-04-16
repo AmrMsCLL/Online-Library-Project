@@ -1,48 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+*{
+    font-family: 'Poppins';
+    box-sizing: border-box;
+}
 .footer {
-    color: #333; /* Dark text for readability */
-    text-align: center; /* Center the text */
-    padding: 10px 0; /* Padding on top and bottom */
-    font-size: 14px; /* Set a standard font size */
-    position: sticky;
-    bottom: 0;
+    width: 100%;
+    background-color: #181818;
+    overflow: hidden;
+    color: #fff;
+}
+
+.footer .container{
+    padding: 70px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 60px;
+}
+
+.footer .container .col{
+    /* padding-left: 40px; */
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .container .col h2{
+    font-size: 26px;
+    font-weight: 700;
+    position: relative;
+    padding-left: 10px;
+    color: aqua;
     margin: 0;
 }
 
-.footer a {
-    color: aqua; /* Color for links, match this to your site's theme */
-    text-decoration: none; /* Removes underline from links */
-    margin: 0 5px; /* Adds horizontal spacing between links */
+.footer .container h2::before{
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px  rgba(0, 255, 255, 0.868);
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
-.footer a:hover {
-    text-decoration: underline; /* Adds underline on hover for better user experience */
+.footer .container a{
+   text-decoration: none;
+   color: #fff;
+}
+.footer .container a:hover{
+    text-decoration: underline;
 }
 
-.footer .About,
-.footer .help-support {
-    margin-bottom: 10px; /* Adds space between sections */
+
+.footer .container .col ul a:hover{
+    color: aqua;
+    text-decoration: none;
+}
+.footer .container .col p{
+    line-height: 25px;
+    padding-left: 10px;
+    margin: 30px auto;
 }
 
-.footer hr {
-    border: none; /* Remove default border */
-    height: 1px; /* Set the height of the line */
-    background-color: #ccc; /* Light grey line */
-    margin: 8px 0; /* Spacing before and after the line */
+.footer .container .col .mail{
+    margin: 40px 0;
+    color: aqua;
 }
 
-.footer .copyright-DigitalDewey {
-    font-size: 12px; /* Slightly smaller font size for copyright */
-    color: #666; /* Lighter text for the copyright notice */
+.footer .container ul{
+    li{
+        margin: 15px auto;
+        margin-top: 0;
+        font-size: 20px;
+    }
+    list-style: none;
+    text-decoration: none;
+    padding: 0 10px;
 }
 
-.footer div {
+.footer .container .col .social{
+    width: 100%;
+    a{
+        text-decoration: none;
+    }
+}
+.footer ion-icon{
+    font-size: 30px;
+    color: #fff;
     margin: 5px;
 }
 
-.footer p {
-    margin: 5px 0;
+.face:hover{
+    color: blue;
 }
 
-.footer::after {
-    content: none;
+.youtube:hover{
+    color: red;
+}
+
+.twitter:hover{
+    color: rgb(68, 152, 247);
+}
+
+.linkedin:hover{
+    color: blue;
 }
