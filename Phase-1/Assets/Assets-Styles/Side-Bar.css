@@ -15,19 +15,6 @@ body{
     left: 0;
     background-color: black;
     z-index: 50;
-    border-radius: 6px;
-    .logo {
-        position: absolute;
-        top: 0;
-        text-decoration: none;
-        color: aqua;
-        left: 80%;
-        top: -50%;
-    }
-    .logo:visited {
-        text-decoration: none;
-        color: aqua;
-    }
 }
 .search {
     display: inline;
@@ -72,6 +59,9 @@ body{
 
 .options{
     margin-top: 40px;
+    list-style: none;
+    padding-left: 0;
+    padding-left: 10px;
     .option{
         opacity: 0;
         pointer-events: none;
@@ -182,4 +172,34 @@ body{
     box-sizing: border-box; /* Include padding and border in the width/height */
     position: relative; /* Ensure it's positioned relative to sidebar */
     z-index: 1; /* Stack above non-hovered items */
+}
+
+.logoutIcon{
+    color: red;
+}
+
+.searchInputnav{
+    position: relative;
+    margin: 0;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    border: 2px solid aqua;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+form{
+    position: relative;
+    width: 100%;
+    outline: none;
+    border: none;
+    border: 2px solid aqua;
+    box-shadow: 0 0 5px #fff;
+    border-radius: 50px;
+    padding: 0;
+    margin: 0;
 }
