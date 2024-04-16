@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/Login.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="scripts/validation.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 
     <header> <h1>Log In to DigitalDewey Online Library</h1> </header>
 
-    <form action="Home.html" class="content">
+    <form  class="content">
         <div class="input_box">
             <div class="input_field">
                 <label for="user" class="lbuser">Username</label>
@@ -38,7 +39,7 @@
 
         <div class="forgot"><p>Forgot </p><a href="#user">Username</a> / <a href="#pass">Password</a>?</div>
 
-        <input type="submit" value="Login" class="buttonlog">
+        <input type="submit" value="Login" class="buttonlog" onclick="btnClick()">
 
         <div class="notreg">Don't Have an Account Yet? <a href="SignUp.html">SignUp Now!</a></div>
     </form>
