@@ -10,9 +10,9 @@ let library = [
     , price: '$75.99', availability: true},
 ];
 
-export default library;
+// export default library;
 
-async function filterBooks() {
+function filterBooks() {
     const searchText = document.getElementById('search-input').value.toLowerCase();
 
     let filteredBooks = searchText ? library.filter(book => {
@@ -23,7 +23,7 @@ async function filterBooks() {
     }) : library;
 
     const booksByCategory = groupBooksByCategory(filteredBooks);
-    await displayBooksByCategory(booksByCategory);
+    displayBooksByCategory(booksByCategory);
 }
 
 function updateUrlAndSearch() {
@@ -35,11 +35,10 @@ function updateUrlAndSearch() {
         newUrl.searchParams.set('search', searchText);
         history.pushState({ path: newUrl.toString() }, '', newUrl.toString());
     }
-
     filterBooks(searchText);
 }
 
-window.onload = async function() {
+window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
     const currentUrl = window.location.href;
@@ -60,8 +59,9 @@ window.onload = async function() {
     if (searchQuery) {
         document.getElementById('search-input').value = searchQuery;
         filterBooks();
-    } else {
-        await displayBooksByCategory(groupBooksByCategory(library))
+    } 
+    else {
+        displayBooksByCategory(groupBooksByCategory(library))
     }
 };
 
@@ -77,7 +77,7 @@ function groupBooksByCategory(books) {
 
 let booksByCategory = groupBooksByCategory();
 
-async function displayBooksByCategory(booksByCategory) {
+function displayBooksByCategory(booksByCategory) {
     const container = document.getElementById('library-container');
     container.innerHTML = '';
 
@@ -134,4 +134,3 @@ async function displayBooksByCategory(booksByCategory) {
         container.appendChild(section);
     }
 }
-await displayBooksByCategory();
