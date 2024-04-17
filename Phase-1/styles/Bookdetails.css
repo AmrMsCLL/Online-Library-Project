@@ -36,7 +36,7 @@ img{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 150px auto 150px 350px;
+    margin: 100px auto 150px 250px;
     width: 70%;
     height: 450px;
 }
