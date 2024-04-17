@@ -15,7 +15,15 @@
     <script src="Assets/ِAssets-Scripts/LoadSide-Bar.js" defer></script>
 
     <div class="search-wrapper">
-    <input type="text" id="search-input" placeholder="Search books..." oninput="updateUrlAndSearch()">
+        <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search Names, Categories, Authors..." oninput="filterBooks()">
+        </div>
+        <div class="filter-options">
+            <label>
+                <input type="checkbox" id="available-only-checkbox">
+                Show Available Only
+            </label>
+        </div>
     </div>  
     
     <div id="library-container"></div>

@@ -2,9 +2,9 @@ let library = [
     { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
     { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
     { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'LOTR 2', author: 'lotr', category: 'Fiction', description: 'lotr 2 novel description', imageUrl: 'Imgs/Books/ (2).jpg', price: '$17.99', availability: true  },
+    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: false  },
+    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: false  },
+    { name: 'LOTR 2', author: 'lotr', category: 'Fiction', description: 'lotr 2 novel description', imageUrl: 'Imgs/Books/ (2).jpg', price: '$17.99', availability: false  },
     { name: 'GOT 1' , author: 'GOT' , category: 'Fiction', description: 'got novel description'   , imageUrl: 'Imgs/Books/ (3).jpg', price: '$19.99', availability: false },
     { name: 'The Art Of War', author: 'Sun Tzu', category: 'Military', description: 'A Dude Explaining The Art Of War', imageUrl: 'Imgs/Books/ (1).jpg'
     , price: '$75.99', availability: true},
@@ -12,29 +12,92 @@ let library = [
 
 // export default library;
 
+// function filterBooks() {
+//     const searchText = document.getElementById('search-input').value.toLowerCase();
+
+//     if (!searchText) {
+//         displayBooksByCategory(groupBooksByCategory(library));
+//         return;
+//     }
+
+//     let filteredBooks = searchText ? library.filter(book => {
+//         return book.name.toLowerCase().includes(searchText) ||
+//                book.author.toLowerCase().includes(searchText) ||
+//                book.category.toLowerCase().includes(searchText) ||
+//                book.description.toLowerCase().includes(searchText);
+//     }) : library;
+
+//     const booksByCategory = groupBooksByCategory(filteredBooks);
+//     displayBooksByCategory(booksByCategory);
+    
+//     if (filteredBooks.length === 0){
+//         const container = document.getElementById('library-container');
+//         container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
+//     }
+//     else {
+//         const booksByCategory = groupBooksByCategory(filteredBooks);
+//         displayBooksByCategory(booksByCategory);
+//     }
+// }
+
+function displayNoBooksFound() {
+    const container = document.getElementById('library-container');
+    container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
+}
+
+function filterAvailableBooks() {
+    let availableBooks = library.filter(book => book.availability);
+
+    updateUrlAndSearch();
+    const booksByCategory = groupBooksByCategory(availableBooks);
+    displayBooksByCategory(booksByCategory);
+
+    if (availableBooks.length === 0) {
+        updateUrlAndSearch();
+        displayNoBooksFound();
+    }
+}
+
+document.getElementById('available-only-checkbox').addEventListener('change', () => {
+    if (document.getElementById('available-only-checkbox').checked) {
+        filterAvailableBooks();
+    } else {
+        updateUrlAndSearch();
+        displayBooksByCategory(groupBooksByCategory(library));
+    }
+});
+
 function filterBooks() {
     const searchText = document.getElementById('search-input').value.toLowerCase();
+    const showAvailableOnly = document.getElementById('available-only-checkbox').checked;
 
     if (!searchText) {
-        displayBooksByCategory(groupBooksByCategory(library));
-        return;
+        if (showAvailableOnly) {
+            filterAvailableBooks();
+        } else {
+            displayBooksByCategory(groupBooksByCategory(library));
+            return;
+        }
     }
 
-    let filteredBooks = searchText ? library.filter(book => {
-        return book.name.toLowerCase().includes(searchText) ||
-               book.author.toLowerCase().includes(searchText) ||
-               book.category.toLowerCase().includes(searchText) ||
-               book.description.toLowerCase().includes(searchText);
-    }) : library;
+    let filteredBooks = library.filter(book => {
+        const matchesSearchText = searchText ? 
+            book.name.toLowerCase().includes(searchText) ||
+            book.author.toLowerCase().includes(searchText) ||
+            book.category.toLowerCase().includes(searchText) ||
+            book.description.toLowerCase().includes(searchText) : true;
+        
+        const matchesAvailability = showAvailableOnly ? book.availability : true;
+
+        return matchesSearchText && matchesAvailability;
+    });
 
     const booksByCategory = groupBooksByCategory(filteredBooks);
     displayBooksByCategory(booksByCategory);
-    
+
     if (filteredBooks.length === 0){
-        const container = document.getElementById('library-container');
-        container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
-    }
-    else {
+        displayNoBooksFound();
+    } else {
         const booksByCategory = groupBooksByCategory(filteredBooks);
         displayBooksByCategory(booksByCategory);
     }
@@ -63,10 +126,7 @@ window.onload = function() {
         setTimeout(() => {
         const id = hash.replace('#', '');
         const element = document.getElementById(id);
-        
-        // if (element) {
-        //     element.scrollIntoView({ behavior: 'smooth' });
-        // }   
+      
         const elementPosition = element.getBoundingClientRect().top; 
         window.scrollBy({
             top: elementPosition - 60,
@@ -143,7 +203,7 @@ function displayBooksByCategory(booksByCategory) {
             bookElement.appendChild(bookDescription);
 
             const bookAvailability = document.createElement('p');
-            bookAvailability.textContent = `Availability: ${book.availability ? 'Available' : 'UnAvailable'}`;
+            bookAvailability.textContent = `Status: ${book.availability ? 'Available' : 'Unavailable'}`;
             bookAvailability.classList.add('book-availability');
             bookElement.appendChild(bookAvailability);
 
