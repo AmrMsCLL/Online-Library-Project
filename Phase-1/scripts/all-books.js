@@ -117,6 +117,7 @@ function updateUrlAndSearch() {
 window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
+   
     const currentUrl = window.location.href;
     const url = new URL(currentUrl);
     const hash = url.hash;
@@ -128,7 +129,7 @@ window.onload = function() {
       
         const elementPosition = element.getBoundingClientRect().top; 
         window.scrollBy({
-            top: elementPosition - 60,
+            top: elementPosition - 120,
             behavior: 'smooth'
         });
         }, 350);
@@ -157,6 +158,7 @@ let booksByCategory = groupBooksByCategory();
 
 function displayBooksByCategory(booksByCategory) {
     const container = document.getElementById('library-container');
+    // container.classList.add('Card')
     container.innerHTML = '';
 
     for (const [category, books] of Object.entries(booksByCategory)) {
@@ -167,21 +169,33 @@ function displayBooksByCategory(booksByCategory) {
         const header = document.createElement('h2');
         header.textContent = category;
         header.classList.add('section-header')
-        section.appendChild(header);
+        container.appendChild(header);
 
         books.forEach(book => {
             const bookElement = document.createElement('div');
             bookElement.classList.add('book-div');
+            bookElement.classList.add('Card');
+
+            let varAvailable;
+            function checkAvailabilitystatus(){
+                if(book.availability){
+                    varAvailable = "Available"
+                } else {
+                    varAvailable = "Unavailable"
+                }
+            }
+            checkAvailabilitystatus();
 
             const img = document.createElement('img');
             img.src = book.imageUrl;
             img.alt = `Cover of ${book.name}`;
+            img.setAttribute('name', book.name);
+            img.setAttribute('price', book.price);
+            img.setAttribute('availability', varAvailable);
             img.classList.add('book-image');
-
+            
             const link = document.createElement('a');
             link.href = `Book-Details.html?name=${encodeURIComponent(book.name)}&price=${encodeURIComponent(book.price)}`;
-            link.setAttribute('name', book.name);
-            link.setAttribute('price', book.price);
             link.classList.add('link-class')
 
             link.appendChild(img);

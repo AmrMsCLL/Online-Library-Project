@@ -23,7 +23,7 @@
             <h2 id="name"></h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequuntur nihil nam harum cumque fuga, ullam accusamus ipsam! Dignissimos asperiores nesciunt et laborum praesentium laboriosam assumenda autem consectetur aperiam neque!</p>
             <br><br>
-            <span><ion-icon name="checkmark-circle-outline" class="CheckIcon"></ion-icon> Available</span>
+            <span id="availability"><ion-icon name="checkmark-circle-outline" class="CheckIcon"></ion-icon></span>
             <h3 id="price"></h3>
             <div class="buttons">
                 <button class="btn1">Edit Book</button>
@@ -32,20 +32,21 @@
         </div>
     </div>
     <script>
-        var name = sessionStorage.getItem("name");
-        var imageSrc = sessionStorage.getItem("imageSrc");
-        var price = sessionStorage.getItem("price");
+        let name = sessionStorage.getItem("name");
+        let imageSrc = sessionStorage.getItem("imageSrc");
+        let price = sessionStorage.getItem("price");
+        let availablestatus = sessionStorage.getItem("availability");
 
         document.getElementById("name").textContent = name;
         document.getElementById("image").src = imageSrc;
-        document.getElementById("price").textContent=price;
-        document.body.style.backgroundImage = "url('" + imageSrc + "')";
+        document.getElementById("price").textContent = price;
+        document.getElementById("availability").textContent = availablestatus;
 
+        document.body.style.backgroundImage = "url('" + imageSrc + "')";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundSize = "cover"
 
         </script>    
-
 </body>
 
 <footer>
