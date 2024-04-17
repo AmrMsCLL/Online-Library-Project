@@ -9,7 +9,7 @@ body{
     text-align:  center;
     background-color: #181818;
     color: #fff;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .content{
     padding: 20px 35px 25px;

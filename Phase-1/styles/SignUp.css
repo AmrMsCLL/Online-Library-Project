@@ -10,7 +10,7 @@ body{
     text-align: center;
     background-color: #181818;
     color: #fff;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /*----------------------All Content---------------*/

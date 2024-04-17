@@ -48,7 +48,6 @@ function displayNoBooksFound() {
 function filterAvailableBooks() {
     let availableBooks = library.filter(book => book.availability);
 
-    updateUrlAndSearch();
     const booksByCategory = groupBooksByCategory(availableBooks);
     displayBooksByCategory(booksByCategory);
 
@@ -183,6 +182,7 @@ function displayBooksByCategory(booksByCategory) {
             link.href = `Book-Details.html?name=${encodeURIComponent(book.name)}&price=${encodeURIComponent(book.price)}`;
             link.setAttribute('name', book.name);
             link.setAttribute('price', book.price);
+            link.classList.add('link-class')
 
             link.appendChild(img);
             bookElement.appendChild(link);
@@ -203,13 +203,16 @@ function displayBooksByCategory(booksByCategory) {
             bookElement.appendChild(bookDescription);
 
             const bookAvailability = document.createElement('p');
-            bookAvailability.textContent = `Status: ${book.availability ? 'Available' : 'Unavailable'}`;
-            bookAvailability.classList.add('book-availability');
+            bookAvailability.textContent = ` Status: ${book.availability ? 'Available' : 'Unavailable'}`;
+            if(book.availability){
+                bookAvailability.classList.add('available-true');
+            } else {
+                bookAvailability.classList.add('available-false');
+            }
             bookElement.appendChild(bookAvailability);
 
             section.appendChild(bookElement);
         });
-
         container.appendChild(section);
     }
 }

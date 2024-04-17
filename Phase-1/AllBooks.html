@@ -16,11 +16,11 @@
 
     <div class="search-wrapper">
         <div class="search-bar">
-        <input type="text" id="search-input" placeholder="Search Names, Categories, Authors..." oninput="filterBooks()">
+        <input type="text" id="search-input" placeholder="Search Names, Categories, Authors..." oninput="updateUrlAndSearch()">
         </div>
         <div class="filter-options">
             <label>
-                <input type="checkbox" id="available-only-checkbox">
+                <input type="checkbox" id="available-only-checkbox" onchange="filterAvailableBooks()">
                 Show Available Only
             </label>
         </div>

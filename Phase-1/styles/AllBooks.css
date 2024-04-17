@@ -146,7 +146,7 @@ a:hover {
     margin-right: 20px;
 }
 
-.book-name, .book-author, .book-description, .book-availability {
+.book-name, .book-author, .book-description, .available-false .available-true {
     margin-left: 20px;
 }
 
@@ -159,7 +159,11 @@ a:hover {
     font-style: italic;
 }
 
-.book-availability {
+.available-false {
+    color: red;
+}
+
+.available-true {
     color: #28a745;
 }
 
@@ -178,10 +182,10 @@ footer {
 
 .filter-options {
     margin-bottom: 20px;
-    position:absolute;
+    /* position:absolute; */
     /* right: 1200px; */
-    top: 120px;
-    left: 1050px;
+    /* top: 120px; */
+    /* left: 1050px; */
 }
 
 .filter-options label {
