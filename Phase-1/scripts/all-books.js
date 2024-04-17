@@ -15,6 +15,11 @@ let library = [
 function filterBooks() {
     const searchText = document.getElementById('search-input').value.toLowerCase();
 
+    if (!searchText) {
+        displayBooksByCategory(groupBooksByCategory(library));
+        return;
+    }
+
     let filteredBooks = searchText ? library.filter(book => {
         return book.name.toLowerCase().includes(searchText) ||
                book.author.toLowerCase().includes(searchText) ||
@@ -24,6 +29,15 @@ function filterBooks() {
 
     const booksByCategory = groupBooksByCategory(filteredBooks);
     displayBooksByCategory(booksByCategory);
+    
+    if (filteredBooks.length === 0){
+        const container = document.getElementById('library-container');
+        container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
+    }
+    else {
+        const booksByCategory = groupBooksByCategory(filteredBooks);
+        displayBooksByCategory(booksByCategory);
+    }
 }
 
 function updateUrlAndSearch() {
@@ -50,10 +64,15 @@ window.onload = function() {
         const id = hash.replace('#', '');
         const element = document.getElementById(id);
         
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }    
-        }, 150);
+        // if (element) {
+        //     element.scrollIntoView({ behavior: 'smooth' });
+        // }   
+        const elementPosition = element.getBoundingClientRect().top; 
+        window.scrollBy({
+            top: elementPosition - 60,
+            behavior: 'smooth'
+        });
+        }, 350);
     }
 
     if (searchQuery) {

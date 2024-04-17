@@ -1,4 +1,4 @@
-#library-container {
+/* #library-container {
     margin: 20px;
 }
 
@@ -56,4 +56,122 @@ h2 {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+} */
+
+.nobooks {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+body, h1, h2, h3, p, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.search-wrapper {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#search-input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.category-section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    font-size: 1.5rem;
+    color: #495057;
+    margin-bottom: 20px;
+}
+
+.book-div {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+}
+
+.book-image {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.book-name, .book-author, .book-description, .book-availability {
+    margin-left: 20px;
+}
+
+.book-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.book-author {
+    font-style: italic;
+}
+
+.book-availability {
+    color: #28a745;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.section-header {
+    scroll-margin-top: 700px; /* Add this property to the elements you're scrolling into view */
 }
