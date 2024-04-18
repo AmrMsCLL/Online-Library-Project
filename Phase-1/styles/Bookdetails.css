@@ -63,9 +63,17 @@ img{
     margin: 0 auto;
 }
 .CheckIcon{
-    color: rgb(5, 223, 5);
     position: relative;
-    top: 3px;
+    top: 2px;
+    font-size: 15px;
+}
+
+.available{
+    color: greenyellow;
+}
+
+.unavailable{
+    color: red;
 }
 
 .buttons{
