@@ -1,81 +1,173 @@
-/* Profile.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+*{
+    font-family: 'Poppins';
     padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
+body{
+    min-height: 100vh;
+    color:#fff;
+    background-color: #181818;
+
+}
+.wraper{
+    background-color: #181818;
+    padding-top: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInfo{
+    position: relative;
+    padding-left: 20px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 350px;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+
+
+.userImage{
+    display: flex;
+    margin: 0 auto;
+    height: 250px;
+    width: 250px;
+}
+.userInfo .userImage img{
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.userInfo .about{
+    display: flex;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+.userInfo .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    button{
+        background-color: rgba(255, 255, 255, .2);
+        border-radius: 10px;
+        padding: 5px 20px;
+        cursor: pointer;
+        color: #fff;
+        transition: .3s;
+        box-shadow: 0 0 5px aqua;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    button:hover{
+        background-color: rgba(255, 255, 255, .7);
+        color: #000;
+        box-shadow: 0 0 5px #000;
+
+    }
 }
 
-header img {
-    display: block;
-    margin: 10px auto;
-}
+.dashboard{
+    width: calc(100% - 350px);
+    height: 100%;
+    margin-left: 50px;
+    .title{
+        display: flex;
+        align-items: center;
+        margin: 60px 0 30px 20px;
+        ion-icon{
+            display: inline-block;
+            position: relative;
+            background-color: aqua; 
+            color: #181818;
+            height: 35px;
+            width: 35px; 
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2{
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+    }
 
-nav {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-}
+    .boxes{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    .boxes .box{
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% / 3 - 15px);
+        background-color: aqua;
+        padding: 15px 20px;
+        border-radius: 12px;
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    transition: background 0.3s ease;
-}
+        .text{
+            white-space: nowrap;
+            font-size: 18px;
+            font-weight: 700;
+        }
 
-nav ul li a:hover,
-nav ul li a:focus {
-    background: #198754;
-    outline: none;
-}
+        ion-icon{
+            font-size: 35px;
+            color: #181818;
+        }
 
-main {
-    padding: 20px;
-    min-height: 400px; /* Adjust as needed */
-}
+        .number{
+            white-space: nowrap;
+            font-size: 40px;
+            font-weight: 700;
+        }
+    }
 
-main section {
-    background: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+    .boxes .box1{
+        background-color: aqua;
+    }
+    .boxes .box2{
+        background-color: rgb(218, 255, 108);
+    }
+    .boxes .box3{
+        background-color: rgb(254, 89, 224);
+    }
 
-main h2 {
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-}
 
-ul {
-    padding: 0;
-    list-style: none;
-}
 
-p {
-    /* background: #f2f2f2; */
-    padding: 10px;
-    border-radius: 5px;
+    .Card{
+        display: flex;
+        justify-content: left;
+        gap: 20px;
+        margin: 20px;
+        img{
+            height: 250px;
+            width: 180px;
+            transition: .3s;
+        }
+        img:hover{
+            filter: brightness(40%);
+        }
+    }
+    
 }

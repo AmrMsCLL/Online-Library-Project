@@ -4,7 +4,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="../styles/Main.css">
     <link rel="stylesheet" href="../Styles/Profile.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -13,111 +12,108 @@
 <body>
     <div id="side-bar_reuseable"></div>
     <script src="../Assets/ِAssets-Scripts/LoadSide-Bar.js"></script>
-
-    <header>
-        <h1>User Profile</h1>
-    </header>
-
-    <header>
-        <img src="../Imgs/user.png" alt="Profile" width="50" height="50">
-        <h2><b>Your Profile</b></h2>
-    </header>
-
-    <nav>
-        <ul style="list-style-type: none; padding: 0;">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="Categories.html">Categories</a></li>
-            <!-- <li><a href="Categories.html">Search Books</a></li> -->
-            <li><a href="Profile.html#B1">Borrowed Books</a></li>
-            <li><a href="Profile.html#F1">Favourites</a></li> 
-            <!-- star or smth -->
-            <li><B><a href="/logout">Logout</a></B></li>
-
-        </ul>
-    </nav> <br> <br>
-
-    <main>
-        <section>
-            <h2>Personal Information</h2>
-            <ul> 
-                <p><strong>Name : </strong>PlaceHolder Name</p>
-                <p><strong>Email : </strong>PlaceHolder Email</p>
-                <p><strong>Password : </strong> ************ <button>Show</button></p>
-                <p><strong>Member Since : </strong>Placeholder Join Date</p>
-            </ul>
-        </section>
-        <section id="F1">
-            <div class="Favourites">
-                <h2>Favourtie Books</h2>
-                <ul>
-                    <p>
-                        <strong> Placeholder Favourtie Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Favourite Book
-                    </p>
-                    <p>
-                        <strong> Placeholder Favourtie Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Favourite Book
-                    </p>
-                    <p></p>
-                        <strong> Placeholder Favourtie Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Favourite Book
-                    </p>
-                    <p>
-                        <strong> Placeholder Favourtie Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Favourite Book
-                    </p>
-                </ul>
+    <div class="wraper">
+        <div class="userInfo">
+            <div class="userImage">
+                <img src="../Imgs/user.png" alt="" class="profileImage">
             </div>
-        </section>
-        <section id="B1">
-            <div class="Borrowed-Books">
-                <h2>Currently Borrowed Books</h2>
-                <ul>
-                    <p>
-                        <strong> Placeholder Borrowed Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Borrowed Book
-                        <br><strong>Due : [Placeholder Date]</strong>
-                    </p>
-                    <p>
-                        <strong> Placeholder Borrowed Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Borrowed Book
-                       <br><strong>Due : [Placeholder Date]</strong>
-                    </p>
-                    <p>
-                        <strong> Placeholder Borrowed Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Borrowed Book
-                        <br><strong>Due : [Placeholder Date]</strong>
-                    </p>
-                    <p>
-                        <strong> Placeholder Borrowed Book </strong> by Placeholder Author <br>
-                        Category: Placeholder Category <br>
-                        Description: Placeholder Description of Borrowed Book
-                        <br><strong>Due : [Placeholder Date]</strong>
-                    </p>
-                </ul>
+            <div class="about">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repellat magnam sapiente debitis cumque, ab tenetur harum eveniet at porro.</p>
             </div>
-        </section>
-        <section>
-            <h2>Account Settings</h2>
-            <ul>
-                <li><a href="change-Username.html">Change Username</a></li>
-                <li><a href="change-password.html">Change Password</a></li>
-                <li><a href="update-email.html">Update Email Address</a></li>
-                <li><a href="notification-settings.html">Notification Settings</a></li>
-            </ul>
-        </section>
-    </main>
 
-    <section id="content">
-        
-    </section>
+            <div class="buttons">
+                <button>Edit User Profile</button>
+            </div>
+        </div>
+    
+        <div class="dashboard">
+            <div class="title">
+                <ion-icon name="speedometer-outline"></ion-icon>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="boxes">
+                <div class="box box1">
+                    <ion-icon name="book-outline"></ion-icon>
+                    <span class="text">Total Books</span>
+                    <span class="number">200</span>
+                </div>
+
+                <div class="box box2">
+                    <ion-icon name="library-outline"></ion-icon>
+                    <span class="text">Read Books</span>
+                    <span class="number">520</span>
+                </div>
+
+                <div class="box box3">
+                    <ion-icon name="bulb-outline"></ion-icon>
+                    <span class="text">Reward Points</span>
+                    <span class="number">1,550</span>
+                </div>
+
+            </div>
+            <div class="activity">
+                <div class="title">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <h2 class="text">Last Seen</h2>
+                </div>
+
+                <div class="Card">
+                    <div class="bookCover">
+                        <a href="../HTML/Book-Details.html"><img src="../Imgs/Books/ (1).jpg" alt="" name="Book1"></a>
+                    </div>
+                    <div class="detaile">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor accusantium aut atque porro accusamus.</p>
+                    </div>
+                </div>
+
+                
+                <div class="Card">
+                    <div class="bookCover">
+                        <a href="../HTML/Book-Details.html"><img src="../Imgs/Books/ (2).jpg" alt="" name=""></a>
+                    </div>
+                    <div class="detaile">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor accusantium aut atque porro accusamus.</p>
+                    </div>
+                </div>
+
+                
+                <div class="Card">
+                    <div class="bookCover">
+                        <a href="../HTML/Book-Details.html"><img src="../Imgs/Books/ (3).jpg" alt="" name=""></a>
+                    </div>
+                    <div class="detaile">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor accusantium aut atque porro accusamus.</p>
+                    </div>
+                </div>
+
+
+                
+                <div class="Card">
+                    <div class="bookCover">
+                        <a href="../HTML/Book-Details.html"><img src="../Imgs/Books/ (4).jpg" alt="" name=""></a>
+                    </div>
+                    <div class="detaile">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor accusantium aut atque porro accusamus.</p>
+                    </div>
+                </div>
+
+
+                
+                <div class="Card">
+                    <div class="bookCover">
+                        <a href="../HTML/Book-Details.html"><img src="../Imgs/Books/ (5).jpg" alt="" name=""></a>
+                    </div>
+                    <div class="detaile">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dolor accusantium aut atque porro accusamus.</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+
+    <script src="../Scripts/Book-Details.js" defer> </script>
 </body>
 
 <footer>
