@@ -38,17 +38,21 @@ body{
     margin: 0 auto;
     height: 250px;
     width: 250px;
+    margin-bottom: 20px;
 }
 .userInfo .userImage img{
     display: flex;
     position: relative;
     height: 100%;
     width: 100%;
+    border: 5px solid aqua;
+    border-radius: 50%;
 }
 
 .userInfo .about{
     display: flex;
-    text-align: center;
+    flex-direction:column ;
+    padding-left: 10px;
 }
 
 .userInfo .buttons{
