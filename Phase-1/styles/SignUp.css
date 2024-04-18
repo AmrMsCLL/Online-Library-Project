@@ -78,7 +78,13 @@ body{
     top: 50%;
     transform: translateY(-50%);
 }
-
+.toggle-icon {
+    cursor: pointer; /* Makes the icon clickable */
+    position: absolute; /* Positioning the icon relative to its parent .input_field */
+    right: 10px; /* Positioning from the right inside the input field */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align center */
+}
 /*----------------------radio field icon---------------*/
 .check{
     left: 120px;
@@ -108,6 +114,10 @@ body{
 /*----------------------Last Label on the screen---------------*/
 .content  .lb{
     font-size: 14.5px;
+    /* text-align: left; */
+    span {
+        color: #ccc;
+    }
 }
 
 

@@ -1,28 +1,4 @@
-let library = [
-    { name: 'To Kill a Mockingbird', author: 'Harper Lee', price: '9.99', section: 'Popular', category: 'Classic Literature', availability: true, imageUrl: '../Imgs/Books/ (1).jpg' },
-    { name: '1984', author: 'George Orwell', price: '14.99', section: 'Sales', category: 'Dystopian', availability: false, imageUrl: '../Imgs/Books/ (2).jpg' },
-    { name: 'Pride and Prejudice', author: 'Jane Austen', price: '12.99', section: 'Most_read', category: 'Classic Romance', availability: true, imageUrl: '../Imgs/Books/ (3).jpg' },
-    { name: 'To Kill a Mockingbird', author: 'Harper Lee', price: '9.99', section: 'Popular', category: 'Classic', availability: true, imageUrl: '../Imgs/Books/ (1).jpg' },
-    { name: '1984', author: 'George Orwell', price: '14.99', section: 'Sales', category: 'Dystopian', availability: false, imageUrl: '../Imgs/Books/ (2).jpg' },
-    { name: 'Pride and Prejudice', author: 'Jane Austen', price: '12.99', section: 'Most_read', category: 'Classic Romance', availability: true, imageUrl: '../Imgs/Books/ (3).jpg' },
-    { name: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: '15.99', section: 'Popular', category: 'Classic', availability: false, imageUrl: '../Imgs/Books/ (4).jpg' },
-    { name: 'Catcher in the Rye', author: 'J.D. Salinger', price: '11.99', section: 'Sales', category: 'Literary Fiction', availability: true, imageUrl: '../Imgs/Books/ (5).jpg' },
-    { name: 'The Hobbit', author: 'J.R.R. Tolkien', price: '10.99', section: 'Most_read', category: 'Fantasy', availability: false, imageUrl: '../Imgs/Books/ (6).jpg' },
-    { name: 'The Alchemist', author: 'Paulo Coelho', price: '18.99', section: 'Popular', category: 'Philosophical Fiction', availability: true, imageUrl: '../Imgs/Books/ (7).jpg' },
-    { name: 'The Little Prince', author: 'Antoine de Saint-Exupéry', price: '16.99', section: 'Sales', category: 'Children\'s Literature', availability: false, imageUrl: '../Imgs/Books/ (8).jpg' },
-    { name: 'Wuthering Heights', author: 'Emily Brontë', price: '13.99', section: 'Most_read', category: 'Classic Fiction', availability: true, imageUrl: '../Imgs/Books/ (9).jpg' },
-    { name: 'Jane Eyre', author: 'Charlotte Brontë', price: '17.99', section: 'Popular', category: 'Gothic Fiction', availability: false, imageUrl: '../Imgs/Books/ (10).jpg' },
-    { name: 'Crime and Punishment', author: 'Fyodor Dostoevsky', price: '15.99', section: 'None', category: 'Philosophical Novel', availability: true, imageUrl: '../Imgs/Books/ (34).jpg' },
-    { name: 'The Picture of Dorian Gray', author: 'Oscar Wilde', price: '16.99', section: 'None', category: 'Sales', availability: false, imageUrl: '../Imgs/Books/ (35).jpg' },
-    { name: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: '10.99', section: 'Popular', category: 'Popular', availability: true, imageUrl: '../Imgs/Books/ (4).jpg' },
-    { name: 'War and Peace', author: 'Leo Tolstoy', price: '13.99', section: 'Sales', category: 'Historical Fiction', availability: false, imageUrl: '../Imgs/Books/ (5).jpg' },
-    { name: 'Anna Karenina', author: 'Leo Tolstoy', price: '18.99', section: 'Most_read', category: 'Most_read', availability: true, imageUrl: '../Imgs/Books/ (6).jpg' },
-    { name: 'The Catcher in the Rye', author: 'J.D. Salinger', price: '11.99', section: 'Popular', category: 'Literary Fiction', availability: false, imageUrl: '../Imgs/Books/ (7).jpg' },
-    { name: 'The Brothers Karamazov', author: 'Fyodor Dostoevsky', price: '20.99', section: 'Sales', category: 'Philosophical Novel', availability: true, imageUrl: '../Imgs/Books/ (8).jpg' },
-    { name: 'Crime and Punishment', author: 'Fyodor Dostoevsky', price: '15.99', section: 'None', category: 'Philosophical Novel', availability: true, imageUrl: '../Imgs/Books/ (34).jpg' },
-    { name: 'The Picture of Dorian Gray', author: 'Oscar Wilde', price: '16.99', section: 'None', category: 'Gothic', availability: false, imageUrl: '../Imgs/Books/ (35).jpg' },
-    
-];
+import { library } from "../Scripts/LibraryBooks.js";
 
 function displayNoBooksFound() {
     const container = document.getElementById('library-container');
@@ -129,6 +105,11 @@ window.onload = function() {
 };
 
 function groupBooksByCategory(books) {
+    if (!books || !Array.isArray(books)) {
+        // books is undefined or not an array, so we can't group it by category
+        console.error('books is undefined or not an array:', books);
+        return {}; // Return an empty object to avoid further errors
+    }
     return books.reduce((acc, book) => {
         if (!acc[book.category]) {
             acc[book.category] = [];
@@ -138,11 +119,10 @@ function groupBooksByCategory(books) {
     }, {});
 }
 
-let booksByCategory = groupBooksByCategory();
+// let booksByCategory = groupBooksByCategory();
 
 function displayBooksByCategory(booksByCategory) {
     const container = document.getElementById('library-container');
-    // container.classList.add('Card')
     container.innerHTML = '';
 
     for (const [category, books] of Object.entries(booksByCategory)) {
@@ -215,3 +195,31 @@ function displayBooksByCategory(booksByCategory) {
         container.appendChild(section);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const availableCheckbox = document.getElementById('available-only-checkbox');
+    if (availableCheckbox) {
+        availableCheckbox.addEventListener('change', () => {
+            if (availableCheckbox.checked) {
+                filterAvailableBooks();
+            } else {
+                displayBooksByCategory(groupBooksByCategory(library));
+            }
+        });
+    }   
+
+    const availableSearchBar = document.getElementById('search-input')
+    if (availableSearchBar) {
+        availableSearchBar.addEventListener('input', updateUrlAndSearch)
+        updateUrlAndSearch();
+    }
+
+    if (Array.isArray(library)) {
+        const groupedBooks = groupBooksByCategory(library);
+        displayBooksByCategory(groupedBooks);
+    } else {
+        console.error('Library is not loaded or not an array:', library);
+    }
+});
+  
