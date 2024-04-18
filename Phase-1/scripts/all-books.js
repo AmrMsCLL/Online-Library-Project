@@ -10,36 +10,6 @@ let library = [
     , price: '$75.99', availability: true},
 ];
 
-// export default library;
-
-// function filterBooks() {
-//     const searchText = document.getElementById('search-input').value.toLowerCase();
-
-//     if (!searchText) {
-//         displayBooksByCategory(groupBooksByCategory(library));
-//         return;
-//     }
-
-//     let filteredBooks = searchText ? library.filter(book => {
-//         return book.name.toLowerCase().includes(searchText) ||
-//                book.author.toLowerCase().includes(searchText) ||
-//                book.category.toLowerCase().includes(searchText) ||
-//                book.description.toLowerCase().includes(searchText);
-//     }) : library;
-
-//     const booksByCategory = groupBooksByCategory(filteredBooks);
-//     displayBooksByCategory(booksByCategory);
-    
-//     if (filteredBooks.length === 0){
-//         const container = document.getElementById('library-container');
-//         container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
-//     }
-//     else {
-//         const booksByCategory = groupBooksByCategory(filteredBooks);
-//         displayBooksByCategory(booksByCategory);
-//     }
-// }
-
 function displayNoBooksFound() {
     const container = document.getElementById('library-container');
     container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
@@ -226,7 +196,8 @@ function displayBooksByCategory(booksByCategory) {
             bookElement.appendChild(bookAvailability);
 
             section.appendChild(bookElement);
-        });
+        }
+    );
         container.appendChild(section);
     }
 }

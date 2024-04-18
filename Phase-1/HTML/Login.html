@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/Main.css">
+    <link rel="stylesheet" href="styles/Login.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../Scripts/Validation.js"></script>
+</head>
+
+<body>
+    <!-- <img src="Imgs/large-collection-old-books-wooden-shelves-generated-by-ai.jpg" alt="wallpaper" width="100%">  -->
+    
+    <div id="side-bar_reuseable"></div>
+    <script src="Assets/ِAssets-Scripts/LoadSide-Bar.js"></script>
+    
+    <br><br><br><br>
+
+    <header> <h1>Log In to DigitalDewey Online Library</h1> </header>
+
+    <form  class="content">
+        <div class="input_box">
+            <div class="input_field">
+                <label for="user" class="lbuser">Username</label>
+                <input type="text" id="user" placeholder="Enter Username" required>
+                <ion-icon name="person" class="sIcon"></ion-icon>
+            </div>
+        </div>
+        <div class="input_box">
+            <div class="input_field">
+                <label for="pass" class="lbpass">Password</label>
+                <input type="password" id="pass" placeholder="Enter Password" required minlength="8" maxlength="20">
+                <ion-icon name="lock-closed" class="sIcon"></ion-icon>
+            </div>
+        </div>
+        
+        <label for="chkbox">Remember Me<input type="checkbox" id="remmebx"></label>
+
+        <div class="forgot"><p>Forgot </p><a href="#user">Username</a> / <a href="#pass">Password </a>?</div>
+
+        <input type="submit" value="Login" class="buttonlog" onclick="btnClick()">
+
+        <div class="notreg">Don't Have an Account Yet? <a href="SignUp.html">SignUp Now!</a></div>
+    </form>
+</body>
+
+</html>
