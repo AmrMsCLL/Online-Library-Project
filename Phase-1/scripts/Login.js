@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // showing logout and showing login when not logged handling
         
         //testing
-        if (password !== '@theamsCLL2005'){
-            valid = false;
-            errorMessage = 'Password is not Correct';
-        }
+        // if (password !== '@theamsCLL2005'){
+        //     valid = false;
+        //     errorMessage = 'Password is not Correct';
+        // }
 
         if (valid) {
             this.submit();
