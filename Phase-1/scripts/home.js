@@ -63,9 +63,9 @@ function displayHomeSections(booksBySections) {
         if (section === 'Popular') {
             sectionDiv.setAttribute('id', 'GetStarTed')
             iconName = 'trending-up-outline';
-        } else if (section === 'Sales') {
+        } else if (section === 'Sale') {
             iconName = 'pricetags-outline';
-        } else if (section === 'Most_read') {
+        } else if (section === 'Most Read') {
             iconName = 'book-outline';
         }
 
@@ -148,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
     hoverEffect();
     
     const availGetStarted = document.getElementById('startedaction');
-    console.log(availGetStarted)
     if (availGetStarted) {
         availGetStarted.addEventListener('click', function() {
             event.preventDefault();

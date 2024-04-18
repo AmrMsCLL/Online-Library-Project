@@ -11,6 +11,7 @@ document.body.addEventListener("click", function(event) {
         let price = image.querySelector("img").getAttribute("price");
         let availability = image.querySelector("img").getAttribute("availability");
         let category = image.querySelector("img").getAttribute("category");
+        let author = image.querySelector("img").getAttribute("author");
         // let desc = image.querySelector("img").getAttribute("description");
 
         sessionStorage.setItem("name", name);
@@ -18,6 +19,7 @@ document.body.addEventListener("click", function(event) {
         sessionStorage.setItem("price",price);
         sessionStorage.setItem("availability", availability)
         sessionStorage.setItem("category", category)
+        sessionStorage.setItem("author", author)
         // sessionStorage.setItem("description", description)
         window.location.href = url;
     }

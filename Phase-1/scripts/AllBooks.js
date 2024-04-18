@@ -106,9 +106,8 @@ window.onload = function() {
 
 function groupBooksByCategory(books) {
     if (!books || !Array.isArray(books)) {
-        // books is undefined or not an array, so we can't group it by category
         console.error('books is undefined or not an array:', books);
-        return {}; // Return an empty object to avoid further errors
+        return {};
     }
     return books.reduce((acc, book) => {
         if (!acc[book.category]) {
@@ -156,6 +155,8 @@ function displayBooksByCategory(booksByCategory) {
             img.setAttribute('name', book.name);
             img.setAttribute('price', book.price);
             img.setAttribute('availability', varAvailable);
+            img.setAttribute('category', book.category);
+            img.setAttribute('author', book.author);
             img.classList.add('book-image');
             
             const link = document.createElement('a');

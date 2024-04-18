@@ -1,15 +1,15 @@
 export const library = [
   {
-    section: "popular",
+    section: "Popular",
     name: "The Art Of War",
     price: "$69.99",
     imageUrl: "../Imgs/Books/ (1).jpg",
     author: "Sun Tzu",
-    category: "Military Strategy",
+    category: "Military",
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Master Techniques in Surgery",
     price: "$62.99",
     imageUrl: "../Imgs/Books/ (2).jpg",
@@ -18,7 +18,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "The Banker's Wife",
     price: "$79.99",
     imageUrl: "../Imgs/Books/ (3).jpg",
@@ -27,7 +27,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "The Edge of the Sea",
     price: "$69.99",
     imageUrl: "../Imgs/Books/ (4).jpg",
@@ -36,16 +36,16 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "The Subtle Art of not giving a fuck",
     price: "$99.99",
     imageUrl: "../Imgs/Books/ (5).jpg",
     author: "Mark Manson",
-    category: "Self-help",
+    category: "Self Help",
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "The Ebb Tide",
     price: "$74.99",
     imageUrl: "../Imgs/Books/ (6).jpg",
@@ -54,7 +54,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "On the way to the Wedding",
     price: "$78.99",
     imageUrl: "../Imgs/Books/ (7).jpg",
@@ -63,7 +63,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Jets!Jets!Jets!",
     price: "$59.99",
     imageUrl: "../Imgs/Books/ (8).jpg",
@@ -72,7 +72,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Libraries of The Future",
     price: "$49.99",
     imageUrl: "../Imgs/Books/ (9).jpg",
@@ -81,7 +81,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Elon Musk",
     price: "$39.99",
     imageUrl: "../Imgs/Books/ (10).jpg",
@@ -90,7 +90,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Lord of the Flies",
     price: "$29.99",
     imageUrl: "../Imgs/Books/ (11).jpg",
@@ -99,7 +99,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "The Leaf",
     price: "$19.99",
     imageUrl: "../Imgs/Books/ (12).jpg",
@@ -108,7 +108,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "The secret Language Of Birthdays",
     price: "$89.99",
     imageUrl: "../Imgs/Books/ (13).jpg",
@@ -117,7 +117,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Red White Royal Blue",
     price: "$69.99",
     imageUrl: "../Imgs/Books/ (14).jpg",
@@ -126,7 +126,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Game Of Thrones",
     price: "$75.99",
     imageUrl: "../Imgs/Books/ (15).jpg",
@@ -135,7 +135,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Nothing",
     price: "$110.99",
     imageUrl: "../Imgs/Books/ (16).jpg",
@@ -144,7 +144,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Snapdragon",
     price: "$9.99",
     imageUrl: "../Imgs/Books/ (17).jpg",
@@ -153,7 +153,7 @@ export const library = [
     availability: true,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Working On Mars",
     price: "$39.99",
     imageUrl: "../Imgs/Books/ (18).jpg",
@@ -162,7 +162,7 @@ export const library = [
     availability: false,
   },
   {
-    section: "popular",
+    section: "Popular",
     name: "Harry Potter",
     price: "$4.99",
     imageUrl: "../Imgs/Books/ (19).jpg",
@@ -221,7 +221,7 @@ export const library = [
     price: "$44.99",
     imageUrl: "../Imgs/Books/ (25).jpg",
     author: "Various Authors",
-    category: "Self-help",
+    category: "Self Help",
     availability: true,
   },
   {
@@ -257,7 +257,7 @@ export const library = [
     price: "$34.99",
     imageUrl: "../Imgs/Books/ (30).jpg",
     author: "Joseph Nguyen",
-    category: "Self-help",
+    category: "Self Help",
     availability: true,
   },
   {
@@ -293,7 +293,7 @@ export const library = [
     price: "$52.99",
     imageUrl: "../Imgs/Books/ (34).jpg",
     author: "Augusto Cury",
-    category: "Self-help",
+    category: "Self Help",
     availability: true,
   },
   {
@@ -374,7 +374,7 @@ export const library = [
     price: "$199.99",
     imageUrl: "../Imgs/Books/ (45).jpg",
     author: "Maxwell Maltz",
-    category: "Self-help",
+    category: "Self Help",
     availability: true,
   },
   {
@@ -446,7 +446,7 @@ export const library = [
     price: "$60.99",
     imageUrl: "../Imgs/Books/ (54).jpg",
     author: "James Clear",
-    category: "Self-help",
+    category: "Self Help",
     availability: true,
   },
   {
@@ -455,7 +455,7 @@ export const library = [
     price: "$69.99",
     imageUrl: "../Imgs/Books/ (55).jpg",
     author: "Napoleon Hill",
-    category: "Self-help",
+    category: "Self Help",
     availability: false,
   },
   {
