@@ -1,13 +1,33 @@
 let library = [
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: false  },
-    { name: 'LOTR 1', author: 'lotr', category: 'Fiction', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: false  },
-    { name: 'LOTR 2', author: 'lotr', category: 'Fiction', description: 'lotr 2 novel description', imageUrl: 'Imgs/Books/ (2).jpg', price: '$17.99', availability: false  },
-    { name: 'GOT 1' , author: 'GOT' , category: 'Fiction', description: 'got novel description'   , imageUrl: 'Imgs/Books/ (3).jpg', price: '$19.99', availability: false },
-    { name: 'The Art Of War', author: 'Sun Tzu', category: 'Military', description: 'A Dude Explaining The Art Of War', imageUrl: 'Imgs/Books/ (1).jpg'
-    , price: '$75.99', availability: true},
+    { name: 'The Art Of War', author: 'lotr', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
+    { name: 'Master Techniques in Surgery', author: 'Mathimatics', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (2).jpg', price: '$15.99', availability: true  },
+    { name: "The Banker's Wife", author: 'lotr', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (3).jpg', price: '$15.99', availability: true  },
+    { name: 'The Edge of the Sea', author: 'lotr', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (4).jpg', price: '$15.99', availability: false  },
+    { name: 'The Subtle Art of not giving a fck', author: 'ahmed', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (5).jpg', price: '$15.99', availability: false  },
+    { name: 'The Ebb Tide', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (6).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'On the way to the Wedding', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (7).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Jets!Jets!Jets!', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (8).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Libraries of The Future', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (9).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Elon Musk', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (10).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Lord of the Flies', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (11).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'The Leaf', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (12).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'The Ebb Tide', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (13).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'The Ebb Tide', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (14).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    
+    { name: 'The Art Of War', author: 'lotr', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
+    { name: 'Master Techniques in Surgery', author: 'Mathimatics', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (2).jpg', price: '$15.99', availability: true  },
+    { name: "The Banker's Wife", author: 'lotr', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (3).jpg', price: '$15.99', availability: true  },
+    { name: 'The Edge of the Sea', author: 'lotr', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (4).jpg', price: '$15.99', availability: false  },
+    { name: 'The Subtle Art of not giving a fck', author: 'ahmed', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (5).jpg', price: '$15.99', availability: false  },
+    { name: 'The Ebb Tide', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (6).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'On the way to the Wedding', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (7).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Jets!Jets!Jets!', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (8).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Libraries of The Future', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (9).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'Elon Musk', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (10).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    
+
+
+
 ];
 
 function displayNoBooksFound() {
@@ -181,10 +201,10 @@ function displayBooksByCategory(booksByCategory) {
             bookAuthor.classList.add('book-author');
             bookElement.appendChild(bookAuthor);
 
-            const bookDescription = document.createElement('p');
-            bookDescription.textContent = book.description;
-            bookDescription.classList.add('book-description');
-            bookElement.appendChild(bookDescription);
+            // const bookDescription = document.createElement('p');
+            // bookDescription.textContent = book.description;
+            // bookDescription.classList.add('book-description');
+            // bookElement.appendChild(bookDescription);
 
             const bookAvailability = document.createElement('p');
             bookAvailability.textContent = ` Status: ${book.availability ? 'Available' : 'Unavailable'}`;
