@@ -1,0 +1,81 @@
+/* Profile.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header img {
+    display: block;
+    margin: 10px auto;
+}
+
+nav {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: #198754;
+    outline: none;
+}
+
+main {
+    padding: 20px;
+    min-height: 400px; /* Adjust as needed */
+}
+
+main section {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    /* background: #f2f2f2; */
+    padding: 10px;
+    border-radius: 5px;
+}

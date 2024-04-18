@@ -11,7 +11,7 @@ function loadCSS(href, callback){
 }
 
 function loadNav() {
-    fetch('Assets/Side-Bar.html')
+    fetch('../Assets/Assets-HTML/Side-Bar.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('side-bar_reuseable').innerHTML = html;
@@ -35,4 +35,4 @@ function initToggleButton() {
     }
   }
 
-loadCSS('Assets/Assets-Styles/Side-Bar.css', loadNav);
+loadCSS('../Assets/Assets-Styles/Side-Bar.css', loadNav);

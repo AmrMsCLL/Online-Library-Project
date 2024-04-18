@@ -11,17 +11,15 @@ function loadCSS(href, callback){
 }
 
 function loadFooter() {
-    fetch('Assets/Footer.html')
+    fetch('../Assets/Assets-HTML/Footer.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('footer_reuseable').innerHTML = html;
-        // Load CSS after the HTML is set
-        loadCSS('Assets/Assets-Styles/Footer.css');
+        loadCSS('../Assets/Assets-Styles/Footer.css');
     })
     .catch(error => {
         console.warn('Error loading the Footer: ', error);
     });
 }
 
-// Call loadFooter directly without loading CSS first
 loadFooter();

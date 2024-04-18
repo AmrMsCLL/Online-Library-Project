@@ -1,33 +1,27 @@
 let library = [
-    { name: 'The Art Of War', author: 'lotr', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'Master Techniques in Surgery', author: 'Mathimatics', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (2).jpg', price: '$15.99', availability: true  },
-    { name: "The Banker's Wife", author: 'lotr', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (3).jpg', price: '$15.99', availability: true  },
-    { name: 'The Edge of the Sea', author: 'lotr', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (4).jpg', price: '$15.99', availability: false  },
-    { name: 'The Subtle Art of not giving a fck', author: 'ahmed', category: 'Mathimatics', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (5).jpg', price: '$15.99', availability: false  },
-    { name: 'The Ebb Tide', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (6).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'On the way to the Wedding', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (7).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Jets!Jets!Jets!', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (8).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Libraries of The Future', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (9).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Elon Musk', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (10).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Lord of the Flies', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (11).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'The Leaf', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (12).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'The Ebb Tide', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (13).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'The Ebb Tide', author: 'lotr', category: 'Mathimatics',imageUrl: 'Imgs/Books/ (14).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
+    { name: 'To Kill a Mockingbird', author: 'Harper Lee', price: '9.99', section: 'Popular', category: 'Classic Literature', availability: true, imageUrl: '../Imgs/Books/ (1).jpg' },
+    { name: '1984', author: 'George Orwell', price: '14.99', section: 'Sales', category: 'Dystopian', availability: false, imageUrl: '../Imgs/Books/ (2).jpg' },
+    { name: 'Pride and Prejudice', author: 'Jane Austen', price: '12.99', section: 'Most_read', category: 'Classic Romance', availability: true, imageUrl: '../Imgs/Books/ (3).jpg' },
+    { name: 'To Kill a Mockingbird', author: 'Harper Lee', price: '9.99', section: 'Popular', category: 'Classic', availability: true, imageUrl: '../Imgs/Books/ (1).jpg' },
+    { name: '1984', author: 'George Orwell', price: '14.99', section: 'Sales', category: 'Dystopian', availability: false, imageUrl: '../Imgs/Books/ (2).jpg' },
+    { name: 'Pride and Prejudice', author: 'Jane Austen', price: '12.99', section: 'Most_read', category: 'Classic Romance', availability: true, imageUrl: '../Imgs/Books/ (3).jpg' },
+    { name: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: '15.99', section: 'Popular', category: 'Classic', availability: false, imageUrl: '../Imgs/Books/ (4).jpg' },
+    { name: 'Catcher in the Rye', author: 'J.D. Salinger', price: '11.99', section: 'Sales', category: 'Literary Fiction', availability: true, imageUrl: '../Imgs/Books/ (5).jpg' },
+    { name: 'The Hobbit', author: 'J.R.R. Tolkien', price: '10.99', section: 'Most_read', category: 'Fantasy', availability: false, imageUrl: '../Imgs/Books/ (6).jpg' },
+    { name: 'The Alchemist', author: 'Paulo Coelho', price: '18.99', section: 'Popular', category: 'Philosophical Fiction', availability: true, imageUrl: '../Imgs/Books/ (7).jpg' },
+    { name: 'The Little Prince', author: 'Antoine de Saint-Exupéry', price: '16.99', section: 'Sales', category: 'Children\'s Literature', availability: false, imageUrl: '../Imgs/Books/ (8).jpg' },
+    { name: 'Wuthering Heights', author: 'Emily Brontë', price: '13.99', section: 'Most_read', category: 'Classic Fiction', availability: true, imageUrl: '../Imgs/Books/ (9).jpg' },
+    { name: 'Jane Eyre', author: 'Charlotte Brontë', price: '17.99', section: 'Popular', category: 'Gothic Fiction', availability: false, imageUrl: '../Imgs/Books/ (10).jpg' },
+    { name: 'Crime and Punishment', author: 'Fyodor Dostoevsky', price: '15.99', section: 'None', category: 'Philosophical Novel', availability: true, imageUrl: '../Imgs/Books/ (34).jpg' },
+    { name: 'The Picture of Dorian Gray', author: 'Oscar Wilde', price: '16.99', section: 'None', category: 'Sales', availability: false, imageUrl: '../Imgs/Books/ (35).jpg' },
+    { name: 'The Great Gatsby', author: 'F. Scott Fitzgerald', price: '10.99', section: 'Popular', category: 'Popular', availability: true, imageUrl: '../Imgs/Books/ (4).jpg' },
+    { name: 'War and Peace', author: 'Leo Tolstoy', price: '13.99', section: 'Sales', category: 'Historical Fiction', availability: false, imageUrl: '../Imgs/Books/ (5).jpg' },
+    { name: 'Anna Karenina', author: 'Leo Tolstoy', price: '18.99', section: 'Most_read', category: 'Most_read', availability: true, imageUrl: '../Imgs/Books/ (6).jpg' },
+    { name: 'The Catcher in the Rye', author: 'J.D. Salinger', price: '11.99', section: 'Popular', category: 'Literary Fiction', availability: false, imageUrl: '../Imgs/Books/ (7).jpg' },
+    { name: 'The Brothers Karamazov', author: 'Fyodor Dostoevsky', price: '20.99', section: 'Sales', category: 'Philosophical Novel', availability: true, imageUrl: '../Imgs/Books/ (8).jpg' },
+    { name: 'Crime and Punishment', author: 'Fyodor Dostoevsky', price: '15.99', section: 'None', category: 'Philosophical Novel', availability: true, imageUrl: '../Imgs/Books/ (34).jpg' },
+    { name: 'The Picture of Dorian Gray', author: 'Oscar Wilde', price: '16.99', section: 'None', category: 'Gothic', availability: false, imageUrl: '../Imgs/Books/ (35).jpg' },
     
-    { name: 'The Art Of War', author: 'lotr', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (1).jpg', price: '$15.99', availability: true  },
-    { name: 'Master Techniques in Surgery', author: 'Mathimatics', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (2).jpg', price: '$15.99', availability: true  },
-    { name: "The Banker's Wife", author: 'lotr', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (3).jpg', price: '$15.99', availability: true  },
-    { name: 'The Edge of the Sea', author: 'lotr', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (4).jpg', price: '$15.99', availability: false  },
-    { name: 'The Subtle Art of not giving a fck', author: 'ahmed', category: 'comic', description: 'lotr novel description'  , imageUrl: 'Imgs/Books/ (5).jpg', price: '$15.99', availability: false  },
-    { name: 'The Ebb Tide', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (6).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'On the way to the Wedding', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (7).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Jets!Jets!Jets!', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (8).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Libraries of The Future', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (9).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    { name: 'Elon Musk', author: 'lotr', category: 'comic',imageUrl: 'Imgs/Books/ (10).jpg', description: 'lotr 2 novel description', price: '$17.99', availability: false  },
-    
-
-
-
 ];
 
 function displayNoBooksFound() {
@@ -73,8 +67,8 @@ function filterBooks() {
         const matchesSearchText = searchText ? 
             book.name.toLowerCase().includes(searchText) ||
             book.author.toLowerCase().includes(searchText) ||
-            book.category.toLowerCase().includes(searchText) ||
-            book.description.toLowerCase().includes(searchText) : true;
+            book.category.toLowerCase().includes(searchText) : true;
+            // book.description.toLowerCase().includes(searchText) 
         
         const matchesAvailability = showAvailableOnly ? book.availability : true;
 
@@ -119,7 +113,7 @@ window.onload = function() {
       
         const elementPosition = element.getBoundingClientRect().top; 
         window.scrollBy({
-            top: elementPosition - 120,
+            top: elementPosition - 160,
             behavior: 'smooth'
         });
         }, 350);
