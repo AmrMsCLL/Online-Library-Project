@@ -1,23 +1,22 @@
+
 const bookName = sessionStorage.getItem("name");
-const imageSrc = sessionStorage.getItem("imageSrc");
-const price = sessionStorage.getItem("price");
-const availability = sessionStorage.getItem("availability");
-const category = sessionStorage.getItem("category");
-const author = sessionStorage.getItem("author");
-const description = sessionStorage.getItem("description");
-
-
+const bookImageSrc = sessionStorage.getItem("imageSrc");
+const bookPrice = sessionStorage.getItem("price");
+const bookAvailability = sessionStorage.getItem("availability");
+const bookCategory = sessionStorage.getItem("category");
+const bookAuthor = sessionStorage.getItem("author");
+const bookDescription = sessionStorage.getItem("description");
 
 document.getElementById("name").textContent = bookName;
-document.getElementById("image").src = imageSrc;
-document.getElementById("price").textContent = price;
-document.getElementById("availability").textContent = availability;
-document.getElementById("category").textContent = ' - ' + category;
-document.getElementById("author").textContent = 'Written By ' + author;
-document.getElementById("description").innerHTML = description;
+document.getElementById("image").src = bookImageSrc;
+document.getElementById("price").textContent = bookPrice;
+document.getElementById("availability").textContent = bookAvailability;
+document.getElementById("category").textContent = ' - ' + bookCategory;
+document.getElementById("author").textContent = 'Written By ' + bookAuthor;
+document.getElementById("description").textContent = bookDescription;
 
 const ionicon = document.getElementById('ionicon');
-if(availability === 'Available'){
+if(bookAvailability === 'Available'){
     ionicon.setAttribute('name', 'checkmark-circle-outline')
     ionicon.classList.add('available')
 } else {
@@ -25,40 +24,86 @@ if(availability === 'Available'){
     ionicon.classList.add('unavailable')
 }
 
-document.body.style.backgroundImage = "url('" + imageSrc + "')";
+document.body.style.backgroundImage = "url('" + bookImageSrc + "')";
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.backgroundSize = "cover";
 
 function hideOrShowButton() {
     let isAdmin = false; // will create a method to get is admin later
     if(isAdmin){
-        document.getElementById('del').style.display = "flex";
-        document.getElementById('edit').style.display = "flex";
+        document.getElementById('delButton').style.display = "flex";
+        document.getElementById('editButton').style.display = "flex";
     } else {
-        document.getElementById('del').style.display = "none";
-        document.getElementById('edit').style.display = "none";
+        document.getElementById('delButton').style.display = "none";
+        document.getElementById('editButton').style.display = "none";
     }
-    
+}
+
+let borrowedBooks = [];
+
+function addBorrowedBook(name, price, imageUrl, author, category, availability, description) {
+    if (borrowedBooks.some(book => book.name === name)) {
+    } else {
+        loadBooksFromLocalStorage();
+
+        let book = {
+            name: name,
+            price: price,
+            imageUrl: imageUrl,
+            author: author,
+            category: category,
+            availability: availability,
+            description: description
+        };
+        borrowedBooks.push(book);
+        saveBooksToLocalStorage();
+    }
 }
 
 function borrowBookFunc() {
     // borrowing functionality or changing text or issuing a request // later
-    if(availability === 'Available'){
-        document.getElementById("borrowButton").textContent = 'Borrow';
+    if(bookAvailability === 'Available'){
+        document.getElementById("mainButton").textContent = 'Borrow';
     } else {
-        document.getElementById("borrowButton").textContent = 'Request';
+        document.getElementById("mainButton").textContent = 'Request';
     }
+    
+    document.getElementById("mainButton").addEventListener('click', function() {
+        addBorrowedBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription);
+        removeDuplicatesDirectlyInLocalStorage();
+    });
+}
 
-    let borrowedBooks = [
+function loadBooksFromLocalStorage() {
+    const storedBooks = localStorage.getItem('borrowedBooks');
+    if (storedBooks) {
+        borrowedBooks = JSON.parse(storedBooks);
+    }
+    return borrowedBooks;
+}
 
-    ];
+function saveBooksToLocalStorage() {
+    localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
+}
 
+function removeDuplicatesDirectlyInLocalStorage() {
+    const books = loadBooksFromLocalStorage();
+    const seenBooks = new Set();
+    const uniqueBooks = [];
 
+    books.forEach(book => {
+        if (!seenBooks.has(book.name)) {
+            seenBooks.add(book.name);
+            uniqueBooks.push(book);
+        } else {
+            console.log('Duplicate found and removed:', book.name);
+        }
+    });
 
-
-
+    // Save the unique books back to Local Storage
+    localStorage.setItem('borrowedBooks', JSON.stringify(uniqueBooks));
+    console.log('Updated Local Storage with unique books only.');
 }
 
 hideOrShowButton();
 borrowBookFunc();
-

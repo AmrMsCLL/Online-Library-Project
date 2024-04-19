@@ -79,16 +79,23 @@ function groupBooksByCategory(books) {
         console.error('books is undefined or not an array:', books);
         return {};
     }
-    return books.reduce((acc, book) => {
+    const booksByCategory = books.reduce((acc, book) => {
         if (!acc[book.category]) {
             acc[book.category] = [];
         }
         acc[book.category].push(book);
         return acc;
     }, {});
-}
 
-// let booksByCategory = groupBooksByCategory();
+    for (const category in booksByCategory) {
+        booksByCategory[category].sort((a, b) => a.name.localeCompare(b.name));
+    }
+    const sortedCategories = Object.keys(booksByCategory).sort().reduce(
+        (acc, key) => ({ ...acc, [key]: booksByCategory[key] }), {}
+    );
+    
+    return sortedCategories;
+}
 
 function displayBooksByCategory(booksByCategory) {
     const container = document.getElementById('library-container');
@@ -226,9 +233,9 @@ function scrollToHash() {
     setTimeout(() => {
         const element = document.getElementById(categoryToScroll);
         if (element) {
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - 160;
+            const elementPosition = element.getBoundingClientRect().top;
             window.scrollTo({
-                top: elementPosition,
+                top: elementPosition - 230,
                 behavior: 'smooth'
             });
         history.replaceState(null, null, ' ');

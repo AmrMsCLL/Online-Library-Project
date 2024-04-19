@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-*{
+
+* {
     font-family: 'Poppins';
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #181818;
     justify-content: center;
     align-items: center;
     margin: 0;
 }
+
 body::after {
     content: "";
     background: rgba(0, 0, 0, 0.3); 
@@ -21,9 +24,7 @@ body::after {
     z-index: -1; 
 }
 
-
-
-.wrap{
+.wrap {
     img{
         width: 260px;
         height: 90%;
@@ -42,50 +43,55 @@ body::after {
     height: 450px;
 }
 
-.BookCover{
+.BookCover {
     height: 100%;
     width: 290px;
 }
-.text-box{
+
+.text-box {
     height: 100%;
     width: calc(100% - 290px);
     color:#fff;
 }
 
-.text-box p{
+.text-box p {
     font-size: 16px;
 }
-.text-box h2{
+
+.text-box h2 {
     margin: 0 auto;
     position: relative;
     top: 0;
     font-size: 42px;
 }
-.text-box h3{
+
+.text-box h3 {
     font-size:34px;
     margin: 0 auto;
 }
-.CheckIcon{
+
+.CheckIcon {
     position: relative;
     top: 2px;
     font-size: 15px;
 }
 
-.available{
+.available {
     color: greenyellow;
 }
 
-.unavailable{
+.unavailable {
     color: red;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: left;
     gap: 20px;
     position:relative;
 }
-.btn1{
+
+.btn1 {
     position: relative;
     display: flex;
     justify-content: center;
@@ -99,14 +105,14 @@ body::after {
     color: #fff;
     cursor: pointer;
 }
-.center{
+
+.center {
     justify-content: center;
     display: flex;
     gap: 20px;
 }
 
-
-.BookCover .borrowButton{
+.BookCover .mainButton {
     position: relative;
     margin-top: 10px;
     width: 100%;
@@ -119,11 +125,12 @@ body::after {
     transition: .3s;
     cursor: pointer;
 }
-.BookCover .borrowButton:hover{
+
+.BookCover .mainButton:hover {
     background-color: aqua;
     box-shadow: 0 0 5px black;
 }
 
-#footer_reuseable{
+#footer_reuseable {
     width: 100%;
 }
