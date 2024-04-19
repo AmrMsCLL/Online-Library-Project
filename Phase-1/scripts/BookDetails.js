@@ -39,6 +39,9 @@ function hideOrShowButton() {
     }
 }
 
+// the following next funcitons were designed to display borrowed books in profile but was used with last seen 
+// will make them seperate and actually add a borrowed books place in profile 
+
 let borrowedBooks = [];
 
 function addBorrowedBook(name, price, imageUrl, author, category, availability, description) {
@@ -61,14 +64,13 @@ function addBorrowedBook(name, price, imageUrl, author, category, availability, 
 }
 
 function borrowBookFunc() {
-    // borrowing functionality or changing text or issuing a request // later
     if(bookAvailability === 'Available'){
         document.getElementById("mainButton").textContent = 'Borrow';
     } else {
         document.getElementById("mainButton").textContent = 'Request';
     }
     
-    document.getElementById("mainButton").addEventListener('click', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         addBorrowedBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription);
         removeDuplicatesDirectlyInLocalStorage();
     });
@@ -100,9 +102,7 @@ function removeDuplicatesDirectlyInLocalStorage() {
         }
     });
 
-    // Save the unique books back to Local Storage
     localStorage.setItem('borrowedBooks', JSON.stringify(uniqueBooks));
-    console.log('Updated Local Storage with unique books only.');
 }
 
 hideOrShowButton();

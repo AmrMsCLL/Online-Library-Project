@@ -117,7 +117,7 @@ function scrollToElement(elementId) {
                 top: elementPos - 60,
                 behavior: 'smooth'
             });
-        }, 150);
+        }, 0);
     }
 }
 

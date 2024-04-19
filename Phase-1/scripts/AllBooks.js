@@ -93,7 +93,7 @@ function groupBooksByCategory(books) {
     const sortedCategories = Object.keys(booksByCategory).sort().reduce(
         (acc, key) => ({ ...acc, [key]: booksByCategory[key] }), {}
     );
-    
+
     return sortedCategories;
 }
 
@@ -240,5 +240,5 @@ function scrollToHash() {
             });
         history.replaceState(null, null, ' ');
         }   
-    }, 350);
+    }, 150);
 }

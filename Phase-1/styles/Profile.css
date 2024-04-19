@@ -31,7 +31,12 @@ body{
     margin-bottom: 0;
 }
 
-
+.details {
+    padding-top: 10px;
+}
+.detailsPtag{
+    padding: 5px;
+}
 
 .userImage{
     display: flex;
