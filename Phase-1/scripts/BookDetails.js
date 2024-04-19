@@ -1,18 +1,20 @@
-let name = sessionStorage.getItem("name");
-let imageSrc = sessionStorage.getItem("imageSrc");
-let price = sessionStorage.getItem("price");
-let availability = sessionStorage.getItem("availability");
-let category = sessionStorage.getItem("category");
-let author = sessionStorage.getItem("author");
-// let description = sessionStorage.getItem("description");
+const bookName = sessionStorage.getItem("name");
+const imageSrc = sessionStorage.getItem("imageSrc");
+const price = sessionStorage.getItem("price");
+const availability = sessionStorage.getItem("availability");
+const category = sessionStorage.getItem("category");
+const author = sessionStorage.getItem("author");
+const description = sessionStorage.getItem("description");
 
-document.getElementById("name").textContent = name;
+
+
+document.getElementById("name").textContent = bookName;
 document.getElementById("image").src = imageSrc;
 document.getElementById("price").textContent = price;
 document.getElementById("availability").textContent = availability;
 document.getElementById("category").textContent = ' - ' + category;
 document.getElementById("author").textContent = 'Written By ' + author;
-// document.getElementById("desciption").textContent = description;
+document.getElementById("description").innerHTML = description;
 
 const ionicon = document.getElementById('ionicon');
 if(availability === 'Available'){
@@ -46,6 +48,15 @@ function borrowBookFunc() {
     } else {
         document.getElementById("borrowButton").textContent = 'Request';
     }
+
+    let borrowedBooks = [
+
+    ];
+
+
+
+
+
 }
 
 hideOrShowButton();

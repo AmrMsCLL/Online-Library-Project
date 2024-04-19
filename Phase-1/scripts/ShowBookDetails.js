@@ -12,7 +12,7 @@ document.body.addEventListener("click", function(event) {
         let availability = image.querySelector("img").getAttribute("availability");
         let category = image.querySelector("img").getAttribute("category");
         let author = image.querySelector("img").getAttribute("author");
-        // let desc = image.querySelector("img").getAttribute("description");
+        let description = image.querySelector("img").getAttribute("description");
 
         sessionStorage.setItem("name", name);
         sessionStorage.setItem("imageSrc", imageSrc);
@@ -20,7 +20,7 @@ document.body.addEventListener("click", function(event) {
         sessionStorage.setItem("availability", availability)
         sessionStorage.setItem("category", category)
         sessionStorage.setItem("author", author)
-        // sessionStorage.setItem("description", description)
+        sessionStorage.setItem("description", description)
         window.location.href = url;
     }
 });

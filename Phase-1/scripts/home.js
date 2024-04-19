@@ -34,6 +34,7 @@ function createBookCard(book) {
     img.setAttribute('author', book.author);
     img.setAttribute('availability', bookisavailablestring);
     img.setAttribute('category', book.category);
+    img.setAttribute('description', book.description)
     img.classList.add('book-image');
 
     const link = document.createElement('a');
