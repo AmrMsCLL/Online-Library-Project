@@ -16,10 +16,11 @@ body{
     background-color: black;
     z-index: 50;
     .profile{
+        background-color: rgba(255, 255, 255, .2);
         display: flex;
         border: 2px solid aqua;
         border-radius: 10px;
-        padding: 0 20px;
+        padding: 0 10px;
         align-items: center;
         justify-content: center;
         position: absolute;
@@ -30,11 +31,23 @@ body{
             width: 40px;
             height: 40px;
             margin-left: 10px;
+            transition: .3s;
         }
         a{
             text-decoration: none;
             color: #fff;
+            transition: .3s;
         }
+        transition: .3s;
+    }
+
+    .profile:hover{
+        background-color: rgba(255, 255, 255, .7);
+        a{
+        color: black;
+        font-weight: 700;
+        }
+        border: 2px solid rgb(4, 162, 162);
     }
 }
 .search {
