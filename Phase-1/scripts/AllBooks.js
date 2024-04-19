@@ -41,11 +41,11 @@ function filterBooks() {
 
     let filteredBooks = library.filter(book => {
         const matchesSearchText = searchText ? 
-            book.name.toLowerCase().includes(searchText) ||
-            book.author.toLowerCase().includes(searchText) ||
-            book.category.toLowerCase().includes(searchText) : true;
-            // book.description.toLowerCase().includes(searchText) 
-        
+        book.name.toLowerCase().includes(searchText) ||
+        book.author.toLowerCase().includes(searchText) ||
+        book.category.toLowerCase().includes(searchText) : true;
+        // book.description.toLowerCase().includes(searchText) 
+            
         const matchesAvailability = showAvailableOnly ? book.availability : true;
 
         return matchesSearchText && matchesAvailability;
@@ -73,36 +73,6 @@ function updateUrlAndSearch() {
     }
     filterBooks(searchText);
 }
-
-window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get('search');
-   
-    const currentUrl = window.location.href;
-    const url = new URL(currentUrl);
-    const hash = url.hash;
-     
-    if (hash) {
-        setTimeout(() => {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-      
-        const elementPosition = element.getBoundingClientRect().top; 
-        window.scrollBy({
-            top: elementPosition - 160,
-            behavior: 'smooth'
-        });
-        }, 350);
-    }
-
-    if (searchQuery) {
-        document.getElementById('search-input').value = searchQuery;
-        filterBooks();
-    } 
-    else {
-        displayBooksByCategory(groupBooksByCategory(library))
-    }
-};
 
 function groupBooksByCategory(books) {
     if (!books || !Array.isArray(books)) {
@@ -199,7 +169,18 @@ function displayBooksByCategory(booksByCategory) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+
+    const currentUrl = window.location.href;
+    const url = new URL(currentUrl);
+    const hash = url.hash;
+
     const availableCheckbox = document.getElementById('available-only-checkbox');
+
+    const availableSearchBar = document.getElementById('search-input')
+    
+    
     if (availableCheckbox) {
         availableCheckbox.addEventListener('change', () => {
             if (availableCheckbox.checked) {
@@ -210,17 +191,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }   
 
-    const availableSearchBar = document.getElementById('search-input')
-    if (availableSearchBar) {
-        availableSearchBar.addEventListener('input', updateUrlAndSearch)
-        updateUrlAndSearch();
-    }
-
     if (Array.isArray(library)) {
         const groupedBooks = groupBooksByCategory(library);
         displayBooksByCategory(groupedBooks);
     } else {
         console.error('Library is not loaded or not an array:', library);
     }
+
+    if (availableSearchBar) {
+            availableSearchBar.addEventListener('input', updateUrlAndSearch)
+            updateUrlAndSearch();
+    }
+
+    if (searchQuery) {
+        document.getElementById('search-input').value = searchQuery;
+        filterBooks();
+    } 
+    else if (hash) {
+        if (window.location.hash) {
+            scrollToHash();
+        }
+    }
+    else {
+        displayBooksByCategory(groupBooksByCategory(library))
+    }
 });
-  
+
+function scrollToHash() {
+        const hash = window.location.hash.substring(1);
+        const params = new URLSearchParams(hash);
+        const categoryToScroll = params.get('Category');
+    setTimeout(() => {
+        const element = document.getElementById(categoryToScroll);
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - 160;
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        history.replaceState(null, null, ' ');
+        }   
+    }, 350);
+}
