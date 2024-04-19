@@ -127,6 +127,8 @@ function displayBooksByCategory(booksByCategory) {
             img.setAttribute('availability', varAvailable);
             img.setAttribute('category', book.category);
             img.setAttribute('author', book.author);
+            img.setAttribute('description', book.description)
+
             img.classList.add('book-image');
             
             const link = document.createElement('a');
