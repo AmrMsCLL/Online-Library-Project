@@ -21,18 +21,19 @@ body::after {
     z-index: -1; 
 }
 
-img{
-    width: 260px;
-    height: 90%;
-    /* float: left; */
-    border: 3px solid #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px aqua;
-    margin: 0 15px;
 
-}
 
 .wrap{
+    img{
+        width: 260px;
+        height: 90%;
+        /* float: left; */
+        border: 3px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px aqua;
+        margin: 0 15px;
+    
+    }
     display: flex;
     flex-direction: row;
     align-items: center;
