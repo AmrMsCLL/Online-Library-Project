@@ -44,9 +44,11 @@ body::after {
 
 .BookCover{
     height: 100%;
+    width: 290px;
 }
 .text-box{
     height: 100%;
+    width: calc(100% - 290px);
     color:#fff;
 }
 
