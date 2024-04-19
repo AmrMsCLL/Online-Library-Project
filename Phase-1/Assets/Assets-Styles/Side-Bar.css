@@ -2,11 +2,6 @@
 *{
     font-family: 'Poppins';
 }
-
-body{
-    padding-top: 30px;
-}
-
 .navbar {
     height: 70px;
     position: fixed;

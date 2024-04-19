@@ -152,7 +152,7 @@ function displayBooksByCategory(booksByCategory) {
             // bookElement.appendChild(bookDescription);
 
             const bookAvailability = document.createElement('p');
-            bookAvailability.textContent = ` Status: ${book.availability ? 'Available' : 'Unavailable'}`;
+            bookAvailability.textContent = ` ${book.availability ? 'Available' : 'Unavailable'}`;
             if(book.availability){
                 bookAvailability.classList.add('available-true');
             } else {
