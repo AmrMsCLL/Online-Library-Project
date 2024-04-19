@@ -8,13 +8,34 @@ body{
 }
 
 .navbar {
-    height: 50px;
+    height: 70px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     background-color: black;
     z-index: 50;
+    .profile{
+        display: flex;
+        border: 2px solid aqua;
+        border-radius: 10px;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 70%;
+        top: 10px;
+        right: 30px;
+        img{
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+    }
 }
 .search {
     display: inline;
