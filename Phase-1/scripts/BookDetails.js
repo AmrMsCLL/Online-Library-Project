@@ -45,22 +45,24 @@ function hideOrShowButton() {
 let borrowedBooks = [];
 
 function addBorrowedBook(name, price, imageUrl, author, category, availability, description) {
-    if (borrowedBooks.some(book => book.name === name)) {
-    } else {
-        loadBooksFromLocalStorage();
+    loadFromLocalStorage("LastSeenBooks");
 
-        let book = {
-            name: name,
-            price: price,
-            imageUrl: imageUrl,
-            author: author,
-            category: category,
-            availability: availability,
-            description: description
-        };
-        borrowedBooks.push(book);
-        saveBooksToLocalStorage();
+    const existingBookIndex = borrowedBooks.findIndex(book => book.name === name);
+    if (existingBookIndex !== -1) {
+        borrowedBooks.splice(existingBookIndex, 1);
     }
+    let book = {
+        name: name,
+        price: price,
+        imageUrl: imageUrl,
+        author: author,
+        category: category,
+        availability: availability,
+        description: description
+    };
+
+    borrowedBooks.push(book);
+    saveToLocalStorage("LastSeenBooks");
 }
 
 function borrowBookFunc() {
@@ -69,27 +71,22 @@ function borrowBookFunc() {
     } else {
         document.getElementById("mainButton").textContent = 'Request';
     }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        addBorrowedBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription);
-        removeDuplicatesDirectlyInLocalStorage();
-    });
 }
 
-function loadBooksFromLocalStorage() {
-    const storedBooks = localStorage.getItem('borrowedBooks');
+function loadFromLocalStorage(localStorageName) {
+    const storedBooks = localStorage.getItem(localStorageName);
     if (storedBooks) {
         borrowedBooks = JSON.parse(storedBooks);
     }
     return borrowedBooks;
 }
 
-function saveBooksToLocalStorage() {
-    localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
+function saveToLocalStorage(localStorageName) {
+    localStorage.setItem(localStorageName, JSON.stringify(borrowedBooks));
 }
 
-function removeDuplicatesDirectlyInLocalStorage() {
-    const books = loadBooksFromLocalStorage();
+function rmvDupesInLocalStorage(localStorageName) {
+    const books = loadFromLocalStorage("LastSeenBooks");
     const seenBooks = new Set();
     const uniqueBooks = [];
 
@@ -101,9 +98,13 @@ function removeDuplicatesDirectlyInLocalStorage() {
             console.log('Duplicate found and removed:', book.name);
         }
     });
-
-    localStorage.setItem('borrowedBooks', JSON.stringify(uniqueBooks));
+    localStorage.setItem(localStorageName, JSON.stringify(uniqueBooks));
 }
 
 hideOrShowButton();
 borrowBookFunc();
+
+document.addEventListener('DOMContentLoaded', function() {
+    addBorrowedBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription);
+    rmvDupesInLocalStorage("LastSeenBooks");
+});

@@ -1,5 +1,5 @@
-function loadBooksFromLocalStorage() {
-    const storedBooks = localStorage.getItem('borrowedBooks');
+function loadBooksFromLocalStorage(localStorageName) {
+    const storedBooks = localStorage.getItem(localStorageName);
     if (storedBooks) {
         borrowedBooks = JSON.parse(storedBooks);
         borrowedBooks.reverse();
@@ -102,6 +102,6 @@ function displayLastSeen(books){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const latestBooks = loadBooksFromLocalStorage();
+    const latestBooks = loadBooksFromLocalStorage("LastSeenBooks");
     displayLastSeen(latestBooks);
 });
