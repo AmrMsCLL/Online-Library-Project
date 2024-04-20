@@ -96,6 +96,42 @@ function groupBooksByCategory(books) {
 
     return sortedCategories;
 }
+// remember to add filtriation when pressed on // 
+function displayCategorySlider(){
+    const categories = Object.keys(groupBooksByCategory(library));
+    
+    const categorySliderContainer = document.getElementById('categories_sliderz_container');
+    categorySliderContainer.innerHTML = '';
+
+    const prevButoon = document.createElement('button');
+    prevButoon.textContent = 'chevron_left';
+    prevButoon.id = 'prev';
+    prevButoon.classList.add('slider_Button', 'material-symbols-rounded')
+    prevButoon.setAttribute('onclick', 'initiateswipe()');
+    
+    categorySliderContainer.appendChild(prevButoon);
+
+    const categoriesList = document.createElement('ul')
+    categoriesList.classList.add('slider', 'categories')
+    
+    categories.forEach(category => {
+        const categoryLi = document.createElement('li');
+        const categoryLink = document.createElement('a');
+        categoryLink.href = `#${category}`;
+        categoryLink.textContent = category;
+        categoryLi.appendChild(categoryLink);
+        categoriesList.appendChild(categoryLi);
+    });
+    categorySliderContainer.appendChild(categoriesList)
+    
+    const nextButton = document.createElement('button');
+    nextButton.textContent = 'chevron_right';
+    nextButton.id = 'next';
+    nextButton.classList.add('slider_Button', 'material-symbols-rounded')
+    nextButton.setAttribute('onclick', 'initiateswipe()');
+
+    categorySliderContainer.appendChild(nextButton);
+}
 
 function displayBooksByCategory(booksByCategory) {
     const container = document.getElementById('library-container');
@@ -177,6 +213,7 @@ function displayBooksByCategory(booksByCategory) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    displayCategorySlider();
     initiateswipe();
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
