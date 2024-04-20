@@ -25,7 +25,7 @@ function validateForm() {
         const username = this.querySelector('#userid').value;
         const email = this.querySelector('#emailid').value;
         const password = this.querySelector('#passid').value;
-        const confirmPassword = this.querySelectorAll('#conpassid').value;
+        const confirmPassword = this.querySelector('#conpassid').value;
         const roleAdmin = this.querySelector('#admin').checked;
         const roleUser = this.querySelector('#user').checked;
         const chkBoxNews = this.querySelector('#chkboxnews').checked;
