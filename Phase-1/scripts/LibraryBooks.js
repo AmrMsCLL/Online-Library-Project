@@ -12,6 +12,16 @@ export const library = [
   },
   {
     section: "Popular",
+    name: "GayNiggers From OuterSpace",
+    price: "$999.99",
+    imageUrl: "../Imgs/Books/(92).jpg",
+    author: "Omar Mahfouz",
+    category: "Fiction",
+    availability: true,
+    description: "Extraterrestrial beings travel the galaxy to free men oppressed by females to make way for an entirely-homosexual society."
+  },
+  {
+    section: "Popular",
     name: "Master Techniques in Surgery",
     price: "$62.99",
     imageUrl: "../Imgs/Books/ (2).jpg",
@@ -594,7 +604,7 @@ export const library = [
       "An exhaustive collection of Shakespeare's plays, sonnets, and poems, offering a comprehensive view of his profound genius in English literature.",
   },
   {
-    section: "None",
+    section: "Most Read",
     name: "The Catcher in the Rye",
     price: "$45.99",
     imageUrl: "../Imgs/Books/(59).jpg",
@@ -605,7 +615,7 @@ export const library = [
       "A novel about teenage rebellion and alienation, following Holden Caulfield's experiences in New York City after being expelled from prep school.",
   },
   {
-    section: "None",
+    section: "Sale",
     name: "1984",
     price: "$39.99",
     imageUrl: "../Imgs/Books/(60).jpg",
@@ -616,7 +626,7 @@ export const library = [
       "A dystopian novel that explores the dangers of totalitarianism, depicting a society under omnipresent government surveillance and public manipulation.",
   },
   {
-    section: "None",
+    section: "Sale",
     name: "To Kill a Mockingbird",
     price: "$50.99",
     imageUrl: "../Imgs/Books/(61).jpg",
@@ -627,7 +637,7 @@ export const library = [
       "A powerful novel that explores themes of racial injustice, moral growth, and the loss of innocence through the eyes of young Scout Finch.",
   },
   {
-    section: "None",
+    section: "Sale",
     name: "The Great Gatsby",
     price: "$34.99",
     imageUrl: "../Imgs/Books/(62).jpg",
@@ -638,7 +648,7 @@ export const library = [
       "A novel set in the Jazz Age that critiques the American Dream through the tragic story of Jay Gatsby's love for Daisy Buchanan.",
   },
   {
-    section: "None",
+    section: "Sale",
     name: "Pride and Prejudice",
     price: "$40.99",
     imageUrl: "../Imgs/Books/(63).jpg",
@@ -971,16 +981,6 @@ export const library = [
     availability: true,
     description:
       "A comprehensive account of the history of Nazi Germany, from Hitler's rise to power to the collapse of the Third Reich, providing insights into the key events and personalities of this tumultuous period.",
-  },
-  {
-    section: "None",
-    name: "GayNiggers From OuterSpace",
-    price: "$999.99",
-    imageUrl: "../Imgs/Books/(92).jpg",
-    author: "Omar Mahfouz",
-    category: "Fiction",
-    availability: true,
-    description: "Extraterrestrial beings travel the galaxy to free men oppressed by females to make way for an entirely-homosexual society."
   },
 ];
 

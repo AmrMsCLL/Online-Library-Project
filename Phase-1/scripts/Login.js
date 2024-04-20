@@ -22,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (password.length < 8 || password.length > 20) {
             valid = false;
-            errorMessage += "Password must be between 8 and 20 characters.\n";
-            
+            errorMessage += "Password must be between 8 and 20 characters.\n";   
         }
 
         // pass comparer with passwords stored in db function here // 

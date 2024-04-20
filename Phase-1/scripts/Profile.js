@@ -1,10 +1,10 @@
 function loadBooksFromLocalStorage(localStorageName) {
     const storedBooks = localStorage.getItem(localStorageName);
     if (storedBooks) {
-        borrowedBooks = JSON.parse(storedBooks);
-        borrowedBooks.reverse();
+        Books = JSON.parse(storedBooks);
+        Books.reverse();
     }
-    return borrowedBooks;
+    return Books;
 }
 
 function displayLastSeen(books){
@@ -104,4 +104,18 @@ function displayLastSeen(books){
 document.addEventListener('DOMContentLoaded', function() {
     const latestBooks = loadBooksFromLocalStorage("LastSeenBooks");
     displayLastSeen(latestBooks);
+
+    const borrowedBooks = loadBooksFromLocalStorage("BorrowedBooks");
+    document.getElementById('borrowNum').textContent = borrowedBooks.length;
+
+    const readBooks = loadBooksFromLocalStorage("ReadBooks");
+    document.getElementById('readNum').textContent = readBooks.length;
+
+    const pointsPerReadBook = 2;
+    const pointsPerBorrowedBook = 1;
+    const recentActivityBonus = latestBooks.length * 0.5;
+
+    const rp = readBooks.length * pointsPerReadBook + (borrowedBooks.length * pointsPerBorrowedBook) + recentActivityBonus;
+    
+    document.getElementById('rewardPoints').textContent = rp;
 });

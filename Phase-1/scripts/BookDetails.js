@@ -1,4 +1,3 @@
-
 const bookName = sessionStorage.getItem("name");
 const bookImageSrc = sessionStorage.getItem("imageSrc");
 const bookPrice = sessionStorage.getItem("price");
@@ -39,17 +38,13 @@ function hideOrShowButton() {
     }
 }
 
-// the following next funcitons were designed to display borrowed books in profile but was used with last seen 
-// will make them seperate and actually add a borrowed books place in profile 
+function addBook(name, price, imageUrl, author, category, availability, description, localStorageName) {
 
-let borrowedBooks = [];
+    let Books = loadFromLocalStorage(localStorageName);
 
-function addBorrowedBook(name, price, imageUrl, author, category, availability, description) {
-    loadFromLocalStorage("LastSeenBooks");
-
-    const existingBookIndex = borrowedBooks.findIndex(book => book.name === name);
+    const existingBookIndex = Books.findIndex(book => book.name === name);
     if (existingBookIndex !== -1) {
-        borrowedBooks.splice(existingBookIndex, 1);
+        Books.splice(existingBookIndex, 1);
     }
     let book = {
         name: name,
@@ -61,32 +56,32 @@ function addBorrowedBook(name, price, imageUrl, author, category, availability, 
         description: description
     };
 
-    borrowedBooks.push(book);
-    saveToLocalStorage("LastSeenBooks");
+    Books.push(book);
+    saveToLocalStorage(Books, localStorageName);
 }
 
 function borrowBookFunc() {
+    // borrowing system
     if(bookAvailability === 'Available'){
-        document.getElementById("mainButton").textContent = 'Borrow';
+        document.getElementById("borrowButton").textContent = 'Borrow';
     } else {
-        document.getElementById("mainButton").textContent = 'Request';
+        document.getElementById("borrowButton").textContent = 'Request';
     }
+
+    document.getElementById('readButton').textContent = "Read Now!";
 }
 
 function loadFromLocalStorage(localStorageName) {
     const storedBooks = localStorage.getItem(localStorageName);
-    if (storedBooks) {
-        borrowedBooks = JSON.parse(storedBooks);
-    }
-    return borrowedBooks;
+    return storedBooks ? JSON.parse(storedBooks) : [];
 }
 
-function saveToLocalStorage(localStorageName) {
-    localStorage.setItem(localStorageName, JSON.stringify(borrowedBooks));
+function saveToLocalStorage(books, localStorageName) {
+    localStorage.setItem(localStorageName, JSON.stringify(books));
 }
 
 function rmvDupesInLocalStorage(localStorageName) {
-    const books = loadFromLocalStorage("LastSeenBooks");
+    let books = loadFromLocalStorage(localStorageName);
     const seenBooks = new Set();
     const uniqueBooks = [];
 
@@ -98,13 +93,54 @@ function rmvDupesInLocalStorage(localStorageName) {
             console.log('Duplicate found and removed:', book.name);
         }
     });
-    localStorage.setItem(localStorageName, JSON.stringify(uniqueBooks));
+    saveToLocalStorage(uniqueBooks, localStorageName);
 }
+
+let isBorrowed = false;
+
+document.addEventListener('DOMContentLoaded', function() {
+    addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "LastSeenBooks");
+    rmvDupesInLocalStorage("LastSeenBooks");
+    if (isBorrowed) {
+        document.getElementById('borrowButton').style.display = 'none';
+        document.getElementById('readButton').style.display = 'inline-block';
+    } else {    
+        document.getElementById('borrowButton').style.display = 'inline-block';
+        document.getElementById('readButton').style.display = 'none';
+    }
+});
+console.log(isBorrowed);
+document.getElementById('borrowButton').addEventListener('click', function() {
+    if (bookAvailability === 'Available') {
+        addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "BorrowedBooks");
+        rmvDupesInLocalStorage("BorrowedBooks");
+        alert('Book Has Been Added To Borrowed Books List');
+        isBorrowed = true;
+    } else {
+        addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "ReadBooks");
+        alert('Book Has Been Added To Requested Books List');
+        isBorrowed = false;
+    }
+    isBorrowedfunc();
+});
+
+function isBorrowedfunc(){
+    console.log(isBorrowed);
+    if (isBorrowed) {
+        document.getElementById('borrowButton').style.display = 'none';
+        document.getElementById('readButton').style.display = 'inline-block';
+    } else {    
+        document.getElementById('borrowButton').style.display = 'inline-block';
+        document.getElementById('readButton').style.display = 'none';
+    }
+}
+
+document.getElementById('readButton').addEventListener('click', function() { 
+    // cant read books that are not borrowed so needs editing
+    addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "ReadBooks");
+    rmvDupesInLocalStorage("ReadBooks");
+    alert('No Book Reading Functionality Yet!! SRY')
+});
 
 hideOrShowButton();
 borrowBookFunc();
-
-document.addEventListener('DOMContentLoaded', function() {
-    addBorrowedBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription);
-    rmvDupesInLocalStorage("LastSeenBooks");
-});
