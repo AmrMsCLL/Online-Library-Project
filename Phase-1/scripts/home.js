@@ -143,11 +143,27 @@ function hoverEffect() {
     });
 }
 
+function loadIsLoggedIn() {
+    const logData = sessionStorage.getItem('isLoggedIn');
+    return logData ? JSON.parse(logData) : [];
+}
+
+function loadIsLoggedInRM() {
+    const logData = localStorage.getItem('isLoggedIn');
+    return logData ? JSON.parse(logData) : [];
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     displayHomeSections(groupHomeSections(library));
     initiateswipe();
     hoverEffect();
     
+    const logggedInData = loadIsLoggedIn();
+    const logggedInDataRM = loadIsLoggedInRM();
+    if (logggedInData === true || logggedInDataRM){
+        document.getElementById('join').remove();
+    }
+
     const availGetStarted = document.getElementById('startedaction');
     if (availGetStarted) {
         availGetStarted.addEventListener('click', function() {

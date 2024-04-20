@@ -14,71 +14,81 @@ function toggleIcons() {
     });
 }
 
+function loadUserData() {
+    const data = localStorage.getItem('RegisteredUsers');
+    return data ? JSON.parse(data) : [];
+}
 
+function saveUserData(data) {
+    localStorage.setItem('RegisteredUsers', JSON.stringify(data));
+}
 
-function validateForm() { 
+function handleSubmit() {
     const form = document.querySelector('.content');
-    
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const username = this.querySelector('#userid').value;
-        const email = this.querySelector('#emailid').value;
-        const password = this.querySelector('#passid').value;
-        const confirmPassword = this.querySelector('#conpassid').value;
-        const roleAdmin = this.querySelector('#admin').checked;
-        const roleUser = this.querySelector('#user').checked;
-        const chkBoxNews = this.querySelector('#chkboxnews').checked;
-        
-        let valid = true;
-        let errorMessage = "";
+        const username = document.getElementById('userid').value.trim();
+        const email = document.getElementById('emailid').value.trim();
+        const password = document.getElementById('passid').value;
+        const confirmPassword = document.getElementById('conpassid').value;
+        const isAdmin = document.getElementById('admin').checked;
+        const isUser = document.getElementById('user').checked;
 
+        let errorMessage = "";
         if (!username) {
-            valid = false;
             errorMessage += "Username cannot be empty.\n";
         }
-
         if (!email.includes('@')) {
-            valid = false;
             errorMessage += "Please enter a valid email.\n";
         }
 
-        if (password.length < 8 || password.length > 20) {
-            valid = false;
-            errorMessage += "Password must be between 8 and 20 characters.\n";
-            
-        }
-
+        
         // chr/num/symbol inclusion function here
         // for(pass) chk chr num symbol
 
-        if (password != confirmPassword) {
-            valid = false;
+        if (password.length < 8 || password.length > 20) {
+            errorMessage += "Password must be between 8 and 20 characters.\n";
+        }
+        if (password !== confirmPassword) {
             errorMessage += "Passwords do not match.\n";
         }
-
-        if (!roleAdmin && !roleUser) {
-            valid = false;
-            errorMessage += "Please select a role.\n";
+        if (!isAdmin && !isUser) {
+            errorMessage += "Please select a role (Admin or User).\n";
         }
-
+        
         // if (chkBoxNews){
         //     sendToeEmail(); Doesnt Exist
         // }
-        
-        // later going to check if email / username are already contained in a db of stored users phase 3 i guess ?
 
-        if (valid) {
-            console.log('111');
-            this.submit();
-        } else {
+        if (errorMessage) {
             alert(errorMessage);
+            return;
         }
+
+        const userData = loadUserData();
+        const isAlrdyReg = userData.some(user => user.username === username || user.email === email);
+        if (isAlrdyReg) {
+            alert('A user with the same username or email already exists.');
+            return;
+        }
+
+        const newUser = {
+            username,
+            email,
+            password,
+            role: isAdmin ? 'Admin' : 'User'
+        };
+
+        userData.push(newUser);
+        saveUserData(userData);
+        alert('User registered successfully.');
+        window.location.replace('../HTML/Login.html');
     });
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    toggleIcons();  
-    validateForm();
+    toggleIcons();
+    handleSubmit(); 
 });
 
