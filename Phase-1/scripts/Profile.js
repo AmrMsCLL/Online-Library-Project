@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const readBooks = loadBooksFromLocalStorage("ReadBooks");
     document.getElementById('readNum').textContent = readBooks.length;
 
-    const pointsPerReadBook = 2;
-    const pointsPerBorrowedBook = 1;
+    const pointsPerReadBook = 150;
+    const pointsPerBorrowedBook = 200;
     const recentActivityBonus = latestBooks.length * 0.5;
 
     const rp = readBooks.length * pointsPerReadBook + (borrowedBooks.length * pointsPerBorrowedBook) + recentActivityBonus;
