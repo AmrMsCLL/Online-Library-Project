@@ -96,7 +96,13 @@ function groupBooksByCategory(books) {
 
     return sortedCategories;
 }
-// remember to add filtriation when pressed on // 
+
+function displayBooksForCategory(category) {
+    const filteredBooks = library.filter(book => book.category === category);
+    const booksByCategory = { [category]: filteredBooks };
+    displayBooksByCategory(booksByCategory);
+}
+
 function displayCategorySlider(){
     const categories = Object.keys(groupBooksByCategory(library));
     
@@ -106,6 +112,7 @@ function displayCategorySlider(){
     const prevButoon = document.createElement('button');
     prevButoon.textContent = 'chevron_left';
     prevButoon.id = 'prev';
+    prevButoon.type = 'button'
     prevButoon.classList.add('slider_Button', 'material-symbols-rounded')
     prevButoon.setAttribute('onclick', 'initiateswipe()');
     
@@ -117,8 +124,14 @@ function displayCategorySlider(){
     categories.forEach(category => {
         const categoryLi = document.createElement('li');
         const categoryLink = document.createElement('a');
-        categoryLink.href = `#${category}`;
+        categoryLink.href = `#`;
         categoryLink.textContent = category;
+        categoryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            const filteredBooks = library.filter(book => book.category === category);
+            const booksByCategory = { [category]: filteredBooks };
+            displayBooksByCategory(booksByCategory);
+        });
         categoryLi.appendChild(categoryLink);
         categoriesList.appendChild(categoryLi);
     });
@@ -127,6 +140,7 @@ function displayCategorySlider(){
     const nextButton = document.createElement('button');
     nextButton.textContent = 'chevron_right';
     nextButton.id = 'next';
+    prevButoon.type = 'button'
     nextButton.classList.add('slider_Button', 'material-symbols-rounded')
     nextButton.setAttribute('onclick', 'initiateswipe()');
 
@@ -189,12 +203,7 @@ function displayBooksByCategory(booksByCategory) {
             const bookAuthor = document.createElement('p');
             bookAuthor.textContent = `Author: ${book.author}`;
             bookAuthor.classList.add('book-author');
-            bookElement.appendChild(bookAuthor);
-
-            // const bookDescription = document.createElement('p');
-            // bookDescription.textContent = book.description;
-            // bookDescription.classList.add('book-description');
-            // bookElement.appendChild(bookDescription);
+            bookElement.appendChild(bookAuthor);;
 
             const bookAvailability = document.createElement('p');
             bookAvailability.textContent = ` ${book.availability ? 'Available' : 'Unavailable'}`;
