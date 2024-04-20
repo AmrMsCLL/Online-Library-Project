@@ -2,7 +2,7 @@ export const library = [
   {
     section: "Popular",
     name: "The Art Of War",
-    price: "$69.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (1).jpg",
     author: "Sun Tzu",
     category: "Military",
@@ -13,7 +13,7 @@ export const library = [
   {
     section: "Popular",
     name: "Master Techniques in Surgery",
-    price: "$62.99",
+    price: "$12.99",
     imageUrl: "../Imgs/Books/ (2).jpg",
     author: "Various Authors",
     category: "Medical",
@@ -24,7 +24,7 @@ export const library = [
   {
     section: "Popular",
     name: "The Banker's Wife",
-    price: "$79.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (3).jpg",
     author: "Cristina Alger",
     category: "Thriller",
@@ -35,7 +35,7 @@ export const library = [
   {
     section: "Popular",
     name: "The Edge of the Sea",
-    price: "$69.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (4).jpg",
     author: "Rachel Carson",
     category: "Science",
@@ -46,7 +46,7 @@ export const library = [
   {
     section: "Popular",
     name: "The Subtle Art of not giving a fuck",
-    price: "$99.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (5).jpg",
     author: "Mark Manson",
     category: "Self Help",
@@ -57,7 +57,7 @@ export const library = [
   {
     section: "Popular",
     name: "The Ebb Tide",
-    price: "$74.99",
+    price: "$44.99",
     imageUrl: "../Imgs/Books/ (6).jpg",
     author: "Beverly Lewis",
     category: "Fiction",
@@ -68,7 +68,7 @@ export const library = [
   {
     section: "Popular",
     name: "On the way to the Wedding",
-    price: "$78.99",
+    price: "$18.99",
     imageUrl: "../Imgs/Books/ (7).jpg",
     author: "Julia Quinn",
     category: "Romance",
@@ -79,7 +79,7 @@ export const library = [
   {
     section: "Popular",
     name: "Jets!Jets!Jets!",
-    price: "$59.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (8).jpg",
     author: "Peter March",
     category: "Technology",
@@ -90,7 +90,7 @@ export const library = [
   {
     section: "Popular",
     name: "Libraries of The Future",
-    price: "$49.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (9).jpg",
     author: "Leland M. Smith",
     category: "Technology",
@@ -101,7 +101,7 @@ export const library = [
   {
     section: "Popular",
     name: "Elon Musk",
-    price: "$39.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (10).jpg",
     author: "Ashlee Vance",
     category: "Biography",
@@ -134,7 +134,7 @@ export const library = [
   {
     section: "Popular",
     name: "The secret Language Of Birthdays",
-    price: "$89.99",
+    price: "$39.99",
     imageUrl: "../Imgs/Books/ (13).jpg",
     author: "Gary Goldschneider",
     category: "Science",
@@ -145,7 +145,7 @@ export const library = [
   {
     section: "Popular",
     name: "Red White Royal Blue",
-    price: "$69.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (14).jpg",
     author: "Casey McQuiston",
     category: "Romance",
@@ -156,7 +156,7 @@ export const library = [
   {
     section: "Popular",
     name: "Game Of Thrones",
-    price: "$75.99",
+    price: "$25.99",
     imageUrl: "../Imgs/Books/ (15).jpg",
     author: "George R. R. Martin",
     category: "Fantasy",
@@ -167,7 +167,7 @@ export const library = [
   {
     section: "Popular",
     name: "Nothing",
-    price: "$110.99",
+    price: "$10.99",
     imageUrl: "../Imgs/Books/ (16).jpg",
     author: "Janne Teller",
     category: "Philosophical Fiction",
@@ -211,7 +211,7 @@ export const library = [
   {
     section: "Sale",
     name: "The Duke and I",
-    price: "$70.99",
+    price: "$30.99",
     imageUrl: "../Imgs/Books/ (20).jpg",
     author: "Julia Quinn",
     category: "Romance",
@@ -233,7 +233,7 @@ export const library = [
   {
     section: "Sale",
     name: "Nothing Part.2",
-    price: "$89.99",
+    price: "$35.99",
     imageUrl: "../Imgs/Books/ (22).jpg",
     author: "Janne Teller",
     category: "Philosophical Fiction",
@@ -244,7 +244,7 @@ export const library = [
   {
     section: "Sale",
     name: "Artie And The WolfMoon",
-    price: "$87.99",
+    price: "$17.99",
     imageUrl: "../Imgs/Books/ (23).jpg",
     author: "Olivia Stephens",
     category: "Graphic Novel",
@@ -266,7 +266,7 @@ export const library = [
   {
     section: "Sale",
     name: "Control Your Mind",
-    price: "$44.99",
+    price: "$4.99",
     imageUrl: "../Imgs/Books/ (25).jpg",
     author: "Various Authors",
     category: "Self Help",
@@ -277,7 +277,7 @@ export const library = [
   {
     section: "Sale",
     name: "Landing Beaches",
-    price: "$29.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (27).jpg",
     author: "George Forty",
     category: "History",
@@ -288,7 +288,7 @@ export const library = [
   {
     section: "Sale",
     name: "Fifty Shades Of Grey",
-    price: "$149.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (28).jpg",
     author: "E.L. James",
     category: "Romance",
@@ -299,7 +299,7 @@ export const library = [
   {
     section: "Sale",
     name: "Romancing Mister Bridgerton",
-    price: "$39.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (29).jpg",
     author: "Julia Quinn",
     category: "Romance",
@@ -310,7 +310,7 @@ export const library = [
   {
     section: "Sale",
     name: "Don't Believe Everything You Think",
-    price: "$34.99",
+    price: "$14.99",
     imageUrl: "../Imgs/Books/ (30).jpg",
     author: "Joseph Nguyen",
     category: "Self Help",
@@ -332,7 +332,7 @@ export const library = [
   {
     section: "Sale",
     name: "A Sir Philip con amor",
-    price: "$87.99",
+    price: "$27.99",
     imageUrl: "../Imgs/Books/ (32).jpg",
     author: "Julia Quinn",
     category: "Romance",
@@ -343,7 +343,7 @@ export const library = [
   {
     section: "Sale",
     name: "Yours Truly",
-    price: "$56.99",
+    price: "$16.99",
     imageUrl: "../Imgs/Books/ (33).jpg",
     author: "Kirsty Greenwood",
     category: "Romance",
@@ -354,7 +354,7 @@ export const library = [
   {
     section: "Sale",
     name: "Ansiedade",
-    price: "$52.99",
+    price: "$32.99",
     imageUrl: "../Imgs/Books/ (34).jpg",
     author: "Augusto Cury",
     category: "Self Help",
@@ -365,7 +365,7 @@ export const library = [
   {
     section: "Sale",
     name: "Jee Main",
-    price: "$52.99",
+    price: "$12.99",
     imageUrl: "../Imgs/Books/ (35).jpg",
     author: "Various Authors",
     category: "Educational",
@@ -376,7 +376,7 @@ export const library = [
   {
     section: "Sale",
     name: "Introduction To Google Analytics",
-    price: "$52.99",
+    price: "$12.99",
     imageUrl: "../Imgs/Books/ (38).jpg",
     author: "Justin Cutroni",
     category: "Technology",
@@ -387,7 +387,7 @@ export const library = [
   {
     section: "Most Read",
     name: "A Gentle Reminder",
-    price: "$69.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (39).jpg",
     author: "Bianca Sparacino",
     category: "Poetry",
@@ -398,7 +398,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Emperor Of Rome",
-    price: "$95.99",
+    price: "$25.99",
     imageUrl: "../Imgs/Books/ (40).jpg",
     author: "Robert Fabbri",
     category: "History",
@@ -409,7 +409,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Castle in Corsica",
-    price: "$45.99",
+    price: "$15.99",
     imageUrl: "../Imgs/Books/ (41).jpg",
     author: "Margery Sharp",
     category: "Fiction",
@@ -420,7 +420,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Stop Pretending",
-    price: "$99.99",
+    price: "$19.99",
     imageUrl: "../Imgs/Books/ (42).jpg",
     author: "Sonya Sones",
     category: "Poetry",
@@ -442,7 +442,7 @@ export const library = [
   {
     section: "Most Read",
     name: "The Highest Dream",
-    price: "$68.99",
+    price: "$28.99",
     imageUrl: "../Imgs/Books/ (44).jpg",
     author: "Monica Sanz",
     category: "Romance",
@@ -453,7 +453,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Psycho Cybernetics",
-    price: "$199.99",
+    price: "$9.99",
     imageUrl: "../Imgs/Books/ (45).jpg",
     author: "Maxwell Maltz",
     category: "Self Help",
@@ -464,7 +464,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Skye Cameron",
-    price: "$90.99",
+    price: "$9.99",
     imageUrl: "../Imgs/Books/ (46).jpg",
     author: "Phyllis A. Whitney",
     category: "Romance",
@@ -475,7 +475,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Iris Bromige",
-    price: "$67.99",
+    price: "$7.99",
     imageUrl: "../Imgs/Books/ (47).jpg",
     author: "Iris Bromige",
     category: "Romance",
@@ -486,7 +486,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Ever After",
-    price: "$53.99",
+    price: "$3.99",
     imageUrl: "../Imgs/Books/ (48).jpg",
     author: "Graham Swift",
     category: "Fiction",
@@ -497,7 +497,7 @@ export const library = [
   {
     section: "Most Read",
     name: "The Fire & The Gold",
-    price: "$76.99",
+    price: "$6.99",
     imageUrl: "../Imgs/Books/ (50).jpg",
     author: "Phyllis A. Whitney",
     category: "Fiction",
@@ -508,7 +508,7 @@ export const library = [
   {
     section: "Most Read",
     name: "An Offer From A Gentleman",
-    price: "$69.99",
+    price: "$9.99",
     imageUrl: "../Imgs/Books/ (51).jpg",
     author: "Julia Quinn",
     category: "Romance",
@@ -519,7 +519,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Creole Holiday",
-    price: "$70.99",
+    price: "$10.99",
     imageUrl: "../Imgs/Books/ (52).jpg",
     author: "Elisabeth Ogilvie",
     category: "Romance",
@@ -530,7 +530,7 @@ export const library = [
   {
     section: "Most Read",
     name: "El Feminisimo es para el mundo",
-    price: "$61.99",
+    price: "$11.99",
     imageUrl: "../Imgs/Books/ (53).jpg",
     author: "Bell Hooks",
     category: "Non-fiction",
@@ -541,7 +541,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Atomic Habits",
-    price: "$60.99",
+    price: "$24.99",
     imageUrl: "../Imgs/Books/ (54).jpg",
     author: "James Clear",
     category: "Self Help",
@@ -552,7 +552,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Think & Grow Rich",
-    price: "$69.99",
+    price: "$24.99",
     imageUrl: "../Imgs/Books/ (55).jpg",
     author: "Napoleon Hill",
     category: "Self Help",
@@ -563,7 +563,7 @@ export const library = [
   {
     section: "Most Read",
     name: "The Rebel",
-    price: "$299.99",
+    price: "$29.99",
     imageUrl: "../Imgs/Books/ (56).jpg",
     author: "Albert Camus",
     category: "Philosophy",
@@ -574,7 +574,7 @@ export const library = [
   {
     section: "Most Read",
     name: "Wuthering Heights",
-    price: "$79.99",
+    price: "$31.99",
     imageUrl: "../Imgs/Books/ (57).jpg",
     author: "Emily Bronte",
     category: "Classic Literature",
@@ -585,7 +585,7 @@ export const library = [
   {
     section: "None",
     name: "The Complete Works of William Shakespeare",
-    price: "$120.99",
+    price: "$21.99",
     imageUrl: "../Imgs/Books/(58).jpg",
     author: "William Shakespeare",
     category: "Classic Literature",
@@ -596,7 +596,7 @@ export const library = [
   {
     section: "Most Read",
     name: "The Catcher in the Rye",
-    price: "$45.99",
+    price: "$12.99",
     imageUrl: "../Imgs/Books/(59).jpg",
     author: "J.D. Salinger",
     category: "Classic Literature",
@@ -607,7 +607,7 @@ export const library = [
   {
     section: "Sale",
     name: "1984",
-    price: "$39.99",
+    price: "$34.99",
     imageUrl: "../Imgs/Books/(60).jpg",
     author: "George Orwell",
     category: "Fiction",
@@ -618,7 +618,7 @@ export const library = [
   {
     section: "Sale",
     name: "To Kill a Mockingbird",
-    price: "$50.99",
+    price: "$21.99",
     imageUrl: "../Imgs/Books/(61).jpg",
     author: "Harper Lee",
     category: "Classic Literature",
@@ -629,7 +629,7 @@ export const library = [
   {
     section: "Sale",
     name: "The Great Gatsby",
-    price: "$34.99",
+    price: "$39.99",
     imageUrl: "../Imgs/Books/(62).jpg",
     author: "F. Scott Fitzgerald",
     category: "Classic Literature",
@@ -640,7 +640,7 @@ export const library = [
   {
     section: "Sale",
     name: "Pride and Prejudice",
-    price: "$40.99",
+    price: "$12.99",
     imageUrl: "../Imgs/Books/(63).jpg",
     author: "Jane Austen",
     category: "Classic Literature",
@@ -651,7 +651,7 @@ export const library = [
   {
     section: "None",
     name: "Band of Brothers",
-    price: "$14.99",
+    price: "$23.99",
     imageUrl: "../Imgs/Books/(64).jpg",
     author: "Stephen E. Ambrose",
     category: "Military",
@@ -663,7 +663,7 @@ export const library = [
   {
     section: "None",
     name: "The Things They Carried",
-    price: "$12.99",
+    price: "$43.99",
     imageUrl: "../Imgs/Books/(65).jpg",
     author: "Tim O'Brien",
     category: "Military",
@@ -674,7 +674,7 @@ export const library = [
   {
     section: "Popular",
     name: "Steve Jobs",
-    price: "$16.99",
+    price: "$23.99",
     imageUrl: "../Imgs/Books/(66).jpg",
     author: "Walter Isaacson",
     category: "Biography",
@@ -686,7 +686,7 @@ export const library = [
   {
     section: "None",
     name: "Becoming",
-    price: "$18.99",
+    price: "$21.99",
     imageUrl: "../Imgs/Books/(67).jpg",
     author: "Michelle Obama",
     category: "Biography",
@@ -694,7 +694,6 @@ export const library = [
     description:
       "Memoir by Michelle Obama, the former First Lady of the United States, detailing her journey from childhood to the White House and beyond.",
   },
-
   {
     section: "Most Read",
     name: "Leonardo da Vinci",
@@ -706,7 +705,6 @@ export const library = [
     description:
       "A biography of Leonardo da Vinci, one of the most creative and influential figures in human history, exploring his art, science, and genius.",
   },
-
   {
     section: "None",
     name: "The Diary of a Young Girl",
@@ -718,11 +716,10 @@ export const library = [
     description:
       "The diary of Anne Frank, a Jewish girl hiding with her family during the Nazi occupation of the Netherlands, offering a poignant and powerful account of life during World War II.",
   },
-
   {
     section: "None",
     name: "Sapiens: A Brief History of Humankind",
-    price: "$19.99",
+    price: "$11.99",
     imageUrl: "../Imgs/Books/(70).jpg",
     author: "Yuval Noah Harari",
     category: "Non-fiction",
@@ -734,7 +731,7 @@ export const library = [
   {
     section: "None",
     name: "Educated",
-    price: "$15.99",
+    price: "$5.99",
     imageUrl: "../Imgs/Books/(71).jpg",
     author: "Tara Westover",
     category: "Non-fiction",
@@ -746,7 +743,7 @@ export const library = [
   {
     section: "None",
     name: "The Immortal Life of Henrietta Lacks",
-    price: "$13.99",
+    price: "$8.99",
     imageUrl: "../Imgs/Books/(72).jpg",
     author: "Rebecca Skloot",
     category: "Non-fiction",
@@ -828,7 +825,7 @@ export const library = [
   {
     section: "None",
     name: "Mistborn: The Final Empire",
-    price: "$11.99",
+    price: "$12.99",
     imageUrl: "../Imgs/Books/(79).jpg",
     author: "Brandon Sanderson",
     category: "Fantasy",
