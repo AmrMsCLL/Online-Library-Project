@@ -96,12 +96,19 @@ function rmvDupesInLocalStorage(localStorageName) {
     saveToLocalStorage(uniqueBooks, localStorageName);
 }
 
+function isBookBorrowed(bookName) {
+    let borrowedBooks = loadFromLocalStorage("BorrowedBooks");
+    return borrowedBooks.some(book => book.name === bookName);
+}
+
 let isBorrowed = false;
 
 document.addEventListener('DOMContentLoaded', function() {
     addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "LastSeenBooks");
     rmvDupesInLocalStorage("LastSeenBooks");
-    if (isBorrowed) {
+
+    const bookIsBorrowed = isBookBorrowed(bookName);
+    if (bookIsBorrowed) {
         document.getElementById('borrowButton').style.display = 'none';
         document.getElementById('readButton').style.display = 'inline-block';
     } else {    
@@ -109,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('readButton').style.display = 'none';
     }
 });
-console.log(isBorrowed);
 document.getElementById('borrowButton').addEventListener('click', function() {
     if (bookAvailability === 'Available') {
         addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "BorrowedBooks");
@@ -125,7 +131,6 @@ document.getElementById('borrowButton').addEventListener('click', function() {
 });
 
 function isBorrowedfunc(){
-    console.log(isBorrowed);
     if (isBorrowed) {
         document.getElementById('borrowButton').style.display = 'none';
         document.getElementById('readButton').style.display = 'inline-block';
