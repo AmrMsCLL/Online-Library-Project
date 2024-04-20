@@ -12,16 +12,6 @@ export const library = [
   },
   {
     section: "Popular",
-    name: "GayNiggers From OuterSpace",
-    price: "$999.99",
-    imageUrl: "../Imgs/Books/(92).jpg",
-    author: "Omar Mahfouz",
-    category: "Fiction",
-    availability: true,
-    description: "Extraterrestrial beings travel the galaxy to free men oppressed by females to make way for an entirely-homosexual society."
-  },
-  {
-    section: "Popular",
     name: "Master Techniques in Surgery",
     price: "$62.99",
     imageUrl: "../Imgs/Books/ (2).jpg",
