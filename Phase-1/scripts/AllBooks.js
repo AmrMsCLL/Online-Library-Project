@@ -177,7 +177,7 @@ function displayBooksByCategory(booksByCategory) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
+    initiateswipe();
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
 

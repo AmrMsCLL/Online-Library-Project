@@ -5,8 +5,7 @@ function initiateswipe() {
         const sliderButtons = sliderContent.querySelectorAll(".slider_Button");
         const BooksList = sliderContent.querySelector(".slider");
     
-        const maxScrollLeft = BooksList.scrollWidth - BooksList.clientWidth;
-    
+        const maxScrollLeft = BooksList.scrollWidth - BooksList.clientWidth;    
         sliderButtons.forEach(button => {
             button.addEventListener("click", () => {
                 console.log(button);
