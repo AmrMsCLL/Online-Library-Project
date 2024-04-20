@@ -5,73 +5,22 @@ function displayNoBooksFound() {
     container.innerHTML = '<p class="nobooks">No books found that match your search criteria.</p>';
 }
 
-function filterAvailableBooks() {
-    let availableBooks = library.filter(book => book.availability);
-
-    const booksByCategory = groupBooksByCategory(availableBooks);
-    displayBooksByCategory(booksByCategory);
-
-    if (availableBooks.length === 0) {
-        updateUrlAndSearch();
-        displayNoBooksFound();
-    }
-}
-
-document.getElementById('available-only-checkbox').addEventListener('change', () => {
-    if (document.getElementById('available-only-checkbox').checked) {
-        filterAvailableBooks();
-    } else {
-        updateUrlAndSearch();
-        displayBooksByCategory(groupBooksByCategory(library));
-    }
-});
-
 function filterBooks() {
     const searchText = document.getElementById('search-input').value.toLowerCase();
     const showAvailableOnly = document.getElementById('available-only-checkbox').checked;
 
-    if (!searchText) {
-        if (showAvailableOnly) {
-            filterAvailableBooks();
-        } else {
-            displayBooksByCategory(groupBooksByCategory(library));
-            return;
-        }
-    }
-
-    let filteredBooks = library.filter(book => {
-        const matchesSearchText = searchText ? 
-        book.name.toLowerCase().includes(searchText) ||
-        book.author.toLowerCase().includes(searchText) ||
-        book.category.toLowerCase().includes(searchText) : true;
-        // book.description.toLowerCase().includes(searchText) 
-            
-        const matchesAvailability = showAvailableOnly ? book.availability : true;
-
-        return matchesSearchText && matchesAvailability;
-    });
-
-    const booksByCategory = groupBooksByCategory(filteredBooks);
-    displayBooksByCategory(booksByCategory);
+    let filteredBooks = library.filter(book =>
+        (!searchText || book.name.toLowerCase().includes(searchText) ||
+         book.author.toLowerCase().includes(searchText) ||
+         book.category.toLowerCase().includes(searchText)) &&
+        (!showAvailableOnly || book.availability)
+    );
 
     if (filteredBooks.length === 0){
         displayNoBooksFound();
     } else {
-        const booksByCategory = groupBooksByCategory(filteredBooks);
-        displayBooksByCategory(booksByCategory);
+        displayBooksByCategory(groupBooksByCategory(filteredBooks));
     }
-}
-
-function updateUrlAndSearch() {
-    const searchInput = document.getElementById('search-input');
-    const searchText = searchInput.value;
-
-    if (history.pushState) {
-        const newUrl = new URL(window.location);
-        newUrl.searchParams.set('search', searchText);
-        history.pushState({ path: newUrl.toString() }, '', newUrl.toString());
-    }
-    filterBooks(searchText);
 }
 
 function groupBooksByCategory(books) {
@@ -96,53 +45,43 @@ function groupBooksByCategory(books) {
 
     return sortedCategories;
 }
-
-function displayBooksForCategory(category) {
-    const filteredBooks = library.filter(book => book.category === category);
-    const booksByCategory = { [category]: filteredBooks };
-    displayBooksByCategory(booksByCategory);
-}
-
 function displayCategorySlider(){
     const categories = Object.keys(groupBooksByCategory(library));
     
     const categorySliderContainer = document.getElementById('categories_sliderz_container');
     categorySliderContainer.innerHTML = '';
 
-    const prevButoon = document.createElement('button');
-    prevButoon.textContent = 'chevron_left';
-    prevButoon.id = 'prev';
-    prevButoon.type = 'button'
-    prevButoon.classList.add('slider_Button', 'material-symbols-rounded')
-    prevButoon.setAttribute('onclick', 'initiateswipe()');
+    const prevButton = document.createElement('button');
+    prevButton.textContent = 'chevron_left';
+    prevButton.id = 'prev';
+    prevButton.classList.add('slider_Button', 'material-symbols-rounded');
+    prevButton.onclick = initiateswipe;
     
-    categorySliderContainer.appendChild(prevButoon);
+    categorySliderContainer.appendChild(prevButton);
 
-    const categoriesList = document.createElement('ul')
-    categoriesList.classList.add('slider', 'categories')
+    const categoriesList = document.createElement('ul');
+    categoriesList.classList.add('slider', 'categories');
     
     categories.forEach(category => {
         const categoryLi = document.createElement('li');
         const categoryLink = document.createElement('a');
-        categoryLink.href = `#`;
+        categoryLink.href = `#${category}`;
         categoryLink.textContent = category;
         categoryLink.addEventListener('click', (event) => {
             event.preventDefault();
-            const filteredBooks = library.filter(book => book.category === category);
-            const booksByCategory = { [category]: filteredBooks };
-            displayBooksByCategory(booksByCategory);
+            filterBooksByCategory(category);
         });
         categoryLi.appendChild(categoryLink);
         categoriesList.appendChild(categoryLi);
     });
-    categorySliderContainer.appendChild(categoriesList)
-    
+
+    categorySliderContainer.appendChild(categoriesList);
+
     const nextButton = document.createElement('button');
     nextButton.textContent = 'chevron_right';
     nextButton.id = 'next';
-    prevButoon.type = 'button'
-    nextButton.classList.add('slider_Button', 'material-symbols-rounded')
-    nextButton.setAttribute('onclick', 'initiateswipe()');
+    nextButton.classList.add('slider_Button', 'material-symbols-rounded');
+    nextButton.onclick = initiateswipe;
 
     categorySliderContainer.appendChild(nextButton);
 }
@@ -167,14 +106,11 @@ function displayBooksByCategory(booksByCategory) {
             bookElement.classList.add('Card');
 
             let varAvailable;
-            function checkAvailabilitystatus(){
-                if(book.availability){
-                    varAvailable = "Available"
-                } else {
-                    varAvailable = "Unavailable"
-                }
+            if(book.availability){
+                varAvailable = "Available"
+            } else {
+                varAvailable = "Unavailable"
             }
-            checkAvailabilitystatus();
 
             const img = document.createElement('img');
             img.src = book.imageUrl;
@@ -203,7 +139,7 @@ function displayBooksByCategory(booksByCategory) {
             const bookAuthor = document.createElement('p');
             bookAuthor.textContent = `Author: ${book.author}`;
             bookAuthor.classList.add('book-author');
-            bookElement.appendChild(bookAuthor);;
+            bookElement.appendChild(bookAuthor);
 
             const bookAvailability = document.createElement('p');
             bookAvailability.textContent = ` ${book.availability ? 'Available' : 'Unavailable'}`;
@@ -221,70 +157,86 @@ function displayBooksByCategory(booksByCategory) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    displayCategorySlider();
-    initiateswipe();
+function scrollToHash() {
+    const hash = window.location.hash.substring(1);
+    const params = new URLSearchParams(hash);
+    const categoryToScroll = params.get('Category');
+setTimeout(() => {
+    const element = document.getElementById(categoryToScroll);
+    if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        window.scrollTo({
+            top: elementPosition - 230,
+            behavior: 'smooth'
+        });
+    history.replaceState(null, null, ' ');
+    }   
+}, 150);
+}
+
+function setupSearch() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+    
+    const searchInput = document.getElementById('search-input');
+    if (searchQuery) {
+        searchInput.value = searchQuery;
+    }
+
+    searchInput.addEventListener('input', () => {
+        updateUrlWithSearch(searchInput.value);
+        filterBooks();
+    });
+
+    window.addEventListener('beforeunload', () => {
+        history.replaceState({}, document.title, window.location.pathname);
+    });
+
+    filterBooks();
+}
+
+function updateUrlWithSearch(searchText) {
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set('search', searchText);
+    history.pushState({}, '', newUrl);
+}
+
+function handleUrlSearchQuery() {
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get('search');
 
-    const currentUrl = window.location.href;
-    const url = new URL(currentUrl);
-    const hash = url.hash;
-
-    const availableCheckbox = document.getElementById('available-only-checkbox');
-
-    const availableSearchBar = document.getElementById('search-input')
-    
-    
-    if (availableCheckbox) {
-        availableCheckbox.addEventListener('change', () => {
-            if (availableCheckbox.checked) {
-                filterAvailableBooks();
-            } else {
-                displayBooksByCategory(groupBooksByCategory(library));
-            }
-        });
-    }   
-
-    if (Array.isArray(library)) {
-        const groupedBooks = groupBooksByCategory(library);
-        displayBooksByCategory(groupedBooks);
-    } else {
-        console.error('Library is not loaded or not an array:', library);
-    }
-
-    if (availableSearchBar) {
-            availableSearchBar.addEventListener('input', updateUrlAndSearch)
-            updateUrlAndSearch();
-    }
-
     if (searchQuery) {
-        document.getElementById('search-input').value = searchQuery;
+        const searchInput = document.getElementById('search-input');
+        searchInput.value = searchQuery;
         filterBooks();
-    } 
-    else if (hash) {
-        if (window.location.hash) {
-            scrollToHash();
-        }
     }
-    else {
-        displayBooksByCategory(groupBooksByCategory(library))
-    }
-});
-
-function scrollToHash() {
-        const hash = window.location.hash.substring(1);
-        const params = new URLSearchParams(hash);
-        const categoryToScroll = params.get('Category');
-    setTimeout(() => {
-        const element = document.getElementById(categoryToScroll);
-        if (element) {
-            const elementPosition = element.getBoundingClientRect().top;
-            window.scrollTo({
-                top: elementPosition - 230,
-                behavior: 'smooth'
-            });
-        history.replaceState(null, null, ' ');
-        }   
-    }, 150);
 }
+
+function filterBooksByCategory(selectedCategory) {
+    const searchText = document.getElementById('search-input').value.toLowerCase();
+    const showAvailableOnly = document.getElementById('available-only-checkbox').checked;
+
+    let filteredBooks = library.filter(book =>
+        (book.category === selectedCategory) &&
+        (!searchText || book.name.toLowerCase().includes(searchText) ||
+         book.author.toLowerCase().includes(searchText) ||
+         book.category.toLowerCase().includes(searchText)) &&
+        (!showAvailableOnly || book.availability)
+    );
+
+    if (filteredBooks.length === 0){
+        displayNoBooksFound();
+    } else {
+        displayBooksByCategory(groupBooksByCategory(filteredBooks));
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupSearch();
+    displayCategorySlider();
+    initiateswipe();
+    handleUrlSearchQuery();
+    document.getElementById('available-only-checkbox').addEventListener('change', filterBooks);
+    document.getElementById('search-input').addEventListener('input', filterBooks);
+    scrollToHash();
+});
