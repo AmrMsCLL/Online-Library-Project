@@ -25,20 +25,21 @@ body::after {
 }
 
 .wrap {
-  img {
-    width: 260px;
-    height: 90%;
-    border: 3px solid #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px aqua;
-    margin: 0 15px;
-  }
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 100px auto 150px 200px;
-  width: 80%;
-  height: 450px;
+    img{
+        width: 260px;
+        height: 90%;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px aqua;
+        margin: 0 15px;
+    
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 150px auto 150px 200px;
+    width: 80%;
+    height: 450px;
 }
 
 .BookCover {
