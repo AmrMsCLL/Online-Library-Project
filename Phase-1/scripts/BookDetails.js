@@ -125,7 +125,7 @@ document.getElementById('borrowButton').addEventListener('click', function() {
         alert('Book Has Been Added To Borrowed Books List');
         isBorrowed = true;
     } else {
-        addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "ReadBooks");
+        addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "RequestedBooks");
         alert('Book Has Been Added To Requested Books List');
         isBorrowed = false;
     }
