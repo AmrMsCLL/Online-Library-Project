@@ -1,18 +1,18 @@
-function toggleIcons() {
-    const toggleIcons = document.querySelectorAll('.toggle-icon');
-    toggleIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-            const input = this.previousElementSibling.previousElementSibling; // Assumes input is two siblings before (because of the lock icon)
-            if (input.type === 'password') {
-                input.type = 'text';
-                this.name = 'eye'; // Change the icon to 'eye'
-            } else {
-                input.type = 'password';
-                this.name = 'eye-off'; // Change the icon back to 'eye-off'
-            }
-        });
-    });
-}
+// function toggleIcons() {
+//     const toggleIcons = document.querySelectorAll('.toggle-icon');
+//     toggleIcons.forEach(icon => {
+//         icon.addEventListener('click', function() {
+//             const input = this.previousElementSibling.previousElementSibling;
+//             if (input.type === 'password') {
+//                 input.type = 'text';
+//                 this.name = 'eye';
+//             } else {
+//                 input.type = 'password';
+//                 this.name = 'eye-off';
+//             }
+//         });
+//     });
+// }
 
 function loadUserData() {
     const data = localStorage.getItem('RegisteredUsers');
@@ -88,7 +88,7 @@ function handleSubmit() {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    toggleIcons();
+    // toggleIcons();
     handleSubmit(); 
 });
 

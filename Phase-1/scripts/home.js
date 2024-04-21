@@ -1,4 +1,11 @@
-import { library } from "../Scripts/LibraryBooks.js";
+// import { library } from "../Scripts/LibraryBooks.js";
+
+let library = []; // Initialize the library array
+
+function loadLibraryFromLocalStorage() {
+    const libraryJson = localStorage.getItem('LibraryBooks');
+    library = libraryJson ? JSON.parse(libraryJson) : [];
+}   
 
 function groupHomeSections(books) {
     return books.reduce((acc, book) => {
@@ -153,22 +160,28 @@ function loadIsLoggedInRM() {
     return logData ? JSON.parse(logData) : [];
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    displayHomeSections(groupHomeSections(library));
-    initiateswipe();
-    hoverEffect();
-    
-    const logggedInData = loadIsLoggedIn();
-    const logggedInDataRM = loadIsLoggedInRM();
-    if (logggedInData === true || logggedInDataRM){
-        document.getElementById('join').remove();
+function handleUserLoginState() {
+    const loggedInData = JSON.parse(sessionStorage.getItem('isLoggedIn') || localStorage.getItem('isLoggedIn'));
+    if (loggedInData) {
+        const joinButton = document.getElementById('join');
+        if (joinButton) {
+            joinButton.style.display = 'none';
+        }
     }
 
     const availGetStarted = document.getElementById('startedaction');
     if (availGetStarted) {
-        availGetStarted.addEventListener('click', function() {
+        availGetStarted.addEventListener('click', (event) => {
             event.preventDefault();
             scrollToElement('GetStarTed');
         });
     }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadLibraryFromLocalStorage();
+    handleUserLoginState();
+    displayHomeSections(groupHomeSections(library));
+    initiateswipe();
+    hoverEffect();
 });

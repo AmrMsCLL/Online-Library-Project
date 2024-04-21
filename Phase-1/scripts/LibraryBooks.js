@@ -981,3 +981,7 @@ export const library = [
 //     availability: true or false,
 //     description: ""
 //   },
+
+document.addEventListener('DOMContentLoaded', function() {
+    localStorage.setItem('LibraryBooks', JSON.stringify(library));
+});

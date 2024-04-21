@@ -58,9 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const username = document.getElementById('user').value;
         const password = document.getElementById('pass').value;
+        const Admin = 'Admin';
         
         const users = loadRegisteredUsers();
         const isAlrdyReg = users.find(user => user.username === username && user.password === password);
+        const isAdmin = users.find(user => user.role === Admin);
+        // console.log(isAdmin);
+        // sessionStorage.setItem('IsAdmin', JSON.stringify(isAdmin));
 
         if (isAlrdyReg) {
             alert('Login Successful!');
@@ -69,9 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if(rememberUser.checked){
                 const isLoggedIn = true;
                 localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
+                sessionStorage.setItem('IsAdmin', JSON.stringify(isAdmin));
             } else {
                 const isLoggedIn = true;
                 sessionStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
+                sessionStorage.setItem('IsAdmin', JSON.stringify(isAdmin));
             }
             window.location.href = '../HTML/Home.html';
         } else {

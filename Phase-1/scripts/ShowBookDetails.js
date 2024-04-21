@@ -3,7 +3,6 @@ document.body.addEventListener("click", function(event) {
 
     let image = event.target.closest(".Card");
     if (image) {
-
         event.preventDefault();
         let name = image.querySelector("img").getAttribute("name");
         let url = image.querySelector("a").getAttribute("href");
@@ -13,6 +12,7 @@ document.body.addEventListener("click", function(event) {
         let category = image.querySelector("img").getAttribute("category");
         let author = image.querySelector("img").getAttribute("author");
         let description = image.querySelector("img").getAttribute("description");
+        let section = image.querySelector("img").getAttribute("section");
 
         sessionStorage.setItem("name", name);
         sessionStorage.setItem("imageSrc", imageSrc);
@@ -21,6 +21,7 @@ document.body.addEventListener("click", function(event) {
         sessionStorage.setItem("category", category)
         sessionStorage.setItem("author", author)
         sessionStorage.setItem("description", description)
+        sessionStorage.setItem("section", section)
         window.location.href = url;
     }
 });

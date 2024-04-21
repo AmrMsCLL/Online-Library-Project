@@ -5,6 +5,7 @@ const bookAvailability = sessionStorage.getItem("availability");
 const bookCategory = sessionStorage.getItem("category");
 const bookAuthor = sessionStorage.getItem("author");
 const bookDescription = sessionStorage.getItem("description");
+const bookSection = sessionStorage.getItem('BookSection');
 
 document.getElementById("name").textContent = bookName;
 document.getElementById("image").src = bookImageSrc;
@@ -27,8 +28,31 @@ document.body.style.backgroundImage = "url('" + bookImageSrc + "')";
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.backgroundSize = "cover";
 
+function loadFromLocalStorage(localStorageName) {
+    const storedBooks = localStorage.getItem(localStorageName);
+    return storedBooks ? JSON.parse(storedBooks) : [];
+}
+
+function saveToLocalStorage(books, localStorageName) {
+    localStorage.setItem(localStorageName, JSON.stringify(books));
+}
+
+function deleteBookFromLibrary(bookName, localStorageName = 'LibraryBooks') {
+    let books = loadFromLocalStorage(localStorageName);
+
+    const index = books.findIndex(book => book.name === bookName);
+    if (index !== -1) {
+        books.splice(index, 1);
+        saveToLocalStorage(books, localStorageName);
+        alert(`Book deleted: ${bookName}`);
+            window.location.href = '../HTML/Home.html';
+    } else {
+        alert('Book not found');
+    }
+}
+
 function hideOrShowButton() {
-    let isAdmin = false; // will create a method to get is admin later
+    let isAdmin = true; // will create a method to get is admin later
     if(isAdmin){
         document.getElementById('delButton').style.display = "flex";
         document.getElementById('editButton').style.display = "flex";
@@ -71,15 +95,6 @@ function borrowBookFunc() {
     document.getElementById('readButton').textContent = "Read Now!";
 }
 
-function loadFromLocalStorage(localStorageName) {
-    const storedBooks = localStorage.getItem(localStorageName);
-    return storedBooks ? JSON.parse(storedBooks) : [];
-}
-
-function saveToLocalStorage(books, localStorageName) {
-    localStorage.setItem(localStorageName, JSON.stringify(books));
-}
-
 function rmvDupesInLocalStorage(localStorageName) {
     let books = loadFromLocalStorage(localStorageName);
     const seenBooks = new Set();
@@ -103,19 +118,6 @@ function isBookBorrowed(bookName) {
 
 let isBorrowed = false;
 
-document.addEventListener('DOMContentLoaded', function() {
-    addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "LastSeenBooks");
-    rmvDupesInLocalStorage("LastSeenBooks");
-
-    const bookIsBorrowed = isBookBorrowed(bookName);
-    if (bookIsBorrowed) {
-        document.getElementById('borrowButton').style.display = 'none';
-        document.getElementById('readButton').style.display = 'inline-block';
-    } else {    
-        document.getElementById('borrowButton').style.display = 'inline-block';
-        document.getElementById('readButton').style.display = 'none';
-    }
-});
 document.getElementById('borrowButton').addEventListener('click', function() {
     if (bookAvailability === 'Available') {
         addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "BorrowedBooks");
@@ -130,6 +132,12 @@ document.getElementById('borrowButton').addEventListener('click', function() {
     isBorrowedfunc();
 });
 
+document.getElementById('readButton').addEventListener('click', function() { 
+    addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "ReadBooks");
+    rmvDupesInLocalStorage("ReadBooks");
+    alert('No Book Reading Functionality Yet!! SRY')
+});
+
 function isBorrowedfunc(){
     if (isBorrowed) {
         document.getElementById('borrowButton').style.display = 'none';
@@ -140,12 +148,92 @@ function isBorrowedfunc(){
     }
 }
 
-document.getElementById('readButton').addEventListener('click', function() { 
-    // cant read books that are not borrowed so needs editing
-    addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "ReadBooks");
-    rmvDupesInLocalStorage("ReadBooks");
-    alert('No Book Reading Functionality Yet!! SRY')
-});
-
 hideOrShowButton();
 borrowBookFunc();
+
+function editBookDetails() {
+    const textContainer = document.getElementById('text-container');
+    textContainer.innerHTML = '';
+
+    const fields = ['name', 'author', 'category', 'price', 'availability', 'description', 'section'];
+    const form = document.createElement('form');
+    form.id = 'editForm';
+
+   fields.forEach(field => {
+        const label = document.createElement('label');
+        label.htmlFor = `${field}-input`;
+        label.textContent = `${capitalize(field)}: `;
+        const input = document.createElement(field === 'description' ? 'textarea' : 'input');
+        input.id = `${field}-input`;
+        input.name = field;
+        input.value = sessionStorage.getItem(field); // Assuming session storage holds current values
+        form.appendChild(label);
+        form.appendChild(input);
+        form.appendChild(document.createElement('br'));
+    });
+
+    const saveButton = document.getElementById('saveButton');
+    saveButton.onclick = saveBookDetails;
+    saveButton.style.display = 'flex';
+
+    const cancelButton = document.getElementById('cancelButton');
+    cancelButton.style.display = 'none';
+    cancelButton.onclick = () => window.location.reload();
+    form.appendChild(saveButton);
+    form.appendChild(cancelButton);
+    textContainer.appendChild(form);
+}
+
+function saveBookDetails() {
+    const form = document.getElementById('editForm');
+    const formData = new FormData(form);
+    const updatedBook = {};
+
+    formData.forEach((value, key) => {
+        updatedBook[key] = value;
+    });
+
+    const books = loadFromLocalStorage('LibraryBooks');
+    const bookIndex = books.findIndex(book => book.name === sessionStorage.getItem("name"));
+    if (bookIndex !== -1) {
+        books.splice(bookIndex, 1);
+        books.push(updatedBook);
+        saveToLocalStorage(books, 'LibraryBooks');
+        alert('Book details updated successfully!');
+        window.location.href = '../HTML/Home.html';
+    } else {
+        alert('Book not found.');
+    }
+    let img = document.getElementById('image');
+    img.setAttribute('src', '../Imgs/Books/ (43).jpg');
+}
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    addBook(bookName, bookPrice, bookImageSrc, bookAuthor, bookCategory, bookAvailability, bookDescription, "LastSeenBooks");
+    rmvDupesInLocalStorage("LastSeenBooks");
+
+    const bookIsBorrowed = isBookBorrowed(bookName);
+    if (bookIsBorrowed) {
+        document.getElementById('borrowButton').style.display = 'none';
+        document.getElementById('readButton').style.display = 'inline-block';
+    } else {    
+        document.getElementById('borrowButton').style.display = 'inline-block';
+        document.getElementById('readButton').style.display = 'none';
+    }
+    const delButton = document.getElementById('delButton');
+    if (delButton) {
+        delButton.addEventListener('click', () => {
+            const bookName = sessionStorage.getItem("name");
+            deleteBookFromLibrary(bookName);
+        });
+    }
+
+    const editButton = document.getElementById('editButton');
+    if (editButton) {
+        editButton.addEventListener('click', editBookDetails);
+    }
+});

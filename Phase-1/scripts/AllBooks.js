@@ -1,4 +1,11 @@
-import { library } from "../Scripts/LibraryBooks.js";
+// import { library } from "../Scripts/LibraryBooks.js";
+
+let library = [];
+
+function loadLibraryFromLocalStorage() {
+    const libraryJson = localStorage.getItem('LibraryBooks');
+    library = libraryJson ? JSON.parse(libraryJson) : [];
+}
 
 function displayNoBooksFound() {
     const container = document.getElementById('library-container');
@@ -232,6 +239,7 @@ function filterBooksByCategory(selectedCategory) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    loadLibraryFromLocalStorage();
     setupSearch();
     displayCategorySlider();
     initiateswipe();
