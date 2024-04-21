@@ -64,12 +64,12 @@ function displayLastSeen(books){
         const detailsAvail = document.createElement('p');
         const detailsPrice = document.createElement('p');
 
-        // const alertNoLastSeen = document.createElement('h2');
-        // if(book.length === 0){
-        //     alertNoLastSeen.textContent = 'Go Check Some Books Out';
-        // } else {
-        //     alertNoLastSeen.textContent = '';
-        // }
+        const alertNoLastSeen = document.createElement('h2');
+        if(book.length === 0){
+            alertNoLastSeen.textContent = 'Go Check Some Books Out';
+        } else {
+            alertNoLastSeen.textContent = '';
+        }
 
         detailsName.textContent = `Name: ${book.name}`;
         detailsCate.textContent = `Category: ${book.category}`;
@@ -138,7 +138,7 @@ function displayBorrowed(books){
 
         const cardImg = document.createElement('img');
         cardImg.alt = `Cover of ${book.name}`;
-        cardImg.src = book.imageUrl;
+        cardImg.setAttribute('src', book.imageSrc);
         cardImg.setAttribute('name', book.name);
         cardImg.setAttribute('price', book.price);
         cardImg.setAttribute('availability', book.availability);
@@ -158,13 +158,6 @@ function displayBorrowed(books){
         const detailsDesc = document.createElement('p');
         const detailsAvail = document.createElement('p');
         const detailsPrice = document.createElement('p');
-
-        // const alertNoLastSeen = document.createElement('h2');
-        // if(book.length === 0){
-        //     alertNoLastSeen.textContent = 'Go Check Some Books Out';
-        // } else {
-        //     alertNoLastSeen.textContent = '';
-        // }
 
         detailsName.textContent = `Name: ${book.name}`;
         detailsCate.textContent = `Category: ${book.category}`;
