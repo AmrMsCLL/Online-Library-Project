@@ -201,8 +201,9 @@ function editBookDetails() {
     form.appendChild(cancelButton);
     textContainer.appendChild(form);
     
-    // document.getElementById('imageSrc-input').style.display =  'none';
-    // document.getElementById('imageSrc-input-label').style.display = 'none';
+    document.getElementById('imageSrc-input').style.display =  'none';
+    document.getElementById('imageSrc-input-label').style.display = 'none';
+    document.getElementById('editButton').disabled = true;
 }
 
 function saveBookDetails() {
@@ -254,6 +255,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     const editButton = document.getElementById('editButton');
     if (editButton) {
-        editButton.addEventListener('click', editBookDetails);
+        editButton.addEventListener('click', function() {
+            document.getElementById('editButton').style.display = 'none'
+            editBookDetails();
+        });
     }
 });
