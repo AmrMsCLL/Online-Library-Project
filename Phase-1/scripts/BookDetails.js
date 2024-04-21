@@ -69,7 +69,6 @@ function getIsAdmin() {
 function hideOrShowButton() {
 
     let isAdmin = getIsAdmin();
-    console.log(isAdmin)
 
     if(!isAdmin){
         document.getElementById('delButton').style.display = "flex";
