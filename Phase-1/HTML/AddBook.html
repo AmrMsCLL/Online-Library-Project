@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add-Book</title>
     <link rel="stylesheet" href="../Styles/Main.css">
-    <link rel="stylesheet" href="../Styles/AddBook.css">
+    <link rel="stylesheet" href="../Styles/Bookdetails.css">
+    <style>
+        body{
+            padding-top: 70px;
+        }
+        .wraper{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .btn1{
+            position: relative;
+            right: -50px;
+        }
+    </style>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -14,71 +28,48 @@
     <div id="side-bar_reuseable"></div>
     <script src="../Assets/Assets-Scripts/LoadSide-Bar.js" defer></script>
 
-    <br><br>
+    <div class="wraper">
+        <form id="editForm">
 
-    <div class="Book_Details" >
-        <center>
-            <h2>Add New Book!</h2>
-            <table>
-                <td><img src="Imgs/book.png" width="300" height="300" alt="BOOK"></td>
-                <td> <table width="300" height="300">
-                    <form action="Book-Details.html">
-                        <div class="ID">
-                            <tr>
-                                <td>Book ID :</td>
-                                <td><input type="text" name="Book ID" placeholder="Book ID"></td>
-                            </tr>
-                        </div>
-                        <div class="name">
-                            <tr>
-                                <td>Book Name :</td>
-                                <td><input type="text" name="Book Name" placeholder="Book Name"></td>
-                            </tr>
-                        </div>
-                        <div class="author">
-                            <tr>
-                                <td>Book Author :</td>
-                                <td><input type="text" name="Book Author" placeholder="Book Author"></td>
-                            </tr>
-                        </div>
-                        <div class="Category">
-                            <tr>
-                                <td>Book Category :</td>
-                                <td><select name="Book-Category" id="Book-Category">
-                                    <option value="Select">Choose a Category</option>
-                                    <option value="Mathematics">Mathematics</option>
-                                    <option value="Art & Applied">Art & Applied</option>
-                                    <option value="Finance & Economics">Finance & Economics</option>
-                                    <option value="Computer Science">Computer Science</option>
-                                    <option value="Humanities">Humanities</option>
-                                    <option value="Law & Criminology">Law & Criminology</option>
-                                    <option value="Physics">Physics</option>
-                                    <option value="Psychology">Psychology</option>
-                                    <option value="Social & Behavioral Sciences">Social & Behavioral Sciences</option>
-                                    <option value="Medicine">Medicine</option>
-                                    <option value="Commic Books">Commic Books</option>
-                                    <option value="Space">Space</option>
-                                    <option value="Statistics & Decision Support">Statistics & Decision Support</option>
-                                </select></td>
-                            </tr>
-                        </div>
-                        <div class="descrpition">
-                            <tr>
-                                <td>Book description :</td>
-                                <td><textarea name="Description" id="Description" cols="21" rows="5" placeholder="Enter Book Description Here"></textarea></td>
-                            </tr>
-                        </div>
-                        <div class="submit">
-                            <tr>
-                            <td><input type="submit" value="Add-Book"></td>
-                            </tr>
-                        </div>
-                    </form>
-                </table> </td>
-                </tr>
-            </table>
-        </center>        
+            <label for="name-input" id="name-input-label" >Name:</label>
+            <input id="name-input" name="name" placeholder="Book Name">
+
+            <br>
+
+            <label for="author-input" id="author-input-label">Author:</label>
+            <input id="author-input" name="author" placeholder="Book Author">
+
+            <br>
+            <label for="category-input" id="category-input-label">Category: </label>
+            <input id="category-input" name="category" placeholder="Book Category">
+            <br>
+            
+            <label for="price-input" id="price-input-label">Price: </label>
+            <input id="price-input" name="price" placeholder="Book Price">
+            <br>
+            
+            <label for="availability-input" id="availability-input-label">Availability: </label>
+            <input id="availability-input" name="availability" placeholder="Book Availability">
+            
+            <br>
+            
+            <label for="description-input" id="description-input-label">Description: </label>
+            <textarea id="description-input" name="description" placeholder="Book Description"></textarea>
+            
+            <br>
+            <label for="section-input" id="section-input-label" >Section: </label>
+            <input id="section-input" name="section" placeholder="Book Section">
+            
+            <br>
+            <label for="imageSrc-input" id="imageSrc-input-label" style="display: none;">ImageSrc:</label>           
+            <input id="imageSrc-input" name="imageSrc" style="display: none;" placeholder="Book Cover Url">
+
+            <br>
+            <button class="btn1" id="saveButton" type="button" style="display: flex;">ADD</button>
+        </form>
     </div>
+
+
 </body>
 
 <footer>

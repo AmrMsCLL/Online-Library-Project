@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
+
 }
 
 body::after {
@@ -38,8 +39,8 @@ body::after {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 100px auto 150px 250px;
-    width: 70%;
+    margin: 100px auto 150px 200px;
+    width: 80%;
     height: 450px;
 }
 
@@ -89,6 +90,8 @@ body::after {
     justify-content: left;
     gap: 20px;
     position:relative;
+    right: 20px;
+    bottom: -180px;
 }
 
 .btn1 {
@@ -162,6 +165,7 @@ body::after {
 }
 
 #editForm{
+    color: #fff;
     input, label, textarea{
         margin-top: 20px;
     }
