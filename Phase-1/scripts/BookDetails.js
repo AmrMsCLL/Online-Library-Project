@@ -5,7 +5,7 @@ const bookAvailability = sessionStorage.getItem("availability");
 const bookCategory = sessionStorage.getItem("category");
 const bookAuthor = sessionStorage.getItem("author");
 const bookDescription = sessionStorage.getItem("description");
-const bookSection = sessionStorage.getItem('BookSection');
+const bookSection = sessionStorage.getItem('section');
 
 document.getElementById("name").textContent = bookName;
 document.getElementById("image").src = bookImageSrc;
@@ -155,7 +155,7 @@ function editBookDetails() {
     const textContainer = document.getElementById('text-container');
     textContainer.innerHTML = '';
 
-    const fields = ['name', 'author', 'category', 'price', 'availability', 'description', 'section'];
+    const fields = ['name', 'author', 'category', 'price', 'availability', 'description', 'section', 'imageSrc'];
     const form = document.createElement('form');
     form.id = 'editForm';
 
@@ -163,6 +163,7 @@ function editBookDetails() {
         const label = document.createElement('label');
         label.htmlFor = `${field}-input`;
         label.textContent = `${capitalize(field)}: `;
+        label.id = `${field}-input-label`;
         const input = document.createElement(field === 'description' ? 'textarea' : 'input');
         input.id = `${field}-input`;
         input.name = field;
@@ -177,11 +178,14 @@ function editBookDetails() {
     saveButton.style.display = 'flex';
 
     const cancelButton = document.getElementById('cancelButton');
-    cancelButton.style.display = 'none';
+    cancelButton.style.display = 'flex';
     cancelButton.onclick = () => window.location.reload();
     form.appendChild(saveButton);
     form.appendChild(cancelButton);
     textContainer.appendChild(form);
+    
+    document.getElementById('imageSrc-input').style.display =  'none';
+    document.getElementById('imageSrc-input-label').style.display = 'none';
 }
 
 function saveBookDetails() {

@@ -1,4 +1,4 @@
-export const library = [
+const library = [
   {
     section: "Popular",
     name: "The Art Of War",

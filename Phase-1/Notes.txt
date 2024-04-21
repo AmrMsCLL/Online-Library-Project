@@ -1,15 +1,1 @@
-https://www.librarything.com/
-
-
-// done // 
-login - signup
-home
-categories
-
-// medhat // 
-book details
-
-// jimy // 
-boooks ig
-
-
+make sure localstorage is empty before using the website 

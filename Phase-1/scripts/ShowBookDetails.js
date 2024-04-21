@@ -1,4 +1,3 @@
-
 document.body.addEventListener("click", function(event) {
 
     let image = event.target.closest(".Card");

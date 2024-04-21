@@ -1,19 +1,3 @@
-// function toggleIcons() {
-//     const toggleIcons = document.querySelectorAll('.toggle-icon');
-//     toggleIcons.forEach(icon => {
-//         icon.addEventListener('click', function() {
-//             const input = this.previousElementSibling.previousElementSibling;
-//             if (input.type === 'password') {
-//                 input.type = 'text';
-//                 this.name = 'eye';
-//             } else {
-//                 input.type = 'password';
-//                 this.name = 'eye-off';
-//             }
-//         });
-//     });
-// }
-
 function loadUserData() {
     const data = localStorage.getItem('RegisteredUsers');
     return data ? JSON.parse(data) : [];
@@ -42,7 +26,6 @@ function handleSubmit() {
         if (!email.includes('@')) {
             errorMessage += "Please enter a valid email.\n";
         }
-
         
         // chr/num/symbol inclusion function here
         // for(pass) chk chr num symbol
@@ -88,7 +71,5 @@ function handleSubmit() {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-    // toggleIcons();
     handleSubmit(); 
 });
-

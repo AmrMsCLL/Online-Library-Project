@@ -8,11 +8,14 @@ function loadLibraryFromLocalStorage() {
 }   
 
 function groupHomeSections(books) {
+    const allowedSections = ['Popular', 'Most Read', 'Sale']; // Define allowed sections
     return books.reduce((acc, book) => {
-        if (!acc[book.section]) {
-            acc[book.section] = [];
+        if (allowedSections.includes(book.section)) { // Only include allowed sections
+            if (!acc[book.section]) {
+                acc[book.section] = [];
+            }
+            acc[book.section].push(book);
         }
-        acc[book.section].push(book);
         return acc;
     }, {});
 }
@@ -42,6 +45,7 @@ function createBookCard(book) {
     img.setAttribute('availability', bookisavailablestring);
     img.setAttribute('category', book.category);
     img.setAttribute('description', book.description)
+    img.setAttribute('section', book.section)
     img.classList.add('book-image');
 
     const link = document.createElement('a');
@@ -57,12 +61,10 @@ function createBookCard(book) {
 }
 
 function displayHomeSections(booksBySections) {
+
     const container = document.getElementById('home-container');
     container.innerHTML = '';
     Object.entries(booksBySections).forEach(([section, books], index, array) => {
-        if (section === 'None') {
-            return;
-        }
     
         const sectionDiv = document.createElement('div');
         sectionDiv.classList.add('Slider_Content', section.replace(' ', ''));
@@ -107,7 +109,7 @@ function displayHomeSections(booksBySections) {
         sectionDiv.appendChild(buttonNext);
 
         container.appendChild(sectionDiv);
-        if (index < array.length - 2) {
+        if (index < array.length - 1) {
             container.appendChild(document.createElement('hr'));
             container.appendChild(document.createElement('br'));
             container.appendChild(document.createElement('br'));
@@ -151,18 +153,19 @@ function hoverEffect() {
 }
 
 function loadIsLoggedIn() {
-    const logData = sessionStorage.getItem('isLoggedIn');
-    return logData ? JSON.parse(logData) : [];
+    const userData = sessionStorage.getItem('isLoggedIn');
+    return userData ? JSON.parse(userData) : [];
 }
 
 function loadIsLoggedInRM() {
-    const logData = localStorage.getItem('isLoggedIn');
-    return logData ? JSON.parse(logData) : [];
+    const userData = localStorage.getItem('isLoggedIn');
+    return userData ? JSON.parse(userData) : [];
 }
 
 function handleUserLoginState() {
-    const loggedInData = JSON.parse(sessionStorage.getItem('isLoggedIn') || localStorage.getItem('isLoggedIn'));
-    if (loggedInData) {
+    const userData = JSON.parse(sessionStorage.getItem('LoggedInUser'));
+    const userDataRM = JSON.parse(localStorage.getItem('LoggedInUser'));
+    if (userData || userDataRM) {
         const joinButton = document.getElementById('join');
         if (joinButton) {
             joinButton.style.display = 'none';

@@ -153,3 +153,10 @@ body::after {
 #footer_reuseable {
     width: 100%;
 }
+
+#saveButton {
+    display: none;
+}
+#cancelButton {
+     display: none;
+}

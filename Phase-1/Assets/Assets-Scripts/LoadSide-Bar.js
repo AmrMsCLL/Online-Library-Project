@@ -16,6 +16,7 @@ function loadNav() {
     .then(html => {
         document.getElementById('side-bar_reuseable').innerHTML = html;
         initToggleButton(); 
+        setupLogoutButton();
     })
     .catch(error => {
         console.warn('Error loading the nav: ', error);
@@ -35,4 +36,36 @@ function initToggleButton() {
     }
   }
 
-loadCSS('../Assets/Assets-Styles/Side-Bar.css', loadNav);
+function checkIsLoggedIn(RM) {
+    // if (RM) {
+    //     const userDataJson = sessionStorage.getItem('LoggedInUser');
+    // } else {
+    //     const userDataJson = sessionStorage.getItem('LoggedInUser');
+    // }
+    const userDataJson = sessionStorage.getItem('LoggedInUser');
+    
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return userData.loggedin;
+    }
+    return false;
+}
+
+function setupLogoutButton() {
+    const loggingButton = document.getElementById('loggingButton'); 
+    const userData = checkIsLoggedIn();
+
+    if (userData) {
+        loggingButton.innerHTML = '<span><ion-icon name="log-out-outline" class="icon logoutIcon"></ion-icon>logout</span>';
+        loggingButton.href = '../../HTML/Home.html'
+        sessionStorage.removeItem('LoggedInUser');
+    } else {
+        loggingButton.innerHTML = '<span><ion-icon name="log-in-outline" class="icon loginIcon"></ion-icon>login</span>';
+        loggingButton.href = '../../HTML/Login.html'
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadCSS('../Assets/Assets-Styles/Side-Bar.css', loadNav);  
+});
+
