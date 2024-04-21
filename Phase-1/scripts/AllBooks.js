@@ -1,5 +1,3 @@
-// import { library } from "../Scripts/LibraryBooks.js";
-
 let library = [];
 
 function loadLibraryFromLocalStorage() {
@@ -52,6 +50,7 @@ function groupBooksByCategory(books) {
 
     return sortedCategories;
 }
+
 function displayCategorySlider(){
     const categories = Object.keys(groupBooksByCategory(library));
     
@@ -120,7 +119,7 @@ function displayBooksByCategory(booksByCategory) {
             }
 
             const img = document.createElement('img');
-            img.src = book.imageUrl;
+            img.src = book.imageSrc;
             img.alt = `Cover of ${book.name}`;
             img.setAttribute('name', book.name);
             img.setAttribute('price', book.price);

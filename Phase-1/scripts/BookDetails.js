@@ -70,7 +70,7 @@ function hideOrShowButton() {
 
     let isAdmin = getIsAdmin();
     console.log(isAdmin)
-    
+
     if(!isAdmin){
         document.getElementById('delButton').style.display = "flex";
         document.getElementById('editButton').style.display = "flex";
@@ -80,7 +80,7 @@ function hideOrShowButton() {
     }
 }
 
-function addBook(name, price, imageUrl, author, category, availability, description, localStorageName) {
+function addBook(name, price, imageSrc, author, category, availability, description, localStorageName) {
 
     let Books = loadFromLocalStorage(localStorageName);
 
@@ -91,7 +91,7 @@ function addBook(name, price, imageUrl, author, category, availability, descript
     let book = {
         name: name,
         price: price,
-        imageUrl: imageUrl,
+        imageSrc: imageSrc,
         author: author,
         category: category,
         availability: availability,
@@ -202,8 +202,8 @@ function editBookDetails() {
     form.appendChild(cancelButton);
     textContainer.appendChild(form);
     
-    document.getElementById('imageSrc-input').style.display =  'none';
-    document.getElementById('imageSrc-input-label').style.display = 'none';
+    // document.getElementById('imageSrc-input').style.display =  'none';
+    // document.getElementById('imageSrc-input-label').style.display = 'none';
 }
 
 function saveBookDetails() {
@@ -253,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function() {
             deleteBookFromLibrary(bookName);
         });
     }
-
     const editButton = document.getElementById('editButton');
     if (editButton) {
         editButton.addEventListener('click', editBookDetails);

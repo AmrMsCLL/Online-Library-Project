@@ -1,6 +1,6 @@
-// import { library } from "../Scripts/LibraryBooks.js";
+import { libraryBooksArray } from "../Scripts/LibraryBooks.js";
 
-let library = []; // Initialize the library array
+let library = [];
 
 function loadLibraryFromLocalStorage() {
     const libraryJson = localStorage.getItem('LibraryBooks');
@@ -35,7 +35,7 @@ function createBookCard(book) {
     }
 
     const img = document.createElement('img');
-    img.src = book.imageUrl;
+    img.src = book.imageSrc;
     img.alt = `Cover of ${book.name}`;
     img.setAttribute('name', book.name);
     img.setAttribute('width', '180px');
@@ -182,6 +182,13 @@ function handleUserLoginState() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    if (!localStorage.getItem('BooksLoaded')) {
+
+        localStorage.setItem('LibraryBooks', JSON.stringify(libraryBooksArray));
+
+        localStorage.setItem('BooksLoaded', 'true');
+    }
+
     loadLibraryFromLocalStorage();
     handleUserLoginState();
     displayHomeSections(groupHomeSections(library));
