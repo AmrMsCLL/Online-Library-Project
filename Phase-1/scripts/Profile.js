@@ -42,13 +42,14 @@ function displayLastSeen(books){
 
         const cardImg = document.createElement('img');
         cardImg.alt = `Cover of ${book.name}`;
-        cardImg.src = book.imageSrc;
+        cardImg.setAttribute('src', book.imageSrc);
         cardImg.setAttribute('name', book.name);
         cardImg.setAttribute('price', book.price);
         cardImg.setAttribute('availability', book.availability);
         cardImg.setAttribute('category', book.category);
         cardImg.setAttribute('author', book.author);
         cardImg.setAttribute('description', book.description);
+        console.log(book.imageSrc)
 
         cardLink.appendChild(cardImg);
         bookCoverContainer.appendChild(cardLink);
