@@ -9,11 +9,11 @@
 body{
     min-height: 100vh;
     color:#fff;
-    background-color: #181818;
+    background-color: #000000;
 
 }
 .wraper{
-    background-color: #181818;
+    background-color: #000000;
     padding-top: 80px;
     height: 100%;
     display: flex;

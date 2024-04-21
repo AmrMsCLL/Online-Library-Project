@@ -70,10 +70,12 @@ body{
     width: 30px;
 }
     /*--------------------------------------------------------------*/
-#Search::-webkit-search-cancel-button {
+#search-Input::-webkit-search-cancel-button {
     position: absolute;
-    right: 80px; /* Adjust as needed */
+    right: 80px;
     top: 30px;
+    width: 20px;
+    height: 20px;
 }
     /*--------------------------------------------------------------*/
 .Resources{
