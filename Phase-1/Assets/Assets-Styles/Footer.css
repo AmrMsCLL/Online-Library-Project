@@ -114,3 +114,11 @@
     color: blue;
 }
 
+#resetStorageLink {
+    color: aqua;
+    text-decoration: none;
+}
+#resetStorageLink:hover {
+    color: red;
+    text-decoration: underline;
+}

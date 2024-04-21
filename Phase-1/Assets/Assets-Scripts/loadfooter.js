@@ -15,11 +15,27 @@ function loadFooter() {
     .then(response => response.text())
     .then(html => {
         document.getElementById('footer_reuseable').innerHTML = html;
+        setupResetButton(); // Setup after the footer is loaded
         loadCSS('../Assets/Assets-Styles/Footer.css');
     })
     .catch(error => {
-        console.warn('Error loading the Footer: ', error);
+        console.warn('Error loading the Footer:', error);
     });
+}
+
+function setupResetButton() {
+    const resetButton = document.getElementById('resetStorageLink');
+    if (resetButton) {
+        resetButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            localStorage.clear();
+            sessionStorage.clear();
+            alert('Everything was Reset Successfully');
+            window.location.href = '../../HTML/Home.html'
+        });
+    } else {
+        console.error('Reset button not found');
+    }
 }
 
 loadFooter();
