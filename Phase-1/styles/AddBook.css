@@ -1,5 +1,8 @@
 body{
     padding-top: 150px;
+    background: url(../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg);
+    background-position: center;
+    background-size: contain;
 }
 .wraper{
     display: flex;
