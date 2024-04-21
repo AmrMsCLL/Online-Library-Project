@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../Styles/Profile.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../Scripts/Profile.js" defer></script>
+</head>
+
+<body>
+
+    <div id="side-bar_reuseable"></div>
+    <script src="../Assets/Assets-Scripts/LoadSide-Bar.js" defer></script>
+
+    <div class="wraper">
+
+        <div class="userInfo">
+            <div class="userImage">
+                <img src="../Imgs/user-profile.png" alt="" class="profileImage">
+            </div>
+            <div class="about">
+                <span id="usernameText">Username: someone@somthing.com</span>
+                <span id="emailText">Email:    *************</span>
+                <span id="roleText">Role:     *************</span>
+                <span id="passwordText">Password: *************</span>
+                <!-- <span>Region: SomeCountry</span>
+                <span>ID: 12345</span> -->
+            </div>
+            <div class="buttons">
+                <button id="editProfileButton">Edit User Profile</button>
+            </div>
+        </div>
+    
+        <div class="dashboard">
+
+            <div class="title">
+                <ion-icon name="speedometer-outline"></ion-icon>
+                <h2>Dashboard</h2>
+            </div>
+
+            <div class="boxes" id="boxesContainer">
+                <div class="box box1">
+                    <ion-icon name="book-outline"></ion-icon>
+                    <span class="text">Borrowed Books</span>
+                    <span class="number" id="borrowNum">0</span>
+                </div>
+                <div class="box box2">
+                    <ion-icon name="library-outline"></ion-icon>
+                    <span class="text" >Read Books</span>
+                    <span class="number" id="readNum">0</span>
+                </div>
+                <div class="box box3">
+                    <ion-icon name="bulb-outline"></ion-icon>
+                    <span class="text">Reward Points</span>
+                    <span class="number" id="rewardPoints">0</span>
+                </div>
+            </div>
+
+            <div class="activity" id="borrowedContainer">
+                <div class="title">
+                    <ion-icon name="book-outline"></ion-icon>
+                    <h2 class="text">Borrowed Books</h2>
+                </div>
+
+            </div>
+
+            <div class="activity" id="lastContainer">
+                <div class="title">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <h2 class="text">Last Seen</h2>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="../Scripts/ShowBookDetails.js" defer></script>
+</body>
+
+<footer>
+    <div id="footer_reuseable"></div>
+    <script src="../Assets/Assets-Scripts/loadfooter.js"></script>
+</footer>
+</html>

@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    <link rel="stylesheet" href="../styles/Home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+    <script src="../scripts/Home.js" defer type="module"></script>
+</head>
+<body>
+    <header class="header">
+        <a class="Logo" href="#"><ion-icon name="library"></ion-icon>DigitalDewey</a>
+        <nav class="nav_bar">
+            <ul>
+                <li><a href="Profile.html" id="profileLink">Profile</a></li>
+                <li><a href="Categories.html">Categories</a></li>
+                <li><a href="AllBooks.html">All Books</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="quote">
+            <h2>Reading is a journey of the mind,</h2>
+            <p> a voyage into the unknown that broadens our horizons and enriches our understanding. It’s a window into other worlds, cultures, and perspectives, allowing us to live a thousand lives in one. Reading nurtures our imagination, fuels our creativity, and sharpens our critical thinking</p>
+
+            <a href="#" id="startedaction">Get Started</a>
+        </div>
+        <form class="Join" id="join">
+            <h2>LogIn</h2>
+            <div class="input_Box">
+                <p class="icon"><ion-icon name="person"></ion-icon></p>
+                <input type="text"  id="EM">
+                <label for="EM">Enter Your Username</label>
+            </div>
+            <div class="input_Box">
+                <p class="icon"><ion-icon name="lock-closed"></ion-icon></p>
+                <input type="password" id="P">
+                <label for="P">Enter Your Password</label>
+            </div>
+            <div class="rME">
+                <p>Don't Have An Account?<a href="SignUp.html" target="_blank">SignUp</a></p>
+            </div>
+            <a href="Login.html"><button type="button" class="Sub" id="joinButton">Join</button></a>
+        </form>
+    </div>
+
+    <div id="home-container"></div>
+    
+    <script src="../Scripts/Sliderswiper.js" defer></script>
+    <script src="../Scripts/ShowBookDetails.js" defer> </script>
+    <script src="../Scripts/LibraryBooks.js" defer></script>
+</body>
+<footer>
+    <div id="footer_reuseable"></div>
+    <script src="../Assets/Assets-Scripts/loadfooter.js" defer></script>
+    <style>
+        hr{
+            margin: auto;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+            height: 5px;
+            background-color: rgb(255, 255, 255);
+
+        }
+    </style>
+</footer>
+</html>

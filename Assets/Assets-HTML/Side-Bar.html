@@ -1,0 +1,105 @@
+<head>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    defer
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    defer
+  ></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="profile" id="profileText">
+      <a href="../../HTML/Profile.html"></a>
+      <img src="../../Imgs/user-profile.png" />
+    </div>
+  </div>
+  <div class="search"></div>
+  <nav class="side-bar">
+    <div class="logos">
+      <p class="logo"><ion-icon name="library"></ion-icon>DigitalDewey</p>
+      <ion-icon name="list-outline" class="btn"></ion-icon>
+    </div>
+
+    <form action="../../HTML/AllBooks.html" method="GET" class="form">
+      <input
+        type="text"
+        name="search"
+        placeholder="Search books..."
+        id="searchInputnav"
+        autocomplete="off"
+      />
+    </form>
+
+    <div>
+      <ul class="options">
+        <li class="option active">
+          <a href="../../HTML/Home.html"
+            ><span
+              ><ion-icon name="home-outline" class="icon"></ion-icon>Home</span
+            ></a
+          >
+        </li>
+
+        <li class="option">
+          <a href="../../HTML/Profile.html"
+            ><span
+              ><ion-icon name="person-outline" class="icon"></ion-icon>User
+              Profile</span
+            ></a
+          >
+        </li>
+
+        <li class="option">
+          <a href="../../HTML/Categories.html"
+            ><span
+              ><ion-icon name="list-circle-outline" class="icon"></ion-icon
+              >Categories</span
+            ></a
+          >
+        </li>
+
+        <li class="option">
+          <a href="../../HTML/AllBooks.html"
+            ><span
+              ><ion-icon name="book-outline" class="icon"></ion-icon>All
+              Books</span
+            ></a
+          >
+        </li>
+
+        <li class="option" id="addBook">
+          <a href="../../HTML/AddBook.html"
+            ><span
+              ><ion-icon name="add-circle-outline" class="icon"></ion-icon>Add a
+              Book</span
+            ></a
+          >
+        </li>
+
+        <li class="option">
+          <a href="../../HTML/About.html"
+            ><span
+              ><ion-icon name="people-outline" class="icon"></ion-icon
+              >About</span
+            ></a
+          >
+        </li>
+
+        <li class="option logout">
+          <a id="loggingButton"
+            ><span
+              ><ion-icon
+                name="log-out-outline"
+                class="icon logoutIcon"
+              ></ion-icon></span
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>

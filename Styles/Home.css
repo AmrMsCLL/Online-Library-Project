@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+.header {
+  position: fixed;
+  background-color: rgb(1, 1, 1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+.header li {
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-left: 40px;
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transform: scaleX(0);
+    transition: 0.2s;
+  }
+  a:hover:after {
+    transform: scaleX(1);
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.logo {
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../Imgs/joey-huang-JLJQAG2Ofn4-unsplash.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 50px 100px;
+}
+
+.container .quote {
+  max-width: 500px;
+  color: white;
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: -30px;
+  }
+  p {
+    margin: 50px 0px;
+    line-height: 25px;
+  }
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: 700;
+    padding: 20px 50px;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  a:hover {
+    background: #fff;
+    color: black;
+  }
+}
+.container .Join {
+  position: relative;
+  width: 400px;
+}
+
+.Join h2 {
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+}
+.Join .input_Box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 40px 0;
+}
+.Join .input_Box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 30px;
+  color: #fff;
+  padding-left: 50px;
+  font-size: 15px;
+}
+.Join .input_Box label {
+  position: absolute;
+  top: 55%;
+  left: 55px;
+  color: #fff;
+  font-size: 15px;
+  transform: translateY(-60%);
+  transition: 0.3s;
+}
+.input_Box input:valid ~ label {
+  font-size: 13px;
+  top: -14px;
+  left: 17px;
+}
+
+.icon {
+  position: absolute;
+  top: -13px;
+  left: 20px;
+  font-size: 25px;
+  color: aqua;
+}
+
+.Join .rME {
+  margin-top: -30px;
+  margin-bottom: 10px;
+  padding-left: 7px;
+  font-size: 15px;
+  color: #fff;
+  a {
+    padding-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  a:hover {
+    color: aqua;
+    text-decoration: underline;
+  }
+}
+.container .Sub {
+  height: 50px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 25px;
+  font-weight: 700;
+  background: #fff;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.container .Sub:hover {
+  background: aqua;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    position: relative;
+    flex-direction: column;
+    background: black;
+  }
+  .header li {
+    margin-left: 20px;
+  }
+  .container {
+    flex-direction: column;
+    padding: 50px 20px 0px;
+  }
+  .container .quote {
+    max-width: 100%;
+  }
+  .container .Join {
+    background: black;
+    margin-top: 150px;
+    width: 100%;
+  }
+  .Join .input_Box {
+    margin: 30px 0;
+  }
+  .container .quote a {
+    font-size: 15px;
+    padding: 15px 25px;
+  }
+}
+
+.Slider_Content {
+  padding: 70px;
+  position: relative;
+  a {
+    width: 16%;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s;
+    h2:hover {
+      color: aqua;
+      .popIcon {
+        color: #fff;
+      }
+    }
+    h2 {
+      color: #fff;
+      transition: 0.3s;
+      .popIcon {
+        margin-left: 8px;
+        color: aqua;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  div {
+    p {
+      color: #fff;
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  justify-content: left;
+  margin: 20px auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.slider ::-webkit-scrollbar {
+  display: none;
+}
+
+.Card {
+  margin: 20px auto;
+  padding: 30px;
+  position: relative;
+  .image {
+    border: 2px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.791);
+    position: relative;
+    transition: 0.3s;
+  }
+  img {
+    position: relative;
+    transition: filter 0.1s ease;
+  }
+
+  .image img:hover {
+    filter: brightness(50%);
+  }
+  .image:hover {
+    box-shadow: none;
+  }
+}
+.hoverText {
+  position: absolute;
+  text-align: center;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.91);
+  width: 90%;
+}
+
+hr {
+  margin: 0 auto;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  height: 5px;
+  background-color: aqua;
+}
+
+.slider_Button {
+  position: absolute;
+  top: 50%;
+  background-color: aqua;
+  color: #000000;
+  height: 40px;
+  width: 40px;
+  font-size: 2.2rem;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.slider_Button:hover {
+  background-color: #fff;
+}
+
+.Slider_Content #prev {
+  left: 5;
+  display: none;
+}
+
+.Slider_Content #next {
+  right: 5;
+}
+@media only screen and (max-width: 600px) {
+  header h1,
+  .quote h2 {
+    font-size: 1.5rem;
+  }
+
+  .nav_bar ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav_bar li {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .quote,
+  .Join {
+    padding: 10px;
+  }
+
+  .quote p {
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  header h1,
+  .quote h2 {
+    font-size: 2rem;
+  }
+
+  .quote p,
+  .Join label {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}

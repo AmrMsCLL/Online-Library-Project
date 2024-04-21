@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Book</title>
+    <link rel="stylesheet" href="../Styles/AddBook.css">
+    <link rel="stylesheet" href="../Styles/Bookdetails.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../Scripts/AddBook.js" defer></script>
+</head>
+
+<body>
+    <div id="side-bar_reuseable"></div>
+    <script src="../Assets/Assets-Scripts/LoadSide-Bar.js" defer></script>
+
+    <div class="wraper">
+        <form id="editForm">
+
+            <label for="name-input" id="name-input-label" >Name:</label>
+            <input id="name-input" name="name" placeholder="Book Name">
+
+            <br>
+
+            <label for="author-input" id="author-input-label">Author:</label>
+            <input id="author-input" name="author" placeholder="Book Author">
+
+            <br>
+            <label for="category-input" id="category-input-label">Category: </label>
+            <input id="category-input" name="category" placeholder="Book Category">
+            <br>
+            
+            <label for="price-input" id="price-input-label">Price: </label>
+            <input id="price-input" name="price" placeholder="Book Price">
+            <br>
+            
+            <label for="availability-input" id="availability-input-label">Availability: </label>
+            <input id="availability-input" name="availability" placeholder="Book Availability">
+            
+            <br>
+            
+            <label for="description-input" id="description-input-label">Description: </label>
+            <textarea id="description-input" name="description" placeholder="Book Description"></textarea>
+            
+            <br>
+            <label for="section-input" id="section-input-label" >Section: </label>
+            <input id="section-input" name="section" placeholder="Book Section">
+            
+            <br>
+            <label for="imageSrc-input" id="imageSrc-input-label" style="display: none;">ImageSrc:</label>           
+            <input id="imageSrc-input" name="imageSrc" style="display: none;" placeholder="Book Cover Url">
+
+            <br>
+            <button class="btn1" id="submitButton" type="button" style="display: flex;">ADD</button>
+        </form>
+    </div>
+</body>
+
+<footer>
+    <div id="footer_reuseable"></div>
+    <script src="../Assets/Assets-Scripts/loadfooter.js"></script>
+</footer>
+
+</html>
