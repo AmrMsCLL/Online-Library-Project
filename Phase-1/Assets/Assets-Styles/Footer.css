@@ -122,3 +122,31 @@
     color: red;
     text-decoration: underline;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .footer .container-footer .col {
+        width: 50%; 
+    }
+
+    .footer .container-footer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .social{
+        flex-direction: row;
+        justify-content: left;
+    }
+
+}
+
+
+@media only screen and (max-width: 900px) {
+    .footer .container-footer .col {
+        width: 25%; 
+    }
+
+
+}
