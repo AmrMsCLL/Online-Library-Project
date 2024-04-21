@@ -50,7 +50,6 @@ function createBookCard(book) {
 
     const link = document.createElement('a');
     link.href = `Book-Details.html`;
-    // ?name=${encodeURIComponent(book.name)}`;
     link.classList.add('link-class');
     link.appendChild(img);
 
