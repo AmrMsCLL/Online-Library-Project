@@ -42,7 +42,7 @@ function displayLastSeen(books){
 
         const cardImg = document.createElement('img');
         cardImg.alt = `Cover of ${book.name}`;
-        cardImg.src = book.imageUrl;
+        cardImg.src = book.imageSrc;
         cardImg.setAttribute('name', book.name);
         cardImg.setAttribute('price', book.price);
         cardImg.setAttribute('availability', book.availability);
