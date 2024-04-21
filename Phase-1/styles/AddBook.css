@@ -1,2 +1,15 @@
-
-
+body{
+    padding-top: 150px;
+    background: url(../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg);
+    background-position: center;
+    background-size: contain;
+}
+.wraper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btn1{
+    position: relative;
+    right: -50px;
+}

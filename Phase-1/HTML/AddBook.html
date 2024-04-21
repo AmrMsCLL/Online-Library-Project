@@ -5,26 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add-Book</title>
     <link rel="stylesheet" href="../Styles/Main.css">
+    <link rel="stylesheet" href="../Styles/AddBook.css">
     <link rel="stylesheet" href="../Styles/Bookdetails.css">
-    <style>
-        body{
-            padding-top: 100px;
-            background: url(../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg);
-            background-position: center;
-            background-size: contain;
-        }
-        .wraper{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
-        .btn1{
-            position: relative;
-            right: -50px;
-        }
-    </style>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../Scripts/AddBook.js" defer></script>
 </head>
 
 <body>
@@ -68,11 +53,9 @@
             <input id="imageSrc-input" name="imageSrc" style="display: none;" placeholder="Book Cover Url">
 
             <br>
-            <button class="btn1" id="saveButton" type="button" style="display: flex;">ADD</button>
+            <button class="btn1" id="submitButton" type="button" style="display: flex;">ADD</button>
         </form>
     </div>
-
-
 </body>
 
 <footer>
