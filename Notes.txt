@@ -1,0 +1,1 @@
+make sure localstorage is empty before using the website 
