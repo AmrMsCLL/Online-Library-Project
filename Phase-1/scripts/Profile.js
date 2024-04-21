@@ -102,7 +102,6 @@ function displayLastSeen(books){
     };
 }
 
-
 function displayBorrowed(books){
     const borrowedContainer = document.getElementById("borrowedContainer");
     borrowedContainer.innerHTML = '';
@@ -190,7 +189,37 @@ function displayBorrowed(books){
     };
 }
 
+function getUserData() {
+    const userDataJson = sessionStorage.getItem('LoggedInUser');
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return {
+            username: userData.username,
+            email: userData.email,
+            password: userData.password,
+            role: userData.role
+        };
+    }
+    return null;
+}
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+
+    const userDataArr = getUserData();
+
+    console.log(userDataArr);
+
+    document.getElementById('usernameText').innerHTML = `Username: ${userDataArr.username}`;
+    document.getElementById('emailText').innerHTML = `Email: ${userDataArr.email}`;
+    document.getElementById('roleText').innerHTML = `Password: ${userDataArr.password}`;
+    document.getElementById('passwordText').innerHTML = `Role: ${userDataArr.role}`;
+
+    document.getElementById('editProfileButton').addEventListener('click', function() {
+        alert('Unfortuneatly there is no Edit Functionality Currently')
+    })
+
     const latestBooks = loadBooksFromLocalStorage("LastSeenBooks");
     displayLastSeen(latestBooks);
 

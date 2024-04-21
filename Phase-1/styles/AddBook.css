@@ -1,2 +1,12 @@
-
-
+body{
+    padding-top: 150px;
+}
+.wraper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btn1{
+    position: relative;
+    right: -50px;
+}

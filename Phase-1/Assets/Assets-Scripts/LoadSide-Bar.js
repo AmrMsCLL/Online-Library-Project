@@ -50,21 +50,49 @@ function checkIsLoggedIn() {
     }
     return false;
 }
+function checkIsAdmin() {
+    const userDataJson = sessionStorage.getItem('LoggedInUser');
+    
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return userData.role;
+    }
+    return false;
+}
+function getUsername() {
+    const userDataJson = sessionStorage.getItem('LoggedInUser');
+    
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return userData.username;
+    }
+}
 
 function setupLogoutButton() {
     const loggingButton = document.getElementById('loggingButton'); 
     const userData = checkIsLoggedIn();
+    const isAdmin = checkIsAdmin();
+    const username = getUsername();
+
+    if(isAdmin){
+        document.getElementById('addBook').style.display = 'flex';
+    } else {
+        document.getElementById('addBook').style.display = 'none';
+    }
 
     if (userData) {
         loggingButton.innerHTML = '<span><ion-icon name="log-out-outline" class="icon logoutIcon"></ion-icon>logout</span>';
         loggingButton.href = '../../HTML/Home.html'
+        document.getElementById('profileText').innerHTML = `<a href="../../HTML/Profile.html">Hello, ${username}</a><img src="../../Imgs/user-profile.png">`;
         loggingButton.addEventListener('click', function() {
             event.preventDefault();
             sessionStorage.removeItem('LoggedInUser');
+            // document.getElementById('profileText').style.display = 'none'
             window.location.href = '../../HTML/Home.html'
         });
     } else {
         loggingButton.innerHTML = '<span><ion-icon name="log-in-outline" class="icon loginIcon"></ion-icon>login</span>';
+        document.getElementById('profileText').style.display = 'none'
         loggingButton.href = '../../HTML/Login.html'
     }
 }
