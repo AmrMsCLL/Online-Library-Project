@@ -1,106 +1,135 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-*{
-    font-family: 'Poppins';
-    box-sizing: border-box;
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
 }
-body{
-    padding-top: 100px;
-    text-align:  center;
-    background-color: #181818;
-    color: #fff;
-    /* overflow: hidden; */
+body {
+  padding-top: 100px;
+  text-align: center;
+  background-color: #181818;
+  color: #fff;
 }
-.content{
-    padding: 20px 35px 25px;
-    display: flex;
-    flex-direction: column;
-    width: 700px;
-    height: 415px;
-    justify-content:space-around;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, .1);
-    border: 2px solid aqua;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.209);
-    border-radius: 10px;
+.content {
+  padding: 20px 35px 25px;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  height: 415px;
+  justify-content: space-around;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid aqua;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.209);
+  border-radius: 10px;
 }
-.input_field{
-    position: relative;
+.input_field {
+  position: relative;
+  width: 100%;
+  margin: 15px 0;
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
     width: 100%;
-    margin: 15px 0;
-    input[type="text"],input[type="email"],input[type="password"]{
-        width: 100%;
-        color: #fff;
-        height: 100%;
-        background-color: transparent;
-        border: 2px solid rgba(255, 255, 255, .2);
-        outline: none;
-        font-size: 16px;
-        padding: 15px 15px 15px 35px;
-        border-radius: 8px;
-    }
+    color: #fff;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    font-size: 16px;
+    padding: 15px 15px 15px 35px;
+    border-radius: 8px;
+  }
 }
-label{
-    padding-right: 87%;
-    color: #f1f1f1;
-    white-space: nowrap;
-    accent-color: aqua;
+label {
+  padding-right: 87%;
+  color: #f1f1f1;
+  white-space: nowrap;
+  accent-color: aqua;
 }
 
-.sIcon{
-    color: aqua;
-    font-size: 20px;
-    position: absolute;
-    left: 10px;
-    top: 63%;
-    transform: translateY(-50%);
+.sIcon {
+  color: aqua;
+  font-size: 20px;
+  position: absolute;
+  left: 10px;
+  top: 63%;
+  transform: translateY(-50%);
 }
-.content input[type="submit"]{
-    width: 100%;
-    height: 50px;
-    background-color: #fff;
-    border: 2px solid black;
-    outline: none;
-    margin-top: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    transition:  0.4s;
+.content input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border: 2px solid black;
+  outline: none;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.4s;
 }
-.content input[type="submit"]:hover{
-    background-color: aqua;
+.content input[type="submit"]:hover {
+  background-color: aqua;
 }
 .forgot {
-    padding-left: 61%;
+  padding-left: 61%;
+  color: #f1f1f1;
+  a {
+    color: aqua;
+  }
+  a:visited {
+    color: aqua;
+  }
+  p {
+    display: inline;
     color: #f1f1f1;
-    a{
-        /* text-decoration: none; */
-        color: aqua;
-    }
-    a:visited{
-        color: aqua;
-    }
-    p{
-        display: inline;
-        color: #f1f1f1;
-    }
+  }
 }
 
 .notreg {
-    padding: 2% 2%;
-    a{
-        color: aqua;
-        /* text-decoration: none; */
-    }
-    a:visited {
-        color: aqua;
-    }
+  padding: 2% 2%;
+  a {
+    color: aqua;
+  }
+  a:visited {
+    color: aqua;
+  }
 }
 
 #remmebx {
-    display: block;
-    margin-top: -18px;
-    margin-left: 125px ;
+  display: block;
+  margin-top: -18px;
+  margin-left: 125px;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 15px;
+    }
+
+    .input_field input {
+        padding: 8px;
+    }
+
+    .buttonlog {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    .content {
+        max-width: 400px;
+    }
+
+    .input_field input {
+        padding: 12px;
+    }
+
+    .buttonlog {
+        padding: 12px;
+        font-size: 16px;
+    }
 }

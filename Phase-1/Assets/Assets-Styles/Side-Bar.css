@@ -1,234 +1,226 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-*{
-    font-family: 'Poppins';
+* {
+  font-family: "Poppins";
 }
 .navbar {
-    height: 70px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: black;
-    z-index: 50;
-    .profile{
-        background-color: rgba(255, 255, 255, .2);
-        display: flex;
-        border: 2px solid aqua;
-        border-radius: 10px;
-        padding: 0 10px;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        height: 70%;
-        top: 10px;
-        right: 30px;
-        img{
-            width: 40px;
-            height: 40px;
-            margin-left: 10px;
-            transition: .3s;
-        }
-        a{
-            text-decoration: none;
-            color: #fff;
-            transition: .3s;
-        }
-        transition: .3s;
+  height: 70px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index: 50;
+  .profile {
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    border: 2px solid aqua;
+    border-radius: 10px;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 70%;
+    top: 10px;
+    right: 30px;
+    img {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      transition: 0.3s;
     }
+    a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+    transition: 0.3s;
+  }
 
-    .profile:hover{
-        background-color: rgba(255, 255, 255, .7);
-        a{
-        color: black;
-        font-weight: 700;
-        }
-        border: 2px solid rgb(4, 162, 162);
+  .profile:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    a {
+      color: black;
+      font-weight: 700;
     }
+    border: 2px solid rgb(4, 162, 162);
+  }
 }
 .search {
-    display: inline;
-    position: relative;
-    top: 0;
-    left: 80%;
-    top: -50%;
-    z-index: 500;
+  display: inline;
+  position: relative;
+  top: 0;
+  left: 80%;
+  top: -50%;
+  z-index: 500;
 }
 
-.side-bar{
-    box-sizing: border-box; 
-    padding: 0;
+.side-bar {
+  box-sizing: border-box;
+  padding: 0;
+  color: #fff;
+  width: 0px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.912);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  overflow: hidden;
+  z-index: 100;
+  a {
+    text-decoration: none;
     color: #fff;
-    width: 0px;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.912);
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 0.3s;
-    overflow: hidden;
-    z-index: 100;
-    a{
-        text-decoration: none;
-        color: #fff;
-    }
+  }
 }
 
-.side-bar.active{
-    padding: 6px 14px;
-    width: 265px;
+.side-bar.active {
+  padding: 6px 14px;
+  width: 265px;
 }
 
-.side-bar.active .logo{
-    opacity: 1;
-    transition-delay: .2s;
+.side-bar.active .logo {
+  opacity: 1;
+  transition-delay: 0.2s;
 }
 
-.options{
-    margin-top: 40px;
+.options {
+  margin-top: 40px;
+  list-style: none;
+  padding-left: 0;
+  padding-left: 10px;
+  .option {
+    opacity: 0;
+    pointer-events: none;
     list-style: none;
-    padding-left: 0;
-    padding-left: 10px;
-    .option{
-        opacity: 0;
-        pointer-events: none;
-        list-style: none;
-        width: 100%;
-        height: 60px;
-        margin: 10px 0px;
-        display: flex; 
-        align-items: center; 
-        transition: 0.3s;
-
-        a{
-            white-space: nowrap;
-            padding-left:5px ;
-            text-decoration: none;
-            color: #fff;
-            font-size: 20px;
-            flex-grow: 1; 
-            display: flex; 
-            align-items: center; 
-            border-radius: 8px;
-            transition: 0.3s;
-
-            .icon{
-                font-size: 10px;
-                font-weight: 300;
-                min-width: 30px;
-                height: 60px;
-                text-align: center;
-                margin-right: 10px; 
-            }
-            
-            span {
-                display: flex; 
-                align-items: center;
-            }
-        }
-
-    }
-    .option a:hover{
-            background-color: rgba(255, 255, 255, .2);
-    }
-}
-
-
-.logos{
     width: 100%;
-    height: 50px;
+    height: 60px;
+    margin: 10px 0px;
     display: flex;
     align-items: center;
-    .logo{
-        padding-top: 5px;
-        padding-left: 30px;
-        pointer-events: none;
-        font-size: 25px;
-        font-weight: 600;
-        opacity: 0;
-        transition: .1s;
-    }
-    .btn{
-        color: rgb(255, 255, 255);
-        position: fixed;
-        left: 10px;
-        width: 30px;
-        height: 30px;
+    transition: 0.3s;
+
+    a {
+      white-space: nowrap;
+      padding-left: 5px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      transition: 0.3s;
+
+      .icon {
+        font-size: 10px;
+        font-weight: 300;
+        min-width: 30px;
+        height: 60px;
         text-align: center;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 40px;
-        cursor: pointer;
-        transition-delay: 0.3s;
-        transition: opacity 0.3s;
+        margin-right: 10px;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+      }
     }
-}
-.side-bar.active .option{
-    pointer-events: auto;
-    opacity: 1;
+  }
+  .option a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }
 
-.side-bar.active .btn{
-    color: #fff;
+.logos {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  .logo {
+    padding-top: 5px;
+    padding-left: 30px;
+    pointer-events: none;
+    font-size: 25px;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.1s;
+  }
+  .btn {
+    color: rgb(255, 255, 255);
+    position: fixed;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40px;
+    cursor: pointer;
+    transition-delay: 0.3s;
+    transition: opacity 0.3s;
+  }
+}
+.side-bar.active .option {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.side-bar.active .btn {
+  color: #fff;
 }
 
 .side-bar .line {
-    opacity: 0;
+  opacity: 0;
 }
 .side-bar.avtive .line {
-    opacity: 1;
+  opacity: 1;
 }
 
 .logout {
-    position: absolute;
-    bottom: 1%;
-    width: 100%;
-    /* width: 10px; */
-    /* span {
-        color:rgb(255, 255, 255);
-        ion-icon {
-            color: white;
-        }
-    } */
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
 }
-.logout a:hover{
-    background-color: #555; 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
-    position: relative; 
-    z-index: 1;
+.logout a:hover {
+  background-color: #555;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
-.logoutIcon{
-    color: red;
+.logoutIcon {
+  color: red;
 }
-.loginIcon{
-    color: rgb(0, 255, 55);
-}
-
-#searchInputnav, #searchinputnav:focus{
-    position: relative;
-    margin: 0;
-    padding-left: 10px;
-    width: 100%;
-    font-size: 15px;
-    font-weight: 600;
-    outline: none;
-    border: none;
-    border: 2px solid aqua;
-    border-radius: 50px;
-    box-sizing: border-box;
-    opacity: 1;
+.loginIcon {
+  color: rgb(0, 255, 55);
 }
 
-.form{
-    position: relative;
-    width: 100%;
-    outline: none;
-    border: none;
-    border: 2px solid aqua;
-    box-shadow: 0 0 5px #fff;
-    border-radius: 50px;
-    padding: 0;
-    margin: 0;
+#searchInputnav,
+#searchinputnav:focus {
+  position: relative;
+  margin: 0;
+  padding-left: 10px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border: 2px solid aqua;
+  border-radius: 50px;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  outline: none;
+  border: none;
+  border: 2px solid aqua;
+  box-shadow: 0 0 5px #fff;
+  border-radius: 50px;
+  padding: 0;
+  margin: 0;
 }

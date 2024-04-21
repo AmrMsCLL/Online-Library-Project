@@ -1,215 +1,227 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-*{
-    font-family: 'Poppins';
-    box-sizing: border-box;
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
 }
-body{
-    background-color: #000000;
-    /* padding-left: 20px; */
-    /* padding-top: 50px; */
+body {
+  background-color: #000000;
 }
 
 .Search_Bar {
-    display: flex;
-    margin: 100px auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 470px;
-    background-image: url('../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg');
-    background-size: cover;
+  display: flex;
+  margin: 100px auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 470px;
+  background-image: url("../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg");
+  background-size: cover;
+  position: relative;
+  border: 4px solid aqua;
+  border-radius: 24px;
+  p {
+    font-size: 20px;
+    font-weight: 700;
+    color: aqua;
     position: relative;
-    border: 4px solid aqua;
-    border-radius: 24px;
-    /*--------------------------------------------------------------*/
-    p{
-        font-size: 20px;
-        font-weight: 700;
-        color: aqua;
-        position: relative;
-        right: 0;
-        top: 50px;
-    }
-    /*--------------------------------------------------------------*/
-    h2{
-        font-size: 25px;
-        font-weight: 900;
-        color: rgb(255, 255, 255);
-        position: relative;
-        left: 5px;
-        top: 15px;
-    }
+    right: 0;
+    top: 50px;
+  }
+  h2 {
+    font-size: 25px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    position: relative;
+    left: 5px;
+    top: 15px;
+  }
 }
-    /*--------------------------------------------------------------*/
-.bar{
+.bar {
+  width: 900px;
+  height: 50px;
+  position: relative;
+  input {
+    padding-left: 20px;
+    outline: none;
+    border: none;
     width: 900px;
     height: 50px;
-    position: relative;
-    input{
-        padding-left: 20px;
-        outline: none;
-        border: none;
-        width: 900px;
-        height: 50px;
-        border-radius: 10px;
-    }
-    input[type="search"]:focus {
-        transition: background-color 0.2s ease;
-        background-color: #00000090;
-        color: #fff;
-    }
+    border-radius: 10px;
+  }
+  input[type="search"]:focus {
+    transition: background-color 0.2s ease;
+    background-color: #00000090;
+    color: #fff;
+  }
 }
-    /*--------------------------------------------------------------*/
 .search-icon {
-    position: absolute;
-    top: 25px;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 30px;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
 }
-    /*--------------------------------------------------------------*/
 #search-Input::-webkit-search-cancel-button {
+  position: absolute;
+  right: 80px;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+}
+.Resources {
+  position: relative;
+  padding: 20px;
+  ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: left;
+    gap: 100px;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    border: 3px solid aqua;
+    padding: 10px;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  li:hover {
+    background-color: aqua;
+    color: black;
+    a {
+      color: black;
+      font-weight: 700;
+    }
+  }
+
+  h2 {
+    padding: 3px 10px 3px 10px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  h2:before {
+    content: "";
+    width: 5px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.868);
     position: absolute;
-    right: 80px;
-    top: 30px;
-    width: 20px;
-    height: 20px;
-}
-    /*--------------------------------------------------------------*/
-.Resources{
+    top: 45px;
+    left: 15px;
+  }
+
+  a {
+    text-align: center;
+    display: block;
     position: relative;
-    padding: 20px;
-    ul{
-        margin: 0;
-        padding: 0;
-        padding-left: 10px;
-        margin-top: 60px;
-        display: flex;
-        justify-content: left;
-        gap: 100px;
-    }
-
-    li{
-        display: flex;
-        justify-content: center;
-        width: 150px;
-        border: 3px solid aqua;
-        padding: 10px;
-        border-radius: 50px;
-        transition: .3s;
-    }
-
-    li:hover{
-        background-color: aqua;
-        color: black;
-        a{
-            color: black;
-            font-weight: 700;
-        }
-    }
-
-    h2{
-        padding: 3px 10px 3px 10px;
-        color: #fff;
-        font-size: 30px;
-        font-weight: 700;
-    }
-    
-    h2:before{
-        content: "";
-        width: 5px;
-        height: 50px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 0 10px  rgba(0, 255, 255, 0.868);
-        position: absolute;
-        top: 45px;
-        left: 15px;
-    }
-
-    a{
-        text-align: center;
-        display: block;
-        position: relative;
-        text-decoration: none;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-        font-size: 15px;
-
-    }
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 15px;
+  }
 }
 
-.Subjects{
+.Subjects {
+  position: relative;
+  padding: 20px;
+  ul {
     position: relative;
-    padding: 20px;
-    ul{
-        position: relative;
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+  }
 
-    }
+  li {
+    position: relative;
+    margin: 10px 0;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(8, 180, 180);
+    line-height: 60px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding-left: 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
 
-    li{
-        position: relative;
-        margin: 10px 0;
-        height: 60px;
-        width: 100%;
-        background-color: rgb(8, 180, 180);
-        line-height: 60px;
+  li:hover {
+    padding-left: 70px;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+
+  li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+  }
+
+  li::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #181818;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.2s;
+  }
+
+  li:hover::after {
+    width: 30%;
+  }
+
+  h2 {
+    padding: 3px 10px 3px 10px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  h2:before {
+    content: "";
+    width: 5px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.696);
+    position: absolute;
+    top: 45px;
+    left: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+    #categoriesContainer h2 {
         font-size: 20px;
-        letter-spacing: 5px;
-        padding-left: 10px;
-        border-radius: 4px;
-        transition: .3s;
     }
 
-    li:hover{
-        padding-left: 70px;
-        font-weight: 900;
-        letter-spacing: 3px;
+    #categoriesContainer li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    #categoriesContainer h2 {
+        font-size: 22px;
     }
 
-    li a{
-        display: block;
-        position: relative;
-        text-decoration: none;
-        width: 100%;
-        height: 100%;
-        color: #000000;
-    }
-
-    li::after{
-        content: "";
-        width: 0;
-        height: 100%;
-        background-color: #181818;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transition: .2s;
-    }
-
-    li:hover::after{
-        width: 30%;
-    }
-
-    h2{
-        padding: 3px 10px 3px 10px;
-        color: #fff;
-        font-size: 30px;
-        font-weight: 700;
-    }
-
-    h2:before{
-        content: "";
-        width: 5px;
-        height: 50px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 0 10px  rgba(0, 255, 255, 0.696);
-        position: absolute;
-        top: 45px;
-        left: 15px;
+    #categoriesContainer li a {
+        font-size: 16px;
+        padding: 10px;
     }
 }

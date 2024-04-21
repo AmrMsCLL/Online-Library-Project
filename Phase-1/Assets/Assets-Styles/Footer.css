@@ -1,124 +1,148 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-*{
-    font-family: 'Poppins';
-    box-sizing: border-box;
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
 }
 .footer {
-    margin-top: 300px;
-    width: 100%;
-    background-color: #181818;
-    overflow: hidden;
-    color: #fff;
-    /* position: absolute; */
-    bottom: 0;
+  margin-top: 300px;
+  width: 100%;
+  background-color: #181818;
+  overflow: hidden;
+  color: #fff;
+  bottom: 0;
 }
 
-.footer .container-footer{
-    padding: 70px;
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    gap: 60px;
+.footer .container-footer {
+  padding: 70px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 60px;
 }
 
-.footer .container-footer .col{
-    /* padding-left: 40px; */
-    width: 25%;
-    display: flex;
-    flex-direction: column;
+.footer .container-footer .col {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer .container-footer .col h2{
-    font-size: 26px;
-    font-weight: 700;
-    position: relative;
-    padding-left: 10px;
-    color: aqua;
-    margin: 0;
+.footer .container-footer .col h2 {
+  font-size: 26px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 10px;
+  color: aqua;
+  margin: 0;
 }
 
-.footer .container-footer h2::before{
-    content: "";
-    width: 5px;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px  rgba(0, 255, 255, 0.868);
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.footer .container-footer h2::before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.868);
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
-.footer .container-footer a{
-   text-decoration: none;
-   color: #fff;
+.footer .container-footer a {
+  text-decoration: none;
+  color: #fff;
 }
-.footer .container-footer a:hover{
+.footer .container-footer a:hover {
+  text-decoration: none;
+  color: aqua;
+}
+
+.footer .container-footer .col ul a:hover {
+  color: aqua;
+  text-decoration: none;
+}
+.footer .container-footer .col p {
+  line-height: 25px;
+  padding-left: 10px;
+  margin: 30px auto;
+}
+
+.footer .container-footer .col .mail {
+  margin: 40px 0;
+  color: aqua;
+}
+
+.footer .container-footer ul {
+  li {
+    margin: 15px auto;
+    margin-top: 0;
+    font-size: 20px;
+  }
+  list-style: none;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.footer .container-footer .col .social {
+  width: 100%;
+  a {
     text-decoration: none;
-    color: aqua;
+  }
+}
+.footer ion-icon {
+  font-size: 30px;
+  color: #fff;
+  margin: 5px;
 }
 
-
-.footer .container-footer .col ul a:hover{
-    color: aqua;
-    text-decoration: none;
-}
-.footer .container-footer .col p{
-    line-height: 25px;
-    padding-left: 10px;
-    margin: 30px auto;
+.face:hover {
+  color: blue;
 }
 
-.footer .container-footer .col .mail{
-    margin: 40px 0;
-    color: aqua;
+.youtube:hover {
+  color: red;
 }
 
-.footer .container-footer ul{
-    li{
-        margin: 15px auto;
-        margin-top: 0;
-        font-size: 20px;
-    }
-    list-style: none;
-    text-decoration: none;
-    padding: 0 10px;
+.twitter:hover {
+  color: rgb(68, 152, 247);
 }
 
-.footer .container-footer .col .social{
-    width: 100%;
-    a{
-        text-decoration: none;
-    }
-}
-.footer ion-icon{
-    font-size: 30px;
-    color: #fff;
-    margin: 5px;
-}
-
-.face:hover{
-    color: blue;
-}
-
-.youtube:hover{
-    color: red;
-}
-
-.twitter:hover{
-    color: rgb(68, 152, 247);
-}
-
-.linkedin:hover{
-    color: blue;
+.linkedin:hover {
+  color: blue;
 }
 
 #resetStorageLink {
-    color: aqua;
-    text-decoration: none;
+  color: aqua;
+  text-decoration: none;
 }
 #resetStorageLink:hover {
-    color: red;
-    text-decoration: underline;
+  color: red;
+  text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer .col {
+    margin-bottom: 10px;
+  }
+
+  .footer h2 {
+    font-size: 16px;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 12px;
+  }
+
+  .footer .social ion-icon {
+    font-size: 24px;
+  }
+
+  .footer .col ul {
+    padding: 0;
+    list-style-type: none;
+  }
 }
