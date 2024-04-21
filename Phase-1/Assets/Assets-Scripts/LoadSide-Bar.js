@@ -36,11 +36,11 @@ function initToggleButton() {
     }
   }
 
-function checkIsLoggedIn(RM) {
+function checkIsLoggedIn() {
+    
+    // remember me checkbox functionality to be added
     // if (RM) {
-    //     const userDataJson = sessionStorage.getItem('LoggedInUser');
     // } else {
-    //     const userDataJson = sessionStorage.getItem('LoggedInUser');
     // }
     const userDataJson = sessionStorage.getItem('LoggedInUser');
     
@@ -58,7 +58,11 @@ function setupLogoutButton() {
     if (userData) {
         loggingButton.innerHTML = '<span><ion-icon name="log-out-outline" class="icon logoutIcon"></ion-icon>logout</span>';
         loggingButton.href = '../../HTML/Home.html'
-        sessionStorage.removeItem('LoggedInUser');
+        loggingButton.addEventListener('click', function() {
+            event.preventDefault();
+            sessionStorage.removeItem('LoggedInUser');
+            window.location.href = '../../HTML/Home.html'
+        });
     } else {
         loggingButton.innerHTML = '<span><ion-icon name="log-in-outline" class="icon loginIcon"></ion-icon>login</span>';
         loggingButton.href = '../../HTML/Login.html'

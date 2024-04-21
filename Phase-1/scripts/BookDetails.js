@@ -51,9 +51,27 @@ function deleteBookFromLibrary(bookName, localStorageName = 'LibraryBooks') {
     }
 }
 
+function getIsAdmin() {
+    // if (RM) {
+    //     const userDataJson = sessionStorage.getItem('LoggedInUser');
+    // } else {
+    //     const userDataJson = sessionStorage.getItem('LoggedInUser');
+    // }
+    const userDataJson = localStorage.getItem('RegisteredUsers');
+    
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return userData.role;
+    }
+    return false;
+}
+
 function hideOrShowButton() {
-    let isAdmin = true; // will create a method to get is admin later
-    if(isAdmin){
+
+    let isAdmin = getIsAdmin();
+    console.log(isAdmin)
+    
+    if(!isAdmin){
         document.getElementById('delButton').style.display = "flex";
         document.getElementById('editButton').style.display = "flex";
     } else {
@@ -167,7 +185,7 @@ function editBookDetails() {
         const input = document.createElement(field === 'description' ? 'textarea' : 'input');
         input.id = `${field}-input`;
         input.name = field;
-        input.value = sessionStorage.getItem(field); // Assuming session storage holds current values
+        input.value = sessionStorage.getItem(field);
         form.appendChild(label);
         form.appendChild(input);
         form.appendChild(document.createElement('br'));
