@@ -8,9 +8,9 @@ function loadLibraryFromLocalStorage() {
 }   
 
 function groupHomeSections(books) {
-    const allowedSections = ['Popular', 'Most Read', 'Sale']; // Define allowed sections
+    const allowedSections = ['Popular', 'Most Read', 'Sale'];
     return books.reduce((acc, book) => {
-        if (allowedSections.includes(book.section)) { // Only include allowed sections
+        if (allowedSections.includes(book.section)) {
             if (!acc[book.section]) {
                 acc[book.section] = [];
             }
