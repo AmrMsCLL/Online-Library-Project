@@ -152,16 +152,6 @@ function hoverEffect() {
     });
 }
 
-function loadIsLoggedIn() {
-    const userData = sessionStorage.getItem('isLoggedIn');
-    return userData ? JSON.parse(userData) : [];
-}
-
-function loadIsLoggedInRM() {
-    const userData = localStorage.getItem('isLoggedIn');
-    return userData ? JSON.parse(userData) : [];
-}
-
 function handleUserLoginState() {
     const userData = JSON.parse(sessionStorage.getItem('LoggedInUser'));
     const userDataRM = JSON.parse(localStorage.getItem('LoggedInUser'));
@@ -181,13 +171,37 @@ function handleUserLoginState() {
     }
 }
 
+function checkIsLoggedIn() {
+    const userDataJson = sessionStorage.getItem('LoggedInUser');
+    
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return userData.loggedin;
+    }
+    return false;
+}
+
+document.getElementById('joinButton').addEventListener('click', function() {
+    window.location.href = '../HTML/Login.html'
+});
+
 document.addEventListener('DOMContentLoaded', function() {
+    const isloggedin = checkIsLoggedIn();;
+    if(!isloggedin){
+        document.getElementById('profileLink').href = 'Login.html'
+    } 
+    
     if (!localStorage.getItem('BooksLoaded')) {
 
         localStorage.setItem('LibraryBooks', JSON.stringify(libraryBooksArray));
 
         localStorage.setItem('BooksLoaded', 'true');
     }
+
+    document.getElementById('joinButton').addEventListener('click', function() {
+        alert('Please Log in through the login page')
+        window.location.href = '../HTML/Login.html';
+    });
 
     loadLibraryFromLocalStorage();
     handleUserLoginState();

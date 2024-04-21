@@ -42,6 +42,7 @@ function checkIsLoggedIn() {
     // if (RM) {
     // } else {
     // }
+
     const userDataJson = sessionStorage.getItem('LoggedInUser');
     
     if (userDataJson) {
@@ -70,7 +71,7 @@ function getUsername() {
 
 function setupLogoutButton() {
     const loggingButton = document.getElementById('loggingButton'); 
-    const userData = checkIsLoggedIn();
+    const isLoggedIn = checkIsLoggedIn();
     const isAdmin = checkIsAdmin();
     const username = getUsername();
 
@@ -80,10 +81,11 @@ function setupLogoutButton() {
         document.getElementById('addBook').style.display = 'none';
     }
 
-    if (userData) {
+    if (isLoggedIn) {
         loggingButton.innerHTML = '<span><ion-icon name="log-out-outline" class="icon logoutIcon"></ion-icon>logout</span>';
         loggingButton.href = '../../HTML/Home.html'
         document.getElementById('profileText').innerHTML = `<a href="../../HTML/Profile.html">Hello, ${username}</a><img src="../../Imgs/user-profile.png">`;
+
         loggingButton.addEventListener('click', function() {
             event.preventDefault();
             sessionStorage.removeItem('LoggedInUser');
