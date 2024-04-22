@@ -227,8 +227,7 @@ body {
 }
 
 .Card {
-  width: 200px;
-  height: 240px;
+
   margin: 20px auto;
   padding: 30px;
   position: relative;
@@ -241,8 +240,7 @@ body {
   img {
     position: relative;
     transition: filter 0.1s ease;
-    width: 180px;
-    height: 230px;
+
   }
 
   .image img:hover {
@@ -319,11 +317,12 @@ hr {
     padding: 20px;
   }
 
-  .Card{
-    img{
-      height: 180px;
-      width: 130px;
-    }
+  .container .Join {
+    background: black;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: none;
   }
 
   .Slider_Content{
@@ -335,10 +334,6 @@ hr {
     .slider_Button{
       top: 56%;
     }
-  }
-
-  .hoverText{
-    top: 70%;
   }
 }
 
