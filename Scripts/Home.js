@@ -38,8 +38,6 @@ function createBookCard(book) {
     img.src = book.imageSrc;
     img.alt = `Cover of ${book.name}`;
     img.setAttribute('name', book.name);
-    img.setAttribute('width', '180px');
-    img.setAttribute('height', '230px');
     img.setAttribute('price', book.price);
     img.setAttribute('author', book.author);
     img.setAttribute('availability', bookisavailablestring);

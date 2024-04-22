@@ -118,7 +118,7 @@ body {
   .boxes {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 20px;
   }
 
@@ -176,20 +176,50 @@ body {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 650px) {
   .profileImage {
     width: 80px;
     height: 80px;
   }
 
+
+  .wraper{
+    flex-direction: column;
+  }
   .userInfo,
   .dashboard {
     padding: 10px;
+    width: auto;
+    margin: 10px 0;
   }
 
-  .box {
+  .boxes{
     width: 100%;
+    gap: 0;
+  }
+
+  .dashboard .boxes .box {
     margin: 5px 0;
+
+    .text {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    ion-icon {
+      font-size: 25px;
+      color: #181818;
+    }
+
+    .number {
+      white-space: nowrap;
+      font-size: 30px;
+      font-weight: 700;
+    }
+  }
+
+  .box1 .text{
+    font-size: 5px;
   }
 
   .activity {
@@ -197,12 +227,24 @@ body {
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+@media only screen and (min-width: 650px) and (max-width: 992px) {
   .profileImage {
     width: 90px;
     height: 90px;
   }
+  .userInfo{
+    margin: 0 auto;
+  }
 
+  .wraper{
+    flex-direction: column;
+  }
+
+  .dashboard {
+    padding: 10px;
+    width: auto;
+    margin: 10px 0;
+  }
   .box {
     width: calc(50% - 10px);
   }

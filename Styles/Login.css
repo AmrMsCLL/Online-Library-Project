@@ -104,8 +104,14 @@ label {
   margin-left: 125px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
+    body{
+      padding-left:10px ;
+      padding-right:10px ;
+    }
     .content {
+      width: auto;
+      height: auto;
         padding: 15px;
     }
 
@@ -119,9 +125,10 @@ label {
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 992px) {
+@media only screen and (min-width: 650px) and (max-width: 992px) {
     .content {
-        max-width: 400px;
+      max-width: 650px ;
+      height: 415px;
     }
 
     .input_field input {
