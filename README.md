@@ -7,6 +7,3 @@ Ahmed Mohamed Saber
 Omar Mahfouz    
 Medhat Ahmed    
 Mohamed Gamal    
-
-
-https://AmrMsCLL.github.io/Online-Library-Project/phase-1/
