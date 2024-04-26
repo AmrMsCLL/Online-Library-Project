@@ -62,16 +62,16 @@ function getIsAdmin() {
 }
 
 function hideOrShowButton() {
-  let isAdmin = getIsAdmin();
-
-  if (!isAdmin) {
-    document.getElementById("delButton").style.display = "flex";
-    document.getElementById("editButton").style.display = "flex";
-  } else {
-    document.getElementById("delButton").style.display = "none";
-    document.getElementById("editButton").style.display = "none";
+    let isAdmin = checkIsAdmin();
+  
+    if (isAdmin == 'Admin') {
+      document.getElementById("delButton").style.display = "flex";
+      document.getElementById("editButton").style.display = "flex";
+    } else {
+      document.getElementById("delButton").style.display = "none";
+      document.getElementById("editButton").style.display = "none";
+    }
   }
-}
 
 function addBook(
   name,
@@ -269,7 +269,7 @@ function saveBookDetails() {
     alert("Book not found.");
   }
   let img = document.getElementById("image");
-  img.setAttribute("src", "../Imgs/Books/ (43).jpg");
+  img.setAttribute("src", "../Imgs/Books/(43).jpg");
 }
 
 function capitalize(string) {

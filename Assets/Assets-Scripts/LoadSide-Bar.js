@@ -54,6 +54,7 @@ function checkIsAdmin() {
   }
   return false;
 }
+
 function getUsername() {
   const userDataJson = sessionStorage.getItem("LoggedInUser");
 
@@ -69,19 +70,16 @@ function setupLogoutButton() {
   const isAdmin = checkIsAdmin();
   const username = getUsername();
 
-  if (isAdmin) {
+  if (isAdmin === 'Admin') {
     document.getElementById("addBook").style.display = "flex";
   } else {
     document.getElementById("addBook").style.display = "none";
   }
 
   if (isLoggedIn) {
-    loggingButton.innerHTML =
-      '<span><ion-icon name="log-out-outline" class="icon logoutIcon"></ion-icon>logout</span>';
+    loggingButton.innerHTML = '<span><ion-icon name="log-out-outline" class="icon logoutIcon"></ion-icon>logout</span>';
     loggingButton.href = "../../HTML/Home.html";
-    document.getElementById(
-      "profileText"
-    ).innerHTML = `<a href="../../HTML/Profile.html">Hello, ${username}</a><img src="../../Imgs/user-profile.png">`;
+    document.getElementById("profileText").innerHTML = `<a href="../../HTML/Profile.html">Hello, ${username}</a><img src="../../Imgs/user-profile.png">`;
 
     loggingButton.addEventListener("click", function () {
       event.preventDefault();
@@ -89,6 +87,9 @@ function setupLogoutButton() {
       window.location.href = "../../HTML/Home.html";
     });
   } else {
+    const profileLink = document.getElementById('profileLink');
+    profileLink.href = '../../HTML/Login.html'
+
     loggingButton.innerHTML =
       '<span><ion-icon name="log-in-outline" class="icon loginIcon"></ion-icon>login</span>';
     document.getElementById("profileText").style.display = "none";

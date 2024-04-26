@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = document.getElementById("name-input").value;
     const price = document.getElementById("price-input").value;
     // const imageSrc = document.getElementById('imageSrc-input').value;
-    const imageSrc = "../../Imgs/Books/ (43).jpg";
+    const imageSrc = "../../Imgs/Books/(43).jpg";
     const author = document.getElementById("author-input").value;
     const category = document.getElementById("category-input").value;
     const availability = document.getElementById("availability-input").value;
