@@ -61,6 +61,16 @@ function getIsAdmin() {
   return false;
 }
 
+function checkIsLoggedIn() {
+    const userDataJson = sessionStorage.getItem('LoggedInUser');
+    
+    if (userDataJson) {
+        const userData = JSON.parse(userDataJson);
+        return userData.loggedin;
+    }
+    return false;
+}
+
 function hideOrShowButton() {
     let isAdmin = checkIsAdmin();
   
@@ -138,50 +148,69 @@ function isBookBorrowed(bookName) {
 let isBorrowed = false;
 
 document.getElementById("borrowButton").addEventListener("click", function () {
-  if (bookAvailability === "Available") {
-    addBook(
-      bookName,
-      bookPrice,
-      bookImageSrc,
-      bookAuthor,
-      bookCategory,
-      bookAvailability,
-      bookDescription,
-      "BorrowedBooks"
-    );
-    rmvDupesInLocalStorage("BorrowedBooks");
-    alert("Book Has Been Added To Borrowed Books List");
-    isBorrowed = true;
-  } else {
-    addBook(
-      bookName,
-      bookPrice,
-      bookImageSrc,
-      bookAuthor,
-      bookCategory,
-      bookAvailability,
-      bookDescription,
-      "RequestedBooks"
-    );
-    alert("Book Has Been Added To Requested Books List");
-    isBorrowed = false;
-  }
-  isBorrowedfunc();
+    const isLoggedIn = checkIsLoggedIn();
+    if(!isLoggedIn) {
+        alert('Please Login First!');
+        window.location.href = '../HTML/Login.html'
+        return;
+    } else {
+        if (bookAvailability === "Available") {
+            addBook(
+              bookName,
+              bookPrice,
+              bookImageSrc,
+              bookAuthor,
+              bookCategory,
+              bookAvailability,
+              bookDescription,
+              "BorrowedBooks"
+            );
+            rmvDupesInLocalStorage("BorrowedBooks");
+            alert("Book Has Been Added To Borrowed Books List");
+            isBorrowed = true;
+          } else {
+            addBook(
+              bookName,
+              bookPrice,
+              bookImageSrc,
+              bookAuthor,
+              bookCategory,
+              bookAvailability,
+              bookDescription,
+              "RequestedBooks"
+            );
+            alert("Book Has Been Added To Requested Books List");
+            isBorrowed = false;
+          }
+          isBorrowedfunc();
+    }
 });
 
 document.getElementById("readButton").addEventListener("click", function () {
-  addBook(
-    bookName,
-    bookPrice,
-    bookImageSrc,
-    bookAuthor,
-    bookCategory,
-    bookAvailability,
-    bookDescription,
-    "ReadBooks"
-  );
-  rmvDupesInLocalStorage("ReadBooks");
-  alert("No Book Reading Functionality Yet!! SRY");
+    const isLoggedIn = checkIsLoggedIn();
+    if(!isLoggedIn) {
+        if (bookAvailability === "Available") {
+            document.getElementById("borrowButton").textContent = "Borrow";
+          } else {
+            document.getElementById("borrowButton").textContent = "Request";
+          }
+        alert('Please Login First!');
+        window.location.href = '../HTML/Login.html'
+        return;
+    } else {
+        addBook(
+            bookName,
+            bookPrice,
+            bookImageSrc,
+            bookAuthor,
+            bookCategory,
+            bookAvailability,
+            bookDescription,
+            "ReadBooks"
+          );
+        rmvDupesInLocalStorage("ReadBooks");
+        alert("Book Added To Read List But No Book Reading Functionality Yet!! SRY");
+    }
 });
 
 function isBorrowedfunc() {
@@ -276,7 +305,17 @@ function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function initializeLocalStorage(key) {
+    if (localStorage.getItem(key) === null) {
+      localStorage.setItem(key, JSON.stringify([]));
+    }
+  }
+
 document.addEventListener("DOMContentLoaded", function () {
+    initializeLocalStorage('RequestedBooks');
+    initializeLocalStorage('ReadBooks');
+    initializeLocalStorage('BorrowedBooks');
+    initializeLocalStorage('LastSeenBooks');
   addBook(
     bookName,
     bookPrice,

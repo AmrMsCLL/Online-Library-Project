@@ -84,6 +84,10 @@ function setupLogoutButton() {
     loggingButton.addEventListener("click", function () {
       event.preventDefault();
       sessionStorage.removeItem("LoggedInUser");
+      localStorage.removeItem("LastSeenBooks");
+      localStorage.removeItem("RequestedBooks");
+      localStorage.removeItem("BorrowedBooks");
+      localStorage.removeItem("ReadBooks");
       window.location.href = "../../HTML/Home.html";
     });
   } else {
