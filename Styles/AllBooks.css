@@ -35,9 +35,14 @@ body {
   background-color: #000000;
   margin-bottom: 5px;
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #search-input {
+  display: block;
   width: 100%;
   padding: 10px;
   border: 1px none #ccc;
@@ -288,7 +293,7 @@ label {
   right: 15px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 650px) {
   .book-div,
   img {
     width: calc(100% - 20px);
@@ -298,17 +303,22 @@ label {
   .filter-options {
     font-size: 14px;
   }
-
-  .category-sections,
+  .category-section{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
   .Slider_Content {
     flex-direction: column;
   }
+
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-  .book-div,
-  img {
-    width: calc(50% - 20px);
+@media only screen and (min-width: 650px) and (max-width: 992px) {
+
+
+  .category-section{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .search-bar input[type="text"],
