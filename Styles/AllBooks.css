@@ -6,12 +6,12 @@
   box-sizing: border-box;
 }
 .nobooks {
-  color: #d9534f;
+  color: black;
   background-color: #f2dede;
-  border: 1px solid #ebccd1;
+  border: 2px solid #e8c0c7;
   padding: 15px;
   margin: 15px 0;
-  border-radius: 10px;
+  border-radius: 24px;
   text-align: center;
   font-size: 1.2em;
 }
@@ -20,7 +20,24 @@ body {
   background-color: #000000;
   padding-top: 80px;
 }
+  /* background: url(../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg);
+background-position: center;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-attachment:fixed;
+}
 
+body::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}    */
 #library-container {
   padding: 40px;
 }
@@ -32,7 +49,7 @@ body {
 }
 .search-wrapper {
   width: 100%;
-  background-color: #000000;
+  /* background-color: #000000; */
   margin-bottom: 5px;
   margin-top: 30px;
   display: flex;
@@ -82,11 +99,17 @@ body {
   white-space: nowrap;
   margin-left: 10px;
   margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .filter-options label {
-  font-size: 1rem;
-  color: #f2dede;
+    margin: 20px;
+    padding: 18px;
+    font-size: 1rem;
+    color: aqua;
+    border: 3px solid aqua;
+    border-radius: 36px;
 }
 
 .filter-options input[type="checkbox"] {
@@ -102,7 +125,7 @@ body {
   border: 2px solid aqua;
   text-shadow: 0 1px 2px aqua;
   border-radius: 30px;
-  background-color: #181818;
+  background-color: black;
   font-size: 35px;
   font-weight: 900;
   color: rgb(255, 255, 255);
@@ -112,25 +135,28 @@ body {
 
 .book-div {
   background-color: rgba(255, 255, 255, 0.208);
-  padding: 20px 15px 5px 15px;
+  padding: 30px 15px 5px 15px;
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
   text-align: center;
   transition: 0.3s;
+    img {
+        border-radius: 10px;  
+    }
 }
 
 .book-div:hover {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.4);
   .book-name {
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0); */
+    color: aqua;
     font-weight: bolder;
   }
   img {
     transform: scale(1.1);
-    border-radius: 10px;
   }
   .book-image {
     filter: drop-shadow(0 5px 5px aqua);
@@ -188,16 +214,17 @@ body {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 2px solid #007bff;
-  border-radius: 3px;
+  border: 3px solid white;
+  border-radius: 36px;
   background: #fff;
   vertical-align: middle;
   margin-right: 8px;
+  transition: 0.3s;
 }
 
 #available-only-checkbox:checked:before {
   background: aqua;
-  border-radius: 50%;
+  border-radius: 36px;
 }
 
 label {
@@ -231,15 +258,15 @@ label {
     padding: 10px;
     white-space: nowrap;
     transition: 0.3s;
-    border: 1px solid #00000070;
+    border-radius: 24px;
   }
 
   li:hover {
-    border: 1px solid #00000070;
+    border-radius: 24px;
     background-color: rgba(255, 255, 255, 0.362);
-    color: black;
+    color: aqua;
     a {
-      color: black;
+      color: aqua;
       font-weight: 700;
     }
   }
@@ -292,6 +319,28 @@ label {
 .Slider_Content #next {
   right: 15px;
 }
+
+@media only screen and (max-width: 500px) {
+
+    .book-image {
+        width: 90%;
+        height: 60%;
+        /* border-radius: 8px; */
+    }
+
+    .search-bar input[type="text"],
+    .filter-options {
+      font-size: 14px;
+    }
+    .category-section{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .Slider_Content {
+      flex-direction: column;
+    }
+  
+  }
 
 @media only screen and (max-width: 650px) {
   .book-div,

@@ -9,6 +9,24 @@ body {
   text-align: center;
   background-color: #181818;
   color: #fff;
+  background: url(../Imgs/elena-kloppenburg-B6FOuNAYpYI-unsplash.jpg);
+background-position: center;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-attachment:fixed;
+
+}
+
+body::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .content {
