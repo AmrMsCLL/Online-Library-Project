@@ -147,7 +147,7 @@ function hoverEffect() {
         imageDiv.addEventListener('mouseout', function() {
             var textDiv = imageDiv.querySelector('.hoverText');
             imageDiv.removeChild(textDiv);
-        });
+        })                                                                                                       ;
     });
 }
 
@@ -161,6 +161,10 @@ function handleUserLoginState() {
         }
     }
 
+    if(!userData){
+        document.getElementById('profileLink').href = 'Login.html'
+    } 
+
     const availGetStarted = document.getElementById('startedaction');
     if (availGetStarted) {
         availGetStarted.addEventListener('click', (event) => {
@@ -170,25 +174,7 @@ function handleUserLoginState() {
     }
 }
 
-function checkIsLoggedIn() {
-    const userDataJson = sessionStorage.getItem('LoggedInUser');
-    
-    if (userDataJson) {
-        const userData = JSON.parse(userDataJson);
-        return userData.loggedin;
-    }
-    return false;
-}
-
-document.getElementById('joinButton').addEventListener('click', function() {
-    window.location.href = '../HTML/Login.html'
-});
-
 document.addEventListener('DOMContentLoaded', function() {
-    const isloggedin = checkIsLoggedIn();;
-    if(!isloggedin){
-        document.getElementById('profileLink').href = 'Login.html'
-    } 
     
     if (!localStorage.getItem('BooksLoaded')) {
 
