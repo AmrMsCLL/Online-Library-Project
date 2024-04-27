@@ -25,11 +25,6 @@ if (bookAvailability === "Available") {
 }
 
 document.body.style.backgroundImage = "url('" + bookImageSrc + "')";
-// document.body.style.backgroundRepeat = "no-repeat";
-// document.body.style.backgroundPosition = "center";
-// document.body.style.backgroundSize = '100% 100%'
-// document.body.style.backgroundSize = 'cover '
-// document.body.style.backgroundAttachment = 'fixed'
 
 function loadFromLocalStorage(localStorageName) {
   const storedBooks = localStorage.getItem(localStorageName);
