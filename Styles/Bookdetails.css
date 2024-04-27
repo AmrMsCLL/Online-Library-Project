@@ -10,6 +10,10 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 body::after {
@@ -32,7 +36,6 @@ body::after {
         border-radius: 10px;
         box-shadow: 0 0 20px aqua;
         margin: 0 15px;
-    
     }
     display: flex;
     flex-direction: row;
@@ -40,6 +43,7 @@ body::after {
     margin: 150px auto 150px 200px;
     width: 80%;
     height: 450px;
+    margin-bottom: 320px;
 }
 
 .BookCover {
@@ -262,7 +266,7 @@ body::after {
 
   .BookCover .borrowButton{
     width: 85%;
-  }
+  } 
 
   .buttons{
     bottom: 0;

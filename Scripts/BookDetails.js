@@ -25,8 +25,11 @@ if (bookAvailability === "Available") {
 }
 
 document.body.style.backgroundImage = "url('" + bookImageSrc + "')";
-document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.backgroundSize = "cover";
+// document.body.style.backgroundRepeat = "no-repeat";
+// document.body.style.backgroundPosition = "center";
+// document.body.style.backgroundSize = '100% 100%'
+// document.body.style.backgroundSize = 'cover '
+// document.body.style.backgroundAttachment = 'fixed'
 
 function loadFromLocalStorage(localStorageName) {
   const storedBooks = localStorage.getItem(localStorageName);
@@ -209,7 +212,7 @@ document.getElementById("readButton").addEventListener("click", function () {
             "ReadBooks"
           );
         rmvDupesInLocalStorage("ReadBooks");
-        alert("Book Added To Read List But No Book Reading Functionality Yet!! SRY");
+        alert("Book Added To Read List But No Book Reading Functionality Yet!! Sorry");
     }
 });
 
@@ -272,7 +275,6 @@ function editBookDetails() {
 
   document.getElementById("imageSrc-input").style.display = "none";
   document.getElementById("imageSrc-input-label").style.display = "none";
-  document.getElementById("editButton").disabled = true;
 }
 
 function saveBookDetails() {
@@ -302,7 +304,7 @@ function saveBookDetails() {
 }
 
 function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string[0].toUpperCase() + string.slice(1);
 }
 
 function initializeLocalStorage(key) {
@@ -328,14 +330,8 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   rmvDupesInLocalStorage("LastSeenBooks");
 
-  const bookIsBorrowed = isBookBorrowed(bookName);
-  if (bookIsBorrowed) {
-    document.getElementById("borrowButton").style.display = "none";
-    document.getElementById("readButton").style.display = "inline-block";
-  } else {
-    document.getElementById("borrowButton").style.display = "inline-block";
-    document.getElementById("readButton").style.display = "none";
-  }
+  isBorrowedfunc();
+  
   const delButton = document.getElementById("delButton");
   if (delButton) {
     delButton.addEventListener("click", () => {
