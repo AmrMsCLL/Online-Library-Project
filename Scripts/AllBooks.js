@@ -70,7 +70,7 @@ function displayCategorySlider() {
   prevButton.textContent = "chevron_left";
   prevButton.id = "prev";
   prevButton.classList.add("slider_Button", "material-symbols-rounded");
-  prevButton.onclick = initiateswipe;
+  prevButton.setAttribute('onclick', 'initiateswipe()');
 
   categorySliderContainer.appendChild(prevButton);
 
@@ -96,7 +96,7 @@ function displayCategorySlider() {
   nextButton.textContent = "chevron_right";
   nextButton.id = "next";
   nextButton.classList.add("slider_Button", "material-symbols-rounded");
-  nextButton.onclick = initiateswipe;
+  nextButton.setAttribute('onclick', 'initiateswipe()');
 
   categorySliderContainer.appendChild(nextButton);
 }

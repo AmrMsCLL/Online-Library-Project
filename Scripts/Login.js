@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         sessionStorage.setItem("LoggedInUser", JSON.stringify(loggedInUser));
       }
-      window.location.href = "../HTML/Home.html";
+      window.location.href = "../HTML/index.html";
     } else {
       alert(
         "Invalid Username or Password. If you are not Registered, Please Register First."
