@@ -184,7 +184,7 @@ body {
 
 
 .Slider_Content {
-  padding: 70px;
+  padding: 20px;
   position: relative;
   a {
     width: 16%;
@@ -295,6 +295,7 @@ hr {
 .Slider_Content #prev {
   left: 5;
   display: none;
+  z-index: 99;
 }
 
 .Slider_Content #next {
